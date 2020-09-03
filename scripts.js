@@ -1,14 +1,23 @@
-//example inputs for building
+//selectors and placeholders
 let divApi = document.getElementById("api");
 let divMins = document.getElementById("mins");
+let results={};
+let inputChoiceFrom = "";
+let inputChoiceTo = "";
+let inputFromEle = document.getElementById("from");
+let inputToEle = document.getElementById("to");
 
-//fake inputs for building out
-let inputChoiceFrom = "bankstation";
-let inputChoiceTo = "neasdenstation";
+function getInputValue(){
+    // Selecting the input element and get its value 
+    inputChoiceFrom = inputFromEle.value;
+    inputChoiceTo = inputToEle.value;
+    inputFromEle.value = "";
+    inputToEle.value = "";
+    journeyPlan(inputChoiceFrom, inputChoiceTo);
+}
 
-
-// function to run after getting inputs from user
-const journeyPlanTrain = (from, to) => {
+// function to get data from api and assign to variables/elements
+const journeyPlan = (from, to) => {
     let tflApi = "https://api.tfl.gov.uk";
     let tflJour = "/journey/journeyresults/";
     return axios.get( tflApi + tflJour + from + "/to/" + to, {
@@ -21,21 +30,52 @@ const journeyPlanTrain = (from, to) => {
     }
     
     ).then((res) => {
-        //get url data from 300 status code then another GET request with new urls
-        //example: channg bankstation to the underground station code 
-        let fromNum = res["data"]["fromLocationDisambiguation"]["disambiguationOptions"][0]["parameterValue"];
-        let toNum = res["data"]["toLocationDisambiguation"]["disambiguationOptions"][0]["parameterValue"];
-        divApi.innerHTML = fromNum +"   "+ toNum;
-            axios.get(tflApi + tflJour + fromNum + "/to/" + toNum
+        if (res.status == "300"){
+            let fromToArr = disambiguationSort(from, to, res);
+            //picking first option from list of 300 status request
+            axios.get(tflApi + tflJour + fromToArr[0] + "/to/" + fromToArr[1]
             ).catch((error) => {
                 console.log(error);
             }).then((res) => {
-                let results = hrsAndMins(res["data"]["journeys"][0].duration);
-                divMins.innerHTML = results;
+            //using length to get last leg of journey to get arrival point
+                let toLeng = res.data.journeys[0].legs.length -1;
+                results = {from: res.data.journeys[0].legs[0].departurePoint.commonName,
+                    to: res.data.journeys[0].legs[toLeng].arrivalPoint.commonName,
+                    duration: res.data.journeys[0].duration};
+                    console.log(results.to);
+                    //assigning to elements
+                divApi.innerHTML = "From "+ results.from + " to  " + results.to;
+                divMins.innerHTML = "This journey takes " + hrsAndMins(results.duration);
             })
-        return fromNum +"   "+ toNum;
+
+        }
+        else{
+             divApi.innerHTML = "from " + res.data.journeyVector.from + " to  " + res.data.journeyVector.to;
+             divMins.innerHTML = "This Journey takes " + hrsAndMins(res.data.journeys[0].duration);
+        }
+
     })
+};
+
+//Sort disabiguation from 300 status request, using the first option to request the data needed
+const disambiguationSort= (from, to, res) => {
+    let disamSort = [];
+
+    if(res.data.fromLocationDisambiguation.matchStatus === "identified"){
+        disamSort[0]= from;
+    }else{
+        disamSort[0] = res.data.fromLocationDisambiguation.disambiguationOptions[0].place.icsCode;
+    };
+    
+    if(res.data.toLocationDisambiguation.matchStatus === "identified"){
+        disamSort[1] = to;
+    }else{
+        disamSort[1] = res.data.toLocationDisambiguation.disambiguationOptions[0].place.icsCode;
+    }
+    return disamSort;
+
 }
+
 
 // take duration from api and convert into a string of mins or hour and mins
 const hrsAndMins = (n) => {
