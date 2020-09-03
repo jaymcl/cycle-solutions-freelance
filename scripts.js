@@ -1,7 +1,11 @@
 //selectors and placeholders
 let divApi = document.getElementById("api");
 let divMins = document.getElementById("mins");
+let divBike = document.getElementById("bike");
+let divFare = document.getElementById("fare");
+let divCom = document.getElementById("speedCom");
 let results={};
+let bikeResults="";
 let inputChoiceFrom = "";
 let inputChoiceTo = "";
 let inputFromEle = document.getElementById("from");
@@ -42,16 +46,61 @@ const journeyPlan = (from, to) => {
                 results = {from: res.data.journeys[0].legs[0].departurePoint.commonName,
                     to: res.data.journeys[0].legs[toLeng].arrivalPoint.commonName,
                     duration: res.data.journeys[0].duration};
-                    console.log(results.to);
                     //assigning to elements
                 divApi.innerHTML = "From "+ results.from + " to  " + results.to;
                 divMins.innerHTML = "This journey takes " + hrsAndMins(results.duration);
-            })
+            });
+            //getting bike distance data
+            axios.get(tflApi + tflJour + fromToArr[0] + "/to/" + fromToArr[1] + "?mode=cycle&bikeProficiency=Fast", {
+                validateStatus: (status) => {
+                    return status <= 300;
+                    //getting data from tfl api using http 300 as a filter for user inputs on to/from location
+                }}
+            ).catch((error) => {
+                console.log(error);
+            }).then((res) => {
+                console.log(res);
+                bikeResults = res.data.journeys[0].duration;
+                console.log(bikeResults);
+                divBike.innerHTML = "This journey takes " + hrsAndMins(bikeResults) + " on a bike";
+                bikeResults < results.duration ? divCom.innerHTML = "Bike is actually faster by " + (results.duration - bikeResults) + "mins" : divCom.innerHTML = "Bike is only " + (bikeResults - results.duration) + "mins";
+            });
+
 
         }
         else{
+            tubeDuration = res.data.journeys[0].duration;
              divApi.innerHTML = "from " + res.data.journeyVector.from + " to  " + res.data.journeyVector.to;
-             divMins.innerHTML = "This Journey takes " + hrsAndMins(res.data.journeys[0].duration);
+             divMins.innerHTML = "This journey takes " + hrsAndMins(tubeDuration);
+                         //getting bike distance data
+            axios.get(tflApi + tflJour + from + "/to/" + to + "?mode=cycle&bikeProficiency=Fast", {
+                validateStatus: (status) => {
+                    return status <= 300;
+                    //getting data from tfl api using http 300 as a filter for user inputs on to/from location
+                }}
+            ).catch((error) => {
+                console.log(error);
+            }).then((res) => {
+                if (res.status == "300"){
+                    let fromToBikeArr = disambiguationSort(from,to,res);
+                    axios.get(tflApi + tflJour + fromToBikeArr[0] + "/to/" + fromToBikeArr[1] + "?mode=cycle&bikeProficiency=Fast"
+                    ).catch((error)=> {
+                        console.log(error);
+                    }).then((res) => {
+                        bikeResults = res.data.journeys[0].duration;
+                         console.log(bikeResults);
+                        divBike.innerHTML = "This journey takes " + hrsAndMins(bikeResults) + " on a bike";
+                        bikeResults < tubeDuration ? divCom.innerHTML = "Bike is actually faster by " + (tubeDuration - bikeResults) + "mins" : divCom.innerHTML = "Bike is only " + (bikeResults - tubeDuration) + "mins";
+                    })
+                }else{
+                    bikeResults = res.data.journeys[0].duration;
+                    console.log(bikeResults);
+                    divBike.innerHTML = "This journey takes " + hrsAndMins(bikeResults) + " on a bike";
+                    bikeResults < tubeDuration ? divCom.innerHTML = "Bike is actually faster by " + (tubeDuration - bikeResults) + "mins" : divCom.innerHTML = "Bike is only " + (bikeResults - tubeDuration) + "mins";
+
+                }
+
+            });
         }
 
     })
