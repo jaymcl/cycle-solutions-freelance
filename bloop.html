@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Cycle Solutions</title>
+</head>
+<body>
+    <h1>Cycle Solutions / Reroute my commute</h1>
+    
+    <label for='from' >From</label>
+    <input type='text' id='from' placeholder="postcode or station">
+    <label for='to'>To</label>
+    <input type='text' id='to' placeholder="postcode or station">
+    <button type='button' onclick="getInputValue();">Submit</button>
+    
+    <div id="api"></div>
+
+    <div id="mins"></div>
+
+    <div id="bike"></div>
+
+    <div id="speedCom"></div>
+
+    <div id="fare"></div>
+    
+    
+    
+    
+    <script src="scripts.js"></script>
+</body>
+</html>
