@@ -42,6 +42,7 @@ const journeyPlan = (from, to) => {
                 console.log(error);
             }).then((res) => {
             //using length to get last leg of journey to get arrival point
+            console.log(res);
                 let toLeng = res.data.journeys[0].legs.length -1;
                 results = {from: res.data.journeys[0].legs[0].departurePoint.commonName,
                     to: res.data.journeys[0].legs[toLeng].arrivalPoint.commonName,
@@ -59,11 +60,9 @@ const journeyPlan = (from, to) => {
             ).catch((error) => {
                 console.log(error);
             }).then((res) => {
-                console.log(res);
                 bikeResults = res.data.journeys[0].duration;
-                console.log(bikeResults);
                 divBike.innerHTML = "This journey takes " + hrsAndMins(bikeResults) + " on a bike";
-                bikeResults < results.duration ? divCom.innerHTML = "Bike is actually faster by " + (results.duration - bikeResults) + "mins" : divCom.innerHTML = "Bike is only " + (bikeResults - results.duration) + "mins";
+                bikeResults < results.duration ? divCom.innerHTML = "Bike is actually faster by " + (results.duration - bikeResults) + "mins" : divCom.innerHTML = "Bike is only " + (bikeResults - results.duration) + "mins slower than the tube";
             });
 
 
@@ -71,7 +70,7 @@ const journeyPlan = (from, to) => {
         else{
             tubeDuration = res.data.journeys[0].duration;
              divApi.innerHTML = "from " + res.data.journeyVector.from + " to  " + res.data.journeyVector.to;
-             divMins.innerHTML = "This journey takes " + hrsAndMins(tubeDuration);
+             divMins.innerHTML = "This journey takes " + hrsAndMins(tubeDuration) + "by public transport";
                          //getting bike distance data
             axios.get(tflApi + tflJour + from + "/to/" + to + "?mode=cycle&bikeProficiency=Fast", {
                 validateStatus: (status) => {
@@ -88,13 +87,11 @@ const journeyPlan = (from, to) => {
                         console.log(error);
                     }).then((res) => {
                         bikeResults = res.data.journeys[0].duration;
-                         console.log(bikeResults);
                         divBike.innerHTML = "This journey takes " + hrsAndMins(bikeResults) + " on a bike";
                         bikeResults < tubeDuration ? divCom.innerHTML = "Bike is actually faster by " + (tubeDuration - bikeResults) + "mins" : divCom.innerHTML = "Bike is only " + (bikeResults - tubeDuration) + "mins";
                     })
                 }else{
                     bikeResults = res.data.journeys[0].duration;
-                    console.log(bikeResults);
                     divBike.innerHTML = "This journey takes " + hrsAndMins(bikeResults) + " on a bike";
                     bikeResults < tubeDuration ? divCom.innerHTML = "Bike is actually faster by " + (tubeDuration - bikeResults) + "mins" : divCom.innerHTML = "Bike is only " + (bikeResults - tubeDuration) + "mins";
 
