@@ -24,7 +24,8 @@ function getInputValue(){
 const journeyPlan = (from, to) => {
     let tflApi = "https://api.tfl.gov.uk";
     let tflJour = "/journey/journeyresults/";
-    return axios.get( tflApi + tflJour + from + "/to/" + to, {
+    let tflTime = "?date=20201101&time=0800";
+    return axios.get( tflApi + tflJour + from + "/to/" + to + tflTime, {
     validateStatus: (status) => {
         return status <= 300;
         //getting data from tfl api using http 300 as a filter for user inputs on to/from location
@@ -37,13 +38,37 @@ const journeyPlan = (from, to) => {
         if (res.status == "300"){
             let fromToArr = disambiguationSort(from, to, res);
             //picking first option from list of 300 status request
-            axios.get(tflApi + tflJour + fromToArr[0] + "/to/" + fromToArr[1]
+            axios.get(tflApi + tflJour + fromToArr[0] + "/to/" + fromToArr[1] + tflTime
             ).catch((error) => {
                 console.log(error);
             }).then((res) => {
             //using length to get last leg of journey to get arrival point
-            console.log(res);
                 let toLeng = res.data.journeys[0].legs.length -1;
+                let legArray = res.data.journeys[0].legs;
+                const fareFind = (array) =>{ 
+                for (let index = 0; index < array.length; index++) {
+                    if (array[index].arrivalPoint.naptanId != undefined && array[index].departurePoint.naptanId != undefined ) {
+                            const element = [array[index].arrivalPoint.naptanId, array[index].departurePoint.naptanId];
+                         axios.get("https://api.tfl.gov.uk/Stoppoint/" + element[1] + "/FareTo/" + element[0]
+                         ).catch((error) => {
+                             console.log(error);
+                            
+                            }).then((res) => {
+                                console.log(res);
+                                //
+                                //to do 
+                                //grab pay as you go fare peak
+                                //display fare 
+                                // [1].mode.id on leg
+                                //farefinder travel mode first then fare
+                                //£1.50 bus
+                                //
+                            })   
+                        }
+                    }
+                }
+                fareFind(legArray);
+                console.log(legArray);
                 results = {from: res.data.journeys[0].legs[0].departurePoint.commonName,
                     to: res.data.journeys[0].legs[toLeng].arrivalPoint.commonName,
                     duration: res.data.journeys[0].duration};
@@ -90,7 +115,7 @@ const journeyPlan = (from, to) => {
                         divBike.innerHTML = "This journey takes " + hrsAndMins(bikeResults) + " on a bike";
                         bikeResults < tubeDuration ? divCom.innerHTML = "Bike is actually faster by " + (tubeDuration - bikeResults) + "mins" : divCom.innerHTML = "Bike is only " + (bikeResults - tubeDuration) + "mins";
                     })
-                }else{
+                    }else{
                     bikeResults = res.data.journeys[0].duration;
                     divBike.innerHTML = "This journey takes " + hrsAndMins(bikeResults) + " on a bike";
                     bikeResults < tubeDuration ? divCom.innerHTML = "Bike is actually faster by " + (tubeDuration - bikeResults) + "mins" : divCom.innerHTML = "Bike is only " + (bikeResults - tubeDuration) + "mins";
