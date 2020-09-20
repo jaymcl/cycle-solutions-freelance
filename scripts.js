@@ -1,4 +1,5 @@
 //selectors and placeholders
+
 let divApi = document.getElementById("api");
 let divMins = document.getElementById("mins");
 let divBike = document.getElementById("bike");
@@ -26,7 +27,7 @@ const journeyPlan = (from, to) => {
     let tflJour = "/journey/journeyresults/";
     let tflTime = "?date=20201101&time=0800";
     return axios.get( tflApi + tflJour + from + "/to/" + to + tflTime, {
-    validateStatus: (status) => {
+        validateStatus: (status) => {
         return status <= 300;
         //getting data from tfl api using http 300 as a filter for user inputs on to/from location
     }}
@@ -42,20 +43,24 @@ const journeyPlan = (from, to) => {
             ).catch((error) => {
                 console.log(error);
             }).then((res) => {
-            //using length to get last leg of journey to get arrival point
+                //using length to get last leg of journey to get arrival point
                 let toLeng = res.data.journeys[0].legs.length -1;
                 let legArray = res.data.journeys[0].legs;
                 const fareFind = (array) =>{ 
-                for (let index = 0; index < array.length; index++) {
-                    if (array[index].arrivalPoint.naptanId != undefined && array[index].departurePoint.naptanId != undefined ) {
+                    let fareInc = 0;
+                    for (let index = 0; index < array.length; index++) {
+                        if (array[index].mode.id === "bus"){
+                            fareInc = fareInc + 1.50;
+                        }
+                        if (array[index].mode.id == "tube" ) {
                             const element = [array[index].arrivalPoint.naptanId, array[index].departurePoint.naptanId];
-                         axios.get("https://api.tfl.gov.uk/Stoppoint/" + element[1] + "/FareTo/" + element[0]
-                         ).catch((error) => {
-                             console.log(error);
-                            
+                            axios.get("https://api.tfl.gov.uk/Stoppoint/" + element[1] + "/FareTo/" + element[0]
+                            ).catch((error) => {
+                                console.log(error);
+                                
                             }).then((res) => {
                                 console.log(res);
-                                //
+                                fareInc = fareInc + parseInt(res.data[0].rows[0].ticketsAvailable[0].cost);
                                 //to do 
                                 //grab pay as you go fare peak
                                 //display fare 
@@ -66,9 +71,12 @@ const journeyPlan = (from, to) => {
                             })   
                         }
                     }
+                divFare.innerHTML = fareInc;
+
                 }
                 fareFind(legArray);
                 console.log(legArray);
+                
                 results = {from: res.data.journeys[0].legs[0].departurePoint.commonName,
                     to: res.data.journeys[0].legs[toLeng].arrivalPoint.commonName,
                     duration: res.data.journeys[0].duration};
@@ -135,14 +143,21 @@ const disambiguationSort= (from, to, res) => {
     if(res.data.fromLocationDisambiguation.matchStatus === "identified"){
         disamSort[0]= from;
     }else{
-        disamSort[0] = res.data.fromLocationDisambiguation.disambiguationOptions[0].place.icsCode;
+        if( res.data.fromLocationDisambiguation.disambiguationOptions[0].place.icsCode == undefined){
+            disamSort[0] = res.data.fromLocationDisambiguation.disambiguationOptions[0].parameterValue;
+        }else{
+            disamSort[0] = res.data.fromLocationDisambiguation.disambiguationOptions[0].place.icsCode;
+        }
     };
     
     if(res.data.toLocationDisambiguation.matchStatus === "identified"){
         disamSort[1] = to;
     }else{
-        disamSort[1] = res.data.toLocationDisambiguation.disambiguationOptions[0].place.icsCode;
-    }
+        if( res.data.toLocationDisambiguation.disambiguationOptions[0].place.icsCode == undefined){
+            disamSort[1] = res.data.toLocationDisambiguation.disambiguationOptions[0].parameterValue;
+        }else{
+            disamSort[1] = res.data.toLocationDisambiguation.disambiguationOptions[0].place.icsCode;
+    }}
     return disamSort;
 
 }
