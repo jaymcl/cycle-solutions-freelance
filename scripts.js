@@ -26,7 +26,8 @@ const journeyPlan = (from, to) => {
     let tflApi = "https://api.tfl.gov.uk";
     let tflJour = "/journey/journeyresults/";
     let tflTime = "?date=20201101&time=0800";
-    return axios.get( tflApi + tflJour + from + "/to/" + to + tflTime, {
+    let tflModes = "&mode=dlr%2Ctube%2Cbus%2Coverground";
+    return axios.get( tflApi + tflJour + from + "/to/" + to + tflTime + tflModes, {
         validateStatus: (status) => {
         return status <= 300;
         //getting data from tfl api using http 300 as a filter for user inputs on to/from location
@@ -48,11 +49,14 @@ const journeyPlan = (from, to) => {
                 let legArray = res.data.journeys[0].legs;
                 const fareFind = (array) =>{ 
                     let fareInc = 0;
+                    fareInc = 0
+                    ;
                     for (let index = 0; index < array.length; index++) {
                         if (array[index].mode.id === "bus"){
-                            fareInc = fareInc + 1.50;
+                            fareInc += 1.50;
+                            
                         }
-                        if (array[index].mode.id == "tube" ) {
+                        else if (array[index].mode.id == "tube" ) {
                             const element = [array[index].arrivalPoint.naptanId, array[index].departurePoint.naptanId];
                             axios.get("https://api.tfl.gov.uk/Stoppoint/" + element[1] + "/FareTo/" + element[0]
                             ).catch((error) => {
@@ -60,7 +64,8 @@ const journeyPlan = (from, to) => {
                                 
                             }).then((res) => {
                                 console.log(res);
-                                fareInc = fareInc + parseInt(res.data[0].rows[0].ticketsAvailable[0].cost);
+                                fareInc += parseFloat(res.data[0].rows[0].ticketsAvailable[1].cost);
+                                
                                 //to do 
                                 //grab pay as you go fare peak
                                 //display fare 
@@ -70,8 +75,9 @@ const journeyPlan = (from, to) => {
                                 //
                             })   
                         }
+                        divFare.innerHTML = "£" + fareInc.toFixed(2);
                     }
-                divFare.innerHTML = fareInc;
+                
 
                 }
                 fareFind(legArray);
