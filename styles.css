@@ -1,0 +1,33 @@
+#inputsSection {
+    width:50vw;
+    margin: 0 auto;
+    padding: 2%;
+}
+
+#buttonWrap{
+    width: 100%;
+    margin: 0 auto;
+}
+
+#goButton {
+    display: block;
+    margin: auto;
+}
+
+h1{
+    padding: 2rem;
+    text-align: center;
+}
+
+#basic-addon1{
+    width: 4rem;
+}
+
+.card {
+    padding:0;
+    margin: 1rem;
+}
+
+.hideCard {
+    display: none;
+}
