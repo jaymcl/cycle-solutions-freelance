@@ -32,66 +32,70 @@ const journeyPlan = (from, to) => {
     let fetchInput = encodeURIComponent(`${tflApi}${tflJour}${from}/to/${to}${tflTime}${tflModes}${appKey}`);
     console.log(`${appKey}lmao`);
 
-    fetch(`https://api.allorigins.win/get?url=${fetchInput}`)
-    .then(response => {
-	if (response.ok) return response.json()
-	throw new Error('Network response was not ok.')
-    })
-    .then(data => {
-    let boo = JSON.parse(data.contents);
-    console.log(boo);
-    }
 
-);
-
-
-
-
-    axios.get(`https://api.allorigins.win/get?url=${fetchInput}`, {
-        validateStatus: (status) => {
-        return status <= 300;}
-        
+axios.get(`https://api.allorigins.win/get?url=${fetchInput}`, {
+    validateStatus: (status) => {
+        return status <= 300;}    
     }
     //getting data from tfl api using http 300 as a filter for user inputs on to/from location
     ).catch((error) => {
         console.log(error);
     }
-    
     ).then((res) => {
         console.log(res);
         if (res.data.status.http_code == "300"){
-            let DisOptionsFrom = JSON.parse(res.data.contents).fromLocationDisambiguation;
+            let fromToArgs = [];
+            let DisOptions = JSON.parse(res.data.contents);
             console.log(JSON.parse(res.data.contents))
-            if( DisOptionsFrom.matchStatus == "list" ){
-                DisOptionsFrom = DisOptionsFrom.disambiguationOptions.slice(0,5);
+            if( DisOptions.fromLocationDisambiguation.matchStatus == "list" ){
+                DisOptionsFrom = DisOptions.fromLocationDisambiguation.disambiguationOptions.slice(0,5);
                 DisOptionsFrom.forEach((ele) => {
                     let newLi =document.createElement("li");
                     let newTn =document.createTextNode(ele.place.commonName);
                     newLi.appendChild(newTn);
                     newLi.classList.add("list-group-item");
                     document.getElementById("fromUL").appendChild(newLi);
+                    newLi.addEventListener("click",() => {fromToArgs[0] = DisOptionsFrom.parameterValue;
+                        document.getElementById("fromOptions").classList.add("hideCard");
+                    }) 
                 });
-            } else {
+                }else {
                 document.getElementById("fromOptions").classList.add("hideCard");
                 let journeyPara = document.createElement("h3");
                 let journeyText = document.createTextNode(`${from}`);
-                journeyPara.appendChild(journeyText)
+                journeyPara.appendChild(journeyText);
                 document.getElementById("journey").appendChild(journeyPara);
+                fromToArgs[0] = from;
                 
-            }
-            let DisOptionsTo = JSON.parse(res.data.contents).toLocationDisambiguation.disambiguationOptions;
-            DisOptionsTo = DisOptionsTo.slice(0,5);
-            DisOptionsTo.forEach((ele) => {
-                let newLi =document.createElement("li");
-                let newTn =document.createTextNode(ele.place.commonName);
-                newLi.appendChild(newTn);
-                newLi.classList.add("list-group-item");
-                document.getElementById("toUL").appendChild(newLi);
-            });
+                };
+
+                if( DisOptions.toLocationDisambiguation.matchStatus == "list" ){
+                let DisOptionsTo = JSON.parse(res.data.contents).toLocationDisambiguation.disambiguationOptions;
+                DisOptionsTo = DisOptions.toLocationDisambiguation.disambiguationOptions.slice(0,5);
+                DisOptionsTo.forEach((ele) => {
+                    let newLi =document.createElement("li");
+                    let newTn =document.createTextNode(ele.place.commonName);
+                    newLi.appendChild(newTn);
+                    newLi.classList.add("list-group-item");
+                    document.getElementById("toUL").appendChild(newLi);
+                    newLi.addEventListener("click",() => {fromToArgs[1] = DisOptionsTo.parameterValue;
+                        document.getElementById("toOptions").classList.add("hideCard"); })
+                })} else{
+                document.getElementById("toOptions").classList.add("hideCard");
+                let journeyPara = document.createElement("h3");
+                let journeyText = document.createTextNode(`${to}`);
+                journeyPara.appendChild(journeyText);
+                document.getElementById("journey").appendChild(journeyPara);
+                fromToArgs[1] = to;
+            };
             //             let fromToArr = disambiguationSort(from, to, res);
             //             //picking first option from list of 300 status request
             //             axios.get(tflApi + tflJour + fromToArr[0] + "/to/" + fromToArr[1] + tflTime + appKey
-        }})}
+            if(fromToArgs.length == 2)
+                {console.log("GOOOOOOOOOOOOOOOOD")}
+        }
+    })
+    };
 //             ).catch((error) => {
 //                 console.log(error);
 //             }).then((res) => {
@@ -232,5 +236,4 @@ const journeyPlan = (from, to) => {
 //         return rhours + " hour(s) and " + rminutes + "minutes"  
 //     }}
 
-
-
+ 
