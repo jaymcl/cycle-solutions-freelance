@@ -29,8 +29,10 @@ const journeyPlan = (from, to) => {
     let tflJour = "/journey/journeyresults/";
     let tflTime = "&date=20201101&time=0800";
     let tflModes = "?mode=bus%2Ctube%2Coverground%2Ctflrail";
+    let tflBikeMode = "?mode=cycle&bikeProficiency=Fast";
     let fetchInput = encodeURIComponent(`${tflApi}${tflJour}${from}/to/${to}${tflTime}${tflModes}${appKey}`);
-    console.log(`${appKey}lmao`);
+    let fetchInputBike = encodeURIComponent(`${tflApi}${tflJour}${from}/to/${to}${tflTime}${tflBikeMode}${appKey}`);
+    
 
 
 axios.get(`https://api.allorigins.win/get?url=${fetchInput}`, {
@@ -55,18 +57,23 @@ axios.get(`https://api.allorigins.win/get?url=${fetchInput}`, {
                     newLi.appendChild(newTn);
                     newLi.classList.add("list-group-item");
                     document.getElementById("fromUL").appendChild(newLi);
-                    newLi.addEventListener("click",() => {fromToArgs[0] = DisOptionsFrom.parameterValue;
+                    document.getElementById("disamOptions").classList.remove("hideCard");
+                    newLi.addEventListener("click",() => {
+                        fromToArgs[0] = ele.parameterValue;
+                        if (fromToArgs.length == 2){
+                            journeyPlan(fromToArgs[0], fromToArgs[1]);
+                            document.getElementById("journey".classList.add("hideCard"));
+                        }
                         document.getElementById("fromOptions").classList.add("hideCard");
                     }) 
                 });
                 }else {
                 document.getElementById("fromOptions").classList.add("hideCard");
                 let journeyPara = document.createElement("h3");
-                let journeyText = document.createTextNode(`${from}`);
+                let journeyText = document.createTextNode(`FROM : ${from}`);
                 journeyPara.appendChild(journeyText);
                 document.getElementById("journey").appendChild(journeyPara);
                 fromToArgs[0] = from;
-                
                 };
 
                 if( DisOptions.toLocationDisambiguation.matchStatus == "list" ){
@@ -78,12 +85,17 @@ axios.get(`https://api.allorigins.win/get?url=${fetchInput}`, {
                     newLi.appendChild(newTn);
                     newLi.classList.add("list-group-item");
                     document.getElementById("toUL").appendChild(newLi);
-                    newLi.addEventListener("click",() => {fromToArgs[1] = DisOptionsTo.parameterValue;
+                    document.getElementById("disamOptions").classList.remove("hideCard");
+                    newLi.addEventListener("click",() => {
+                        fromToArgs[1] = ele.parameterValue;
+                        if (fromToArgs.length == 2){
+                            journeyPlan(fromToArgs[0], fromToArgs[1]);
+                        }
                         document.getElementById("toOptions").classList.add("hideCard"); })
                 })} else{
                 document.getElementById("toOptions").classList.add("hideCard");
                 let journeyPara = document.createElement("h3");
-                let journeyText = document.createTextNode(`${to}`);
+                let journeyText = document.createTextNode(`TO : ${to}`);
                 journeyPara.appendChild(journeyText);
                 document.getElementById("journey").appendChild(journeyPara);
                 fromToArgs[1] = to;
@@ -91,8 +103,31 @@ axios.get(`https://api.allorigins.win/get?url=${fetchInput}`, {
             //             let fromToArr = disambiguationSort(from, to, res);
             //             //picking first option from list of 300 status request
             //             axios.get(tflApi + tflJour + fromToArr[0] + "/to/" + fromToArr[1] + tflTime + appKey
-            if(fromToArgs.length == 2)
-                {console.log("GOOOOOOOOOOOOOOOOD")}
+            
+        }else {
+            let contentParse = JSON.parse(res.data.contents);
+            console.log(contentParse);
+            let toLeng = contentParse.journeys[0].legs.length -1;
+            //let legArray = res.data.journeys[0].legs;
+
+            results = {from: contentParse.journeys[0].legs[0].departurePoint.commonName,
+                                    to: contentParse.journeys[0].legs[toLeng].arrivalPoint.commonName,
+                                    duration: contentParse.journeys[0].duration};
+                                     //assigning to elements
+                                    divApi.innerHTML = "From "+ results.from + " to  " + results.to;
+                                    divMins.innerHTML = "This journey takes " + hrsAndMins(results.duration);
+                                    console.log(from, to);
+
+             axios.get(`https://api.allorigins.win/get?url=${fetchInputBike}`                                       
+                ).catch((error) => {
+                    console.log(error);
+                }
+                ).then((res) => {
+                    bikeParse = JSON.parse(res.data.contents);
+                    bikeResults = bikeParse.journeys[0].duration;
+                    divBike.innerHTML = "This journey takes " + hrsAndMins(bikeResults) + " on a bike";
+                    bikeResults <= results.duration ? divCom.innerHTML = "Bike is actually faster by " + (results.duration - bikeResults) + "mins" : divCom.innerHTML = "Bike is only " + (bikeResults - results.duration) + "mins slower than the tube"
+                })               
         }
     })
     };
@@ -223,17 +258,17 @@ axios.get(`https://api.allorigins.win/get?url=${fetchInput}`, {
 // }
 
 
-// // take duration from api and convert into a string of mins or hour and mins
-// const hrsAndMins = (n) => {
-//     let num = n;
-//     let hours = (num / 60);
-//     let rhours = Math.floor(hours);
-//     let minutes = (hours - rhours) * 60;
-//     let rminutes = Math.round(minutes);
-//     if ( num < 60) {
-//         return num + " minutes"
-//     } else {
-//         return rhours + " hour(s) and " + rminutes + "minutes"  
-//     }}
+// take duration from api and convert into a string of mins or hour and mins
+const hrsAndMins = (n) => {
+    let num = n;
+    let hours = (num / 60);
+    let rhours = Math.floor(hours);
+    let minutes = (hours - rhours) * 60;
+    let rminutes = Math.round(minutes);
+    if ( num < 60) {
+        return num + " minutes"
+    } else {
+        return rhours + " hour(s) and " + rminutes + "minutes"  
+    }}
 
  

@@ -31,3 +31,8 @@ h1{
 .hideCard {
     display: none;
 }
+
+#journey{
+    text-align: center;
+    margin:auto;
+}
