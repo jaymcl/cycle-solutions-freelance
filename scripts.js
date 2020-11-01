@@ -33,6 +33,7 @@ const journeyPlan = (from, to) => {
     let fetchInput = encodeURIComponent(`${tflApi}${tflJour}${from}/to/${to}${tflTime}${tflModes}${appKey}`);
     let fetchInputBike = encodeURIComponent(`${tflApi}${tflJour}${from}/to/${to}${tflTime}${tflBikeMode}${appKey}`);
     
+    
 
 
 axios.get(`https://api.allorigins.win/get?url=${fetchInput}`, {
@@ -108,7 +109,45 @@ axios.get(`https://api.allorigins.win/get?url=${fetchInput}`, {
             let contentParse = JSON.parse(res.data.contents);
             console.log(contentParse);
             let toLeng = contentParse.journeys[0].legs.length -1;
-            //let legArray = res.data.journeys[0].legs;
+            let legArray = contentParse.journeys[0].legs;
+                const fareFind = (array) =>{ 
+                    let fareInc = 0;
+                    
+                    for (let index = 0; index < array.length; index++) {
+                        if (array[index].mode.id === "bus"){
+                            fareInc += 1.50;
+                            
+                        }
+                        else if (array[index].mode.id == "tube" ) {
+                            const element = [array[index].arrivalPoint.naptanId, array[index].departurePoint.naptanId];
+                            let fetchFare = encodeURIComponent(`${tflApi}/Stoppoint/${element[1]}/FareTo/${element[0]}`);
+                            axios.get(`https://api.allorigins.win/get?url=${fetchFare}`
+                            ).catch((error) => {
+                                console.log(error);
+                                
+                            }).then((res) => {
+                                let ParseFare = JSON.parse(res.data.contents);
+                                console.log(res);
+                                fareInc += parseFloat(ParseFare[0].rows[0].ticketsAvailable[1].cost);
+                                
+                                //to do 
+                                //grab pay as you go fare peak
+                                //display fare 
+                                // [1].mode.id on leg
+                                //farefinder travel mode first then fare
+                                //£1.50 bus
+                                //
+                            })   
+                        }
+                        divFare.innerHTML = "£" + fareInc.toFixed(2);
+                    }
+                
+
+                }
+                fareFind(legArray);
+
+
+
 
             results = {from: contentParse.journeys[0].legs[0].departurePoint.commonName,
                                     to: contentParse.journeys[0].legs[toLeng].arrivalPoint.commonName,
