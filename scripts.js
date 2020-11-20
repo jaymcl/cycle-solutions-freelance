@@ -30,13 +30,12 @@ const journeyPlan = (from, to) => {
     let tflTime = "&date=20201101&time=0800";
     let tflModes = "?mode=bus%2Ctube%2Coverground%2Ctflrail";
     let tflBikeMode = "?mode=cycle&bikeProficiency=Fast";
-    let fetchInput = encodeURIComponent(`${tflApi}${tflJour}${from}/to/${to}${tflTime}${tflModes}${appKey}`);
-    let fetchInputBike = encodeURIComponent(`${tflApi}${tflJour}${from}/to/${to}${tflTime}${tflBikeMode}${appKey}`);
+    
     
     
 
 
-axios.get(`https://api.allorigins.win/get?url=${fetchInput}`, {
+axios.get(`${tflApi}${tflJour}${from}/to/${to}${tflTime}${tflModes}`, {
     validateStatus: (status) => {
         return status <= 300;}    
     }
@@ -46,10 +45,10 @@ axios.get(`https://api.allorigins.win/get?url=${fetchInput}`, {
     }
     ).then((res) => {
         console.log(res);
-        if (res.data.status.http_code == "300"){
+        if (res.status == "300"){
             let fromToArgs = [];
-            let DisOptions = JSON.parse(res.data.contents);
-            console.log(JSON.parse(res.data.contents))
+            let DisOptions = res.data;
+            
             if( DisOptions.fromLocationDisambiguation.matchStatus == "list" ){
                 DisOptionsFrom = DisOptions.fromLocationDisambiguation.disambiguationOptions.slice(0,5);
                 DisOptionsFrom.forEach((ele) => {
@@ -64,8 +63,10 @@ axios.get(`https://api.allorigins.win/get?url=${fetchInput}`, {
                         if (fromToArgs.length == 2){
                             journeyPlan(fromToArgs[0], fromToArgs[1]);
                             document.getElementById("journey".classList.add("hideCard"));
+                            document.getElementsByTagName("h3")[0].remove();
                         }
                         document.getElementById("fromOptions").classList.add("hideCard");
+                        
                     }) 
                 });
                 }else {
@@ -78,7 +79,7 @@ axios.get(`https://api.allorigins.win/get?url=${fetchInput}`, {
                 };
 
                 if( DisOptions.toLocationDisambiguation.matchStatus == "list" ){
-                let DisOptionsTo = JSON.parse(res.data.contents).toLocationDisambiguation.disambiguationOptions;
+                let DisOptionsTo = res.data.toLocationDisambiguation.disambiguationOptions;
                 DisOptionsTo = DisOptions.toLocationDisambiguation.disambiguationOptions.slice(0,5);
                 DisOptionsTo.forEach((ele) => {
                     let newLi =document.createElement("li");
@@ -91,8 +92,10 @@ axios.get(`https://api.allorigins.win/get?url=${fetchInput}`, {
                         fromToArgs[1] = ele.parameterValue;
                         if (fromToArgs.length == 2){
                             journeyPlan(fromToArgs[0], fromToArgs[1]);
+                            // document.getElementsByTagName("h3")[0].remove();
                         }
-                        document.getElementById("toOptions").classList.add("hideCard"); })
+                        document.getElementById("toOptions").classList.add("hideCard");
+                        })
                 })} else{
                 document.getElementById("toOptions").classList.add("hideCard");
                 let journeyPara = document.createElement("h3");
@@ -106,45 +109,71 @@ axios.get(`https://api.allorigins.win/get?url=${fetchInput}`, {
             //             axios.get(tflApi + tflJour + fromToArr[0] + "/to/" + fromToArr[1] + tflTime + appKey
             
         }else {
-            let contentParse = JSON.parse(res.data.contents);
-            console.log(contentParse);
+            let contentParse = res.data;
             let toLeng = contentParse.journeys[0].legs.length -1;
             let legArray = contentParse.journeys[0].legs;
                 const fareFind = (array) =>{ 
-                    let fareInc = 0;
-                    
+                    let busResults = [];
+                    let tubeResults = [];
                     for (let index = 0; index < array.length; index++) {
-                        if (array[index].mode.id === "bus"){
-                            fareInc += 1.50;
-                            
+                        if (array[index].mode.id == "bus"){
+                            busResults.push(array[index]);
                         }
-                        else if (array[index].mode.id == "tube" ) {
-                            const element = [array[index].arrivalPoint.naptanId, array[index].departurePoint.naptanId];
-                            let fetchFare = encodeURIComponent(`${tflApi}/Stoppoint/${element[1]}/FareTo/${element[0]}`);
-                            axios.get(`https://api.allorigins.win/get?url=${fetchFare}`
-                            ).catch((error) => {
-                                console.log(error);
-                                
-                            }).then((res) => {
-                                let ParseFare = JSON.parse(res.data.contents);
-                                console.log(res);
-                                fareInc += parseFloat(ParseFare[0].rows[0].ticketsAvailable[1].cost);
-                                
-                                //to do 
-                                //grab pay as you go fare peak
-                                //display fare 
-                                // [1].mode.id on leg
-                                //farefinder travel mode first then fare
-                                //£1.50 bus
-                                //
-                            })   
+                        if (array[index].mode.id == "tube" ) {
+                            tubeResults.push(array[index]);
                         }
-                        divFare.innerHTML = "£" + fareInc.toFixed(2);
-                    }
-                
-
+                    } return [busResults,tubeResults] ;
                 }
-                fareFind(legArray);
+
+                
+                    
+                        
+                        
+                        
+                            //to do 
+                            //grab pay as you go fare peak
+                            //display fare 
+                            // [1].mode.id on leg
+                            //farefinder travel mode first then fare
+                            //£1.50 bus
+                            //
+                          
+                let fareBoth = fareFind(legArray);
+                console.log(fareBoth);
+                if (fareBoth[1].length > 0){
+                    axios.get(`https://api.tfl.gov.uk/Stoppoint/${fareBoth[1][0].departurePoint.naptanId}/FareTo/${fareBoth[1][fareBoth[1].length - 1].arrivalPoint.naptanId}`
+                    ).catch((error) => {
+                        
+                        console.log(error);
+                    }
+                    ).then((res) => {
+                        console.log(res);
+                        
+                        if (fareBoth[0].length >= 1)
+                        {
+                            let faresTotal = (1.50 * fareBoth[0].length) + +res.data[0].rows[0].ticketsAvailable[res.data[0].rows[0].ticketsAvailable.length-1].cost ; 
+                            divFare.innerHTML = "£" + faresTotal.toFixed(2);
+                            console.log(faresTotal)
+                            console.log(fareBoth[0].length);
+                        }else {
+                            let faresTotal = res.data[0].rows[0].ticketsAvailable[res.data[0].rows[0].ticketsAvailable.length-1].cost;
+                            divFare.innerHTML = "£" + faresTotal;
+                            console.log(faresTotal)
+                        }
+                        
+                    })
+
+                } else {
+                    faresTotal = fareBoth[0].length-1 * 1.50;
+                    divFare.innerHTML = "£" + faresTotal.toFixed(2);
+                    console.log(faresTotal);
+                    console.log(fareBoth[0].length-1);
+                }
+
+
+
+                
+                divFare.innerHTML = "£" + Math.round(Math.round(fareBoth * 1000) / 10) / 100 ;
 
 
 
