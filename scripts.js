@@ -27,15 +27,15 @@ const journeyPlan = (from, to) => {
     let appKey = "&app_key=c40967018a7f4319892ed7f05cf93392"; 
     let tflApi = "https://api.tfl.gov.uk";
     let tflJour = "/journey/journeyresults/";
-    let tflTime = "&date=20201101&time=0800";
-    let tflModes = "?mode=bus%2Ctube%2Coverground%2Ctflrail";
+   // let tflTime = "?date=20210201&time=0800&timeIs=Departing";
+    let tflModes = "?mode=bus,tube,overground,tflrail,dlr";
     let tflBikeMode = "?mode=cycle&bikeProficiency=Fast";
     
     
     
 
 
-axios.get(`${tflApi}${tflJour}${from}/to/${to}${tflTime}${tflModes}`, {
+axios.get(`${tflApi}${tflJour}${from}/to/${to}${tflModes}`, {
     validateStatus: (status) => {
         return status <= 300;}    
     }
@@ -119,7 +119,12 @@ axios.get(`${tflApi}${tflJour}${from}/to/${to}${tflTime}${tflModes}`, {
                         if (array[index].mode.id == "bus"){
                             busResults.push(array[index]);
                         }
-                        if (array[index].mode.id == "tube" ) {
+                        if (array[index].mode.id == "tube" ||
+                            array[index].mode.id == "dlr" ||
+                            array[index].mode.id == "tflrail" ||
+                            array[index].mode.id == "overground" 
+
+                            ) {
                             tubeResults.push(array[index]);
                         }
                     } return [busResults,tubeResults] ;
@@ -164,16 +169,16 @@ axios.get(`${tflApi}${tflJour}${from}/to/${to}${tflTime}${tflModes}`, {
                     })
 
                 } else {
-                    faresTotal = fareBoth[0].length-1 * 1.50;
-                    divFare.innerHTML = "£" + faresTotal.toFixed(2);
+                    faresTotal = fareBoth[0].length * 1.50;
+                    divFare.innerHTML = `£${(fareBoth[0].length * 1.50).toFixed(2)}`;
                     console.log(faresTotal);
-                    console.log(fareBoth[0].length-1);
+                    console.log(fareBoth[0].length);
                 }
 
 
 
                 
-                divFare.innerHTML = "£" + Math.round(Math.round(fareBoth * 1000) / 10) / 100 ;
+                
 
 
 
@@ -186,13 +191,12 @@ axios.get(`${tflApi}${tflJour}${from}/to/${to}${tflTime}${tflModes}`, {
                                     divMins.innerHTML = "This journey takes " + hrsAndMins(results.duration);
                                     console.log(from, to);
 
-             axios.get(`https://api.allorigins.win/get?url=${fetchInputBike}`                                       
+             axios.get(`${tflApi}${tflJour}${from}/to/${to}${tflBikeMode}`                                       
                 ).catch((error) => {
                     console.log(error);
                 }
                 ).then((res) => {
-                    bikeParse = JSON.parse(res.data.contents);
-                    bikeResults = bikeParse.journeys[0].duration;
+                    bikeResults = res.data.journeys[0].duration;
                     divBike.innerHTML = "This journey takes " + hrsAndMins(bikeResults) + " on a bike";
                     bikeResults <= results.duration ? divCom.innerHTML = "Bike is actually faster by " + (results.duration - bikeResults) + "mins" : divCom.innerHTML = "Bike is only " + (bikeResults - results.duration) + "mins slower than the tube"
                 })               
