@@ -1,8 +1,15 @@
 #inputsSection {
-    width:50vw;
+    width:90vw;
     margin: 0 auto;
     padding: 2%;
 }
+#frominput{
+    width: 100%;    
+}
+#toinput{
+    width: 100%;    
+}
+
 
 #buttonWrap{
     width: 100%;
@@ -21,6 +28,7 @@ h1{
 
 #basic-addon1{
     width: 4rem;
+    height: 100%;
 }
 
 .card {
@@ -36,3 +44,20 @@ h1{
     text-align: center;
     margin:auto;
 }
+
+img {
+    width: 1rem;
+    height: 2rem;
+    padding: 0;
+
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown-item {
+    float:left;
+}
+

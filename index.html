@@ -9,24 +9,1364 @@
     <title>Cycle Solutions</title>
 </head>
 <body>
+
+   
+
     <h1>Reroute my commute</h1>
     
     <section id="inputsSection">
-
-        <div id="fromInput"class="input-group mb-3">
-            <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon1">From:</span>
+        <div class="container" >
+            <div class=>
+                <div id="fromInput"class="input-group ">           
+                <div class="input-group-prepend ">
+                    <span class="input-group-text" id="basic-addon1">From:</span>
+                </div>
+                <input  type="text" class="form-control " id="from"placeholder="Postcode / Station" aria-label="postcode or station" aria-describedby="basic-addon1">
             </div>
-            <input type="text" class="form-control" id="from"placeholder="Postcode / Station" aria-label="postcode or station" aria-describedby="basic-addon1">
-    </div>
-    
-    <div id="toInput"class="input-group mb-3">
-        <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1" >To:</span>
+            
+
+            
+                <ul class="list-group list-group-flush accordian" id="fromAccordion">
+                    <li class="list-group-item list-group-item-action" id="fromButtonHeading" data-toggle="collapse" data-target="#fromPickerButton" aria-expanded="true" aria-controls="fromPickerButton">Station Picker</li>
+                </ul>
+                <ul id="fromPickerButton" class="collapse list-group list-group-flush accordian" aria-labelledby="fromButtonHeading" data-parent="#fromAccordion">
+                    <li class="list-group-item list-group-item-action bakerloo" id="fromBakerlooLine" data-toggle="collapse" data-target="#fromBakerlooStations" aria-expanded="true" aria-controls="fromBakerlooStations">
+                        Bakerloo</li>
+                        <ul id="fromBakerlooStations" class="collapse list-group list-group-flush stations" aria-labelledby="fromBakerlooLine" data-parent="#fromPickerButton">
+                            <li class="list-group-item list-group-item-action">Baker Street Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Charing Cross Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Edgware Road (Bakerloo) Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Elephant & Castle Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Embankment Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Harlesden Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Harrow & Wealdstone Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Kensal Green Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Kenton Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Kilburn Park Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Lambeth North Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Maida Vale Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Marylebone Underground Station </li>
+                            <li class="list-group-item list-group-item-action">North Wembley Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Oxford Circus Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Paddington Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Piccadilly Circus Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Queen's Park Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Regent's Park Underground Station </li>
+                            <li class="list-group-item list-group-item-action">South Kenton Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Stonebridge Park Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Warwick Avenue Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Waterloo Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Wembley Central Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Willesden Junction Underground Station </li>
+                        </ul>
+                    <li class="list-group-item list-group-item-action central" id="fromCentralLine" data-toggle="collapse" data-target="#fromCentralStations" aria-expanded="true" aria-controls="fromCentralStations">Central</li>
+                        <ul id="fromCentralStations" class="collapse list-group list-group-flush stations" aria-labelledby="fromCentralLine" data-parent="#fromPickerButton">
+                                <li class="list-group-item list-group-item-action">Bank Underground Station </li>
+                                <li class="list-group-item list-group-item-action">Barkingside Underground Station </li>
+                                <li class="list-group-item list-group-item-action">Bethnal Green Underground Station </li>
+                                <li class="list-group-item list-group-item-action">Bond Street Underground Station </li>
+                                <li class="list-group-item list-group-item-action">Buckhurst Hill Underground Station </li>
+                                <li class="list-group-item list-group-item-action">Chancery Lane Underground Station </li>
+                                <li class="list-group-item list-group-item-action">Chigwell Underground Station </li>
+                                <li class="list-group-item list-group-item-action">Debden Underground Station </li>
+                                <li class="list-group-item list-group-item-action">Ealing Broadway Underground Station </li>
+                                <li class="list-group-item list-group-item-action">East Acton Underground Station </li>
+                                <li class="list-group-item list-group-item-action">Epping Underground Station </li>
+                                <li class="list-group-item list-group-item-action">Fairlop Underground Station </li>
+                                <li class="list-group-item list-group-item-action">Gants Hill Underground Station </li>
+                                <li class="list-group-item list-group-item-action">Grange Hill Underground Station </li>
+                                <li class="list-group-item list-group-item-action">Greenford Underground Station </li>
+                                <li class="list-group-item list-group-item-action">Hainault Underground Station </li>
+                                <li class="list-group-item list-group-item-action">Hanger Lane Underground Station </li>
+                                <li class="list-group-item list-group-item-action">Holborn Underground Station </li>
+                                <li class="list-group-item list-group-item-action">Holland Park Underground Station </li>
+                                <li class="list-group-item list-group-item-action">Lancaster Gate Underground Station </li>
+                                <li class="list-group-item list-group-item-action">Leyton Underground Station </li>
+                                <li class="list-group-item list-group-item-action">Leytonstone Underground Station </li>
+                                <li class="list-group-item list-group-item-action">Liverpool Street Underground Station </li>
+                                <li class="list-group-item list-group-item-action">Loughton Underground Station </li>
+                                <li class="list-group-item list-group-item-action">Marble Arch Underground Station </li>
+                                <li class="list-group-item list-group-item-action">Mile End Underground Station </li>
+                                <li class="list-group-item list-group-item-action">Newbury Park Underground Station </li>
+                                <li class="list-group-item list-group-item-action">North Acton Underground Station </li>
+                                <li class="list-group-item list-group-item-action">Northolt Underground Station </li>
+                                <li class="list-group-item list-group-item-action">Notting Hill Gate Underground Station </li>
+                                <li class="list-group-item list-group-item-action">Oxford Circus Underground Station </li>
+                                <li class="list-group-item list-group-item-action">Perivale Underground Station </li>
+                                <li class="list-group-item list-group-item-action">Queensway Underground Station </li>
+                                <li class="list-group-item list-group-item-action">Redbridge Underground Station </li>
+                                <li class="list-group-item list-group-item-action">Roding Valley Underground Station </li>
+                                <li class="list-group-item list-group-item-action">Ruislip Gardens Underground Station </li>
+                                <li class="list-group-item list-group-item-action">Shepherd's Bush (Central) Underground Station </li>
+                                <li class="list-group-item list-group-item-action">Snaresbrook Underground Station </li>
+                                <li class="list-group-item list-group-item-action">South Ruislip Underground Station </li>
+                                <li class="list-group-item list-group-item-action">South Woodford Underground Station </li>
+                                <li class="list-group-item list-group-item-action">St. Paul's Underground Station </li>
+                                <li class="list-group-item list-group-item-action">Stratford Underground Station </li>
+                                <li class="list-group-item list-group-item-action">Theydon Bois Underground Station </li>
+                                <li class="list-group-item list-group-item-action">Tottenham Court Road Underground Station </li>
+                                <li class="list-group-item list-group-item-action">Wanstead Underground Station </li>
+                                <li class="list-group-item list-group-item-action">West Acton Underground Station </li>
+                                <li class="list-group-item list-group-item-action">West Ruislip Underground Station </li>
+                                <li class="list-group-item list-group-item-action">White City Underground Station </li>
+                                <li class="list-group-item list-group-item-action">Woodford Underground Station </li>
+                        </ul>
+                    <li class="list-group-item list-group-item-action cirlcle" id="fromCircleLine" data-toggle="collapse" data-target="#fromCircleStations" aria-expanded="true" aria-controls="fromCircleStations">Circle</li>
+                        <ul id="fromCircleStations" class="collapse list-group list-group-flush stations" aria-labelledby="fromCircleLine" data-parent="#fromPickerButton">
+                            <li class="list-group-item list-group-item-action">Aldgate Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Baker Street Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Barbican Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Bayswater Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Blackfriars Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Cannon Street Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Edgware Road (Circle Line) Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Embankment Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Euston Square Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Farringdon Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Gloucester Road Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Goldhawk Road Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Great Portland Street Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Hammersmith (H&C Line) Underground Station </li>
+                            <li class="list-group-item list-group-item-action">High Street Kensington Underground Station </li>
+                            <li class="list-group-item list-group-item-action">King's Cross St. Pancras Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Ladbroke Grove Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Latimer Road Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Liverpool Street Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Mansion House Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Monument Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Moorgate Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Notting Hill Gate Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Paddington (H&C Line)-Underground </li>
+                            <li class="list-group-item list-group-item-action">Paddington Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Royal Oak Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Shepherd's Bush Market Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Sloane Square Underground Station </li>
+                            <li class="list-group-item list-group-item-action">South Kensington Underground Station </li>
+                            <li class="list-group-item list-group-item-action">St. James's Park Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Temple Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Tower Hill Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Victoria Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Westbourne Park Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Westminster Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Wood Lane Underground Station </li>
+                        </ul>
+                    <li class="list-group-item list-group-item-action district" id="fromDistrictLine" data-toggle="collapse" data-target="#fromDistrictStations" aria-expanded="true" aria-controls="fromDistrictStations">District</li>
+                        <ul id="fromDistrictStations" class="collapse list-group list-group-flush stations" aria-labelledby="fromDistrictLine" data-parent="#fromPickerButton">
+                            <li class="list-group-item list-group-item-action">Acton Town Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Aldgate East Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Barking Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Barons Court Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Bayswater Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Becontree Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Blackfriars Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Bow Road Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Bromley-by-Bow Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Cannon Street Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Chiswick Park Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Dagenham East Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Dagenham Heathway Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Ealing Broadway Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Ealing Common Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Earl's Court Underground Station </li>
+                            <li class="list-group-item list-group-item-action">East Ham Underground Station </li>
+                            <li class="list-group-item list-group-item-action">East Putney Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Edgware Road (Circle Line) Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Elm Park Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Embankment Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Fulham Broadway Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Gloucester Road Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Gunnersbury Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Hammersmith (Dist&Picc Line) Underground Station </li>
+                            <li class="list-group-item list-group-item-action">High Street Kensington Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Hornchurch Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Kensington (Olympia) Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Kew Gardens Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Mansion House Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Mile End Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Monument Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Notting Hill Gate Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Paddington Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Parsons Green Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Plaistow Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Putney Bridge Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Ravenscourt Park Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Richmond Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Sloane Square Underground Station </li>
+                            <li class="list-group-item list-group-item-action">South Kensington Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Southfields Underground Station </li>
+                            <li class="list-group-item list-group-item-action">St. James's Park Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Stamford Brook Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Stepney Green Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Temple Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Tower Hill Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Turnham Green Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Upminster Bridge Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Upminster Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Upney Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Upton Park Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Victoria Underground Station </li>
+                            <li class="list-group-item list-group-item-action">West Brompton Underground Station </li>
+                            <li class="list-group-item list-group-item-action">West Ham Underground Station </li>
+                            <li class="list-group-item list-group-item-action">West Kensington Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Westminster Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Whitechapel Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Wimbledon Park Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Wimbledon Underground Station </li>
+                        </ul>
+                    <li class="list-group-item list-group-item-action HAC" id="fromHACLine" data-toggle="collapse" data-target="#fromHACStations" aria-expanded="true" aria-controls="fromHACStations">Hammersmith and City</li>
+                        <ul id="fromHACStations" class="collapse list-group list-group-flush stations" aria-labelledby="fromHACLine" data-parent="#fromPickerButton">
+                            <li class="list-group-item list-group-item-action">Aldgate East Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Baker Street Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Barbican Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Barking Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Bow Road Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Bromley-by-Bow Underground Station </li>
+                            <li class="list-group-item list-group-item-action">East Ham Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Edgware Road (Circle Line) Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Euston Square Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Farringdon Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Goldhawk Road Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Great Portland Street Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Hammersmith (H&C Line) Underground Station </li>
+                            <li class="list-group-item list-group-item-action">King's Cross St. Pancras Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Ladbroke Grove Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Latimer Road Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Liverpool Street Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Mile End Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Moorgate Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Plaistow Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Royal Oak Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Shepherd's Bush Market Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Stepney Green Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Upton Park Underground Station </li>
+                            <li class="list-group-item list-group-item-action">West Ham Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Westbourne Park Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Whitechapel Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Wood Lane Underground Station </li>
+                        </ul>
+                    <li class="list-group-item list-group-item-action Jubilee" id="fromJubileeLine" data-toggle="collapse" data-target="#fromJubileeStations" aria-expanded="true" aria-controls="fromJubileeStations">Jubilee</li>
+                        <ul id="fromJubileeStations" class="collapse list-group list-group-flush stations" aria-labelledby="fromJubileeLine" data-parent="#fromPickerButton">
+                            <li class="list-group-item list-group-item-action">Baker Street Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Bermondsey Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Bond Street Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Canada Water Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Canary Wharf Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Canning Town Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Canons Park Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Dollis Hill Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Finchley Road Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Green Park Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Kilburn Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Kingsbury Underground Station </li>
+                            <li class="list-group-item list-group-item-action">London Bridge Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Neasden Underground Station </li>
+                            <li class="list-group-item list-group-item-action">North Greenwich Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Queensbury Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Southwark Underground Station </li>
+                            <li class="list-group-item list-group-item-action">St. John's Wood Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Stanmore Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Stratford Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Swiss Cottage Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Waterloo Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Wembley Park Underground Station </li>
+                            <li class="list-group-item list-group-item-action">West Ham Underground Station </li>
+                            <li class="list-group-item list-group-item-action">West Hampstead Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Westminster Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Willesden Green Underground Station </li>
+                        </ul>
+                    <li class="list-group-item list-group-item-action metropolitan" id="fromMetropolitanLine" data-toggle="collapse" data-target="#fromMetropolitanStations" aria-expanded="true" aria-controls="fromMetropolitanStations">Metropolitan</li>
+                        <ul id="fromMetropolitanStations" class="collapse list-group list-group-flush stations" aria-labelledby="fromMetropolitanLine" data-parent="#fromPickerButton">
+                            <li class="list-group-item list-group-item-action">Aldgate Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Amersham Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Baker Street Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Barbican Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Chalfont & Latimer Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Chesham Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Chorleywood Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Croxley Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Eastcote Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Euston Square Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Farringdon Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Finchley Road Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Great Portland Street Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Harrow-on-the-Hill Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Hillingdon Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Ickenham Underground Station </li>
+                            <li class="list-group-item list-group-item-action">King's Cross St. Pancras Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Liverpool Street Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Moor Park Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Moorgate Underground Station </li>
+                            <li class="list-group-item list-group-item-action">North Harrow Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Northwick Park Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Northwood Hills Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Northwood Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Pinner Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Preston Road Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Rayners Lane Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Rickmansworth Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Ruislip Manor Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Ruislip Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Uxbridge Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Watford Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Wembley Park Underground Station </li>
+                            <li class="list-group-item list-group-item-action">West Harrow Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Willesden Green Underground Station </li>
+
+                        </ul>
+                    <li class="list-group-item list-group-item-action northern" id="fromNorthernLine" data-toggle="collapse" data-target="#fromNorthernStations" aria-expanded="true" aria-controls="fromNorthernStations">Northern</li>
+                        <ul id="fromNorthernStations" class="collapse list-group list-group-flush stations" aria-labelledby="fromNorthernLine" data-parent="#fromPickerButton">
+                            <li class="list-group-item list-group-item-action">Angel Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Archway Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Balham Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Bank Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Belsize Park Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Borough Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Brent Cross Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Burnt Oak Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Camden Town Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Chalk Farm Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Charing Cross Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Clapham Common Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Clapham North Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Clapham South Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Colindale Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Colliers Wood Underground Station </li>
+                            <li class="list-group-item list-group-item-action">East Finchley Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Edgware Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Elephant & Castle Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Embankment Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Euston Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Finchley Central Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Golders Green Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Goodge Street Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Hampstead Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Hendon Central Underground Station </li>
+                            <li class="list-group-item list-group-item-action">High Barnet Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Highgate Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Kennington Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Kentish Town Underground Station </li>
+                            <li class="list-group-item list-group-item-action">King's Cross St. Pancras Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Leicester Square Underground Station </li>
+                            <li class="list-group-item list-group-item-action">London Bridge Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Mill Hill East Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Moorgate Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Morden Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Mornington Crescent Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Old Street Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Oval Underground Station </li>
+                            <li class="list-group-item list-group-item-action">South Wimbledon Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Stockwell Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Tooting Bec Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Tooting Broadway Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Tottenham Court Road Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Totteridge & Whetstone Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Tufnell Park Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Warren Street Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Waterloo Underground Station </li>
+                            <li class="list-group-item list-group-item-action">West Finchley Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Woodside Park Underground Station </li>
+                        </ul>
+                    <li class="list-group-item list-group-item-action piccadilly" id="fromPiccadillyLine" data-toggle="collapse" data-target="#fromPiccadillyStations" aria-expanded="true" aria-controls="fromPiccadillyStations">Piccadilly</li>
+                        <ul id="fromPiccadillyStations" class="collapse list-group list-group-flush stations" aria-labelledby="fromPiccadillyLine" data-parent="#fromPickerButton">
+                            <li class="list-group-item list-group-item-action">Acton Town Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Alperton Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Arnos Grove Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Arsenal Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Barons Court Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Boston Manor Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Bounds Green Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Caledonian Road Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Cockfosters Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Covent Garden Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Ealing Common Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Earl's Court Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Eastcote Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Finsbury Park Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Gloucester Road Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Green Park Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Hammersmith (Dist&Picc Line) Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Hatton Cross Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Heathrow Terminal  Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Heathrow Terminals  &  Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Hillingdon Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Holborn Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Holloway Road Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Hounslow Central Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Hounslow East Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Hounslow West Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Hyde Park Corner Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Ickenham Underground Station </li>
+                            <li class="list-group-item list-group-item-action">King's Cross St. Pancras Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Knightsbridge Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Leicester Square Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Manor House Underground Station </li>
+                            <li class="list-group-item list-group-item-action">North Ealing Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Northfields Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Oakwood Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Osterley Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Park Royal Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Piccadilly Circus Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Rayners Lane Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Ruislip Manor Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Ruislip Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Russell Square Underground Station </li>
+                            <li class="list-group-item list-group-item-action">South Ealing Underground Station </li>
+                            <li class="list-group-item list-group-item-action">South Harrow Underground Station </li>
+                            <li class="list-group-item list-group-item-action">South Kensington Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Southgate Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Sudbury Hill Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Sudbury Town Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Turnham Green Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Turnpike Lane Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Uxbridge Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Wood Green Underground Station </li>
+                        </ul>
+                    <li class="list-group-item list-group-item-action victoria" id="fromVictoriaLine" data-toggle="collapse" data-target="#fromVictoriaStations" aria-expanded="true" aria-controls="fromVictoriaStations">Victoria</li>
+                        <ul id="fromVictoriaStations" class="collapse list-group list-group-flush stations" aria-labelledby="fromVictoriaLine" data-parent="#fromPickerButton">
+                            <li class="list-group-item list-group-item-action">Blackhorse Road Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Brixton Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Euston Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Finsbury Park Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Green Park Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Highbury & Islington Underground Station </li>
+                            <li class="list-group-item list-group-item-action">King's Cross St. Pancras Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Oxford Circus Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Pimlico Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Seven Sisters Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Stockwell Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Tottenham Hale Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Vauxhall Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Victoria Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Walthamstow Central Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Warren Street Underground Station </li>
+                        </ul>
+                    <li class="list-group-item list-group-item-action WAC" id="fromWACLine" data-toggle="collapse" data-target="#fromWACStations" aria-expanded="true" aria-controls="fromWACStations">Waterloo and City</li>
+                        <ul id="fromWACStations" class="collapse list-group list-group-flush stations" aria-labelledby="fromWACLine" data-parent="#fromPickerButton">
+                            <li class="list-group-item list-group-item-action">Bank Underground Station </li>
+                            <li class="list-group-item list-group-item-action">Waterloo Underground Station </li>
+                        </ul>
+                    <li class="list-group-item list-group-item-action londonOverground" id="fromLondonOvergroundLine" data-toggle="collapse" data-target="#fromLondonOvergroundStations" aria-expanded="true" aria-controls="fromLondonOvergroundStations">London Overground</li>
+                        <ul id="fromLondonOvergroundStations" class="collapse list-group list-group-flush stations" aria-labelledby="fromLondonOvergroundLine" data-parent="#fromPickerButton">
+                            <li class="list-group-item list-group-item-action">Acton Central Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Anerley Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Barking Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Bethnal Green Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Blackhorse Road Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Brockley Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Brondesbury Park Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Brondesbury Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Bruce Grove Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Bush Hill Park Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Bushey Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Caledonian Road & Barnsbury Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Cambridge Heath (London) Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Camden Road Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Canada Water Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Canonbury Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Carpenders Park Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Cheshunt Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Chingford Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Clapham High Street Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Clapham Junction Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Clapham Junction Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Clapton Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Crouch Hill Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Crystal Palace Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Dalston Junction Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Dalston Kingsland Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Denmark Hill Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Edmonton Green Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Emerson Park Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Enfield Town Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Finchley Road & Frognal Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Forest Hill Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Gospel Oak Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Gunnersbury Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Hackney Central Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Hackney Downs Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Hackney Wick Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Haggerston Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Hampstead Heath Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Harlesden Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Harringay Green Lanes Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Harrow & Wealdstone Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Hatch End Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Headstone Lane Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Highams Park Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Highbury & Islington Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Homerton Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Honor Oak Park Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Hoxton Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Imperial Wharf Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Kensal Green Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Kensal Rise Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Kensington (Olympia) Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Kentish Town West Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Kenton Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Kew Gardens Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Kilburn High Road Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Leyton Midland Road Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Leytonstone High Road Rail Station </li>
+                            <li class="list-group-item list-group-item-action">London Euston Rail Station </li>
+                            <li class="list-group-item list-group-item-action">London Fields Rail Station </li>
+                            <li class="list-group-item list-group-item-action">London Liverpool Street Rail Station </li>
+                            <li class="list-group-item list-group-item-action">New Cross ELL Rail Station </li>
+                            <li class="list-group-item list-group-item-action">New Cross Gate Rail Station </li>
+                            <li class="list-group-item list-group-item-action">North Wembley Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Norwood Junction Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Peckham Rye Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Penge West Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Queens Park (London) Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Queens Road Peckham Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Rectory Road Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Richmond (London) Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Romford Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Rotherhithe Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Seven Sisters Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Shadwell Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Shepherds Bush Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Shoreditch High Street Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Silver Street Rail Station </li>
+                            <li class="list-group-item list-group-item-action">South Acton Rail Station </li>
+                            <li class="list-group-item list-group-item-action">South Hampstead Rail Station </li>
+                            <li class="list-group-item list-group-item-action">South Kenton Rail Station </li>
+                            <li class="list-group-item list-group-item-action">South Tottenham Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Southbury Rail Station </li>
+                            <li class="list-group-item list-group-item-action">St James Street (London) Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Stamford Hill Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Stoke Newington Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Stonebridge Park Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Stratford (London) Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Surrey Quays Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Sydenham Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Theobalds Grove Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Turkey Street Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Upminster Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Upper Holloway Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Walthamstow Central Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Walthamstow Queens Road Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Wandsworth Road Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Wanstead Park Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Wapping Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Watford High Street Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Watford Junction Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Wembley Central Rail Station </li>
+                            <li class="list-group-item list-group-item-action">West Brompton Rail Station </li>
+                            <li class="list-group-item list-group-item-action">West Croydon Rail Station </li>
+                            <li class="list-group-item list-group-item-action">West Hampstead Rail Station </li>
+                            <li class="list-group-item list-group-item-action">White Hart Lane Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Whitechapel Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Willesden Junction Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Wood Street Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Woodgrange Park Rail Station </li>
+
+                        </ul>
+                    <li class="list-group-item list-group-item-action tflRail" id="fromTflRailLine" data-toggle="collapse" data-target="#fromTflRailStations" aria-expanded="true" aria-controls="fromTflRailStations">Tfl Rail</li>
+                        <ul id="fromTflRailStations" class="collapse list-group list-group-flush stations" aria-labelledby="fromTflRailLine" data-parent="#fromPickerButton">
+                            <li class="list-group-item list-group-item-action">Acton Main Line Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Brentwood Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Burnham (Berks) Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Chadwell Heath Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Ealing Broadway Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Forest Gate Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Gidea Park Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Goodmayes Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Hanwell Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Harold Wood Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Hayes & Harlington Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Heathrow Terminal  Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Heathrow Terminal (Heathrow Terminals  &  Rail Station) </li>
+                            <li class="list-group-item list-group-item-action">Ilford Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Iver Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Langley (Berks) Rail Station </li>
+                            <li class="list-group-item list-group-item-action">London Liverpool Street Rail Station </li>
+                            <li class="list-group-item list-group-item-action">London Paddington Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Maidenhead Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Manor Park Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Maryland Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Reading Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Romford Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Seven Kings Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Shenfield Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Slough Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Southall Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Stratford (London) Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Taplow Rail Station </li>
+                            <li class="list-group-item list-group-item-action">Twyford Rail Station </li>
+                            <li class="list-group-item list-group-item-action">West Drayton Rail Station </li>
+                            <li class="list-group-item list-group-item-action">West Ealing Rail Station </li>
+                        </ul>
+                    <li class="list-group-item list-group-item-action DLR" id="fromDLRLine" data-toggle="collapse" data-target="#fromDLRStations" aria-expanded="true" aria-controls="fromDLRStations">DLR</li>
+                        <ul id="fromDLRStations" class="collapse list-group list-group-flush stations" aria-labelledby="fromDLRLine" data-parent="#fromPickerButton">
+                            <li class="list-group-item list-group-item-action">Abbey Road DLR Station </li>
+                            <li class="list-group-item list-group-item-action">All Saints DLR Station </li>
+                            <li class="list-group-item list-group-item-action">Bank DLR Station </li>
+                            <li class="list-group-item list-group-item-action">Beckton DLR Station </li>
+                            <li class="list-group-item list-group-item-action">Beckton Park DLR Station </li>
+                            <li class="list-group-item list-group-item-action">Blackwall DLR Station </li>
+                            <li class="list-group-item list-group-item-action">Bow Church DLR Station </li>
+                            <li class="list-group-item list-group-item-action">Canary Wharf DLR Station </li>
+                            <li class="list-group-item list-group-item-action">Canning Town DLR Station </li>
+                            <li class="list-group-item list-group-item-action">Crossharbour DLR Station </li>
+                            <li class="list-group-item list-group-item-action">Custom House (for ExCel) DLR Station </li>
+                            <li class="list-group-item list-group-item-action">Cutty Sark (for Maritime Greenwich) DLR Station </li>
+                            <li class="list-group-item list-group-item-action">Cyprus DLR Station </li>
+                            <li class="list-group-item list-group-item-action">Deptford Bridge DLR Station </li>
+                            <li class="list-group-item list-group-item-action">Devons Road DLR Station </li>
+                            <li class="list-group-item list-group-item-action">East India DLR Station </li>
+                            <li class="list-group-item list-group-item-action">Elverson Road DLR Station </li>
+                            <li class="list-group-item list-group-item-action">Gallions Reach DLR Station </li>
+                            <li class="list-group-item list-group-item-action">Greenwich DLR Station </li>
+                            <li class="list-group-item list-group-item-action">Heron Quays DLR Station </li>
+                            <li class="list-group-item list-group-item-action">Island Gardens DLR Station </li>
+                            <li class="list-group-item list-group-item-action">King George V DLR Station </li>
+                            <li class="list-group-item list-group-item-action">Langdon Park DLR Station </li>
+                            <li class="list-group-item list-group-item-action">Lewisham DLR Station </li>
+                            <li class="list-group-item list-group-item-action">Limehouse DLR Station </li>
+                            <li class="list-group-item list-group-item-action">London City Airport DLR Station </li>
+                            <li class="list-group-item list-group-item-action">Mudchute DLR Station </li>
+                            <li class="list-group-item list-group-item-action">Pontoon Dock DLR Station </li>
+                            <li class="list-group-item list-group-item-action">Poplar DLR Station </li>
+                            <li class="list-group-item list-group-item-action">Prince Regent DLR Station </li>
+                            <li class="list-group-item list-group-item-action">Pudding Mill Lane DLR Station </li>
+                            <li class="list-group-item list-group-item-action">Royal Albert DLR Station </li>
+                            <li class="list-group-item list-group-item-action">Royal Victoria DLR Station </li>
+                            <li class="list-group-item list-group-item-action">Shadwell DLR Station </li>
+                            <li class="list-group-item list-group-item-action">South Quay DLR Station </li>
+                            <li class="list-group-item list-group-item-action">Star Lane DLR Station </li>
+                            <li class="list-group-item list-group-item-action">Stratford DLR Station </li>
+                            <li class="list-group-item list-group-item-action">Stratford High Street DLR Station </li>
+                            <li class="list-group-item list-group-item-action">Stratford International DLR Station </li>
+                            <li class="list-group-item list-group-item-action">Tower Gateway DLR Station </li>
+                            <li class="list-group-item list-group-item-action">West Ham DLR Station </li>
+                            <li class="list-group-item list-group-item-action">West India Quay DLR Station </li>
+                            <li class="list-group-item list-group-item-action">West Silvertown DLR Station </li>
+                            <li class="list-group-item list-group-item-action">Westferry DLR Station </li>
+                            <li class="list-group-item list-group-item-action">Woolwich Arsenal DLR Station </li>
+                        </ul>
+                    <li class="list-group-item list-group-item-action tram" id="fromTramLine" data-toggle="collapse" data-target="#fromTramStations" aria-expanded="true" aria-controls="fromTramStations">Tram</li>
+                        <ul id="fromTramStations" class="collapse list-group list-group-flush stations" aria-labelledby="fromTramLine" data-parent="#fromPickerButton">
+                            <li class="list-group-item list-group-item-action">Addington Village Tram Stop</li>
+                            <li class="list-group-item list-group-item-action">Addiscombe Tram Stop</li>
+                            <li class="list-group-item list-group-item-action">Ampere Way Tram Stop</li>
+                            <li class="list-group-item list-group-item-action">Arena Tram Stop</li>
+                            <li class="list-group-item list-group-item-action">Avenue Road Tram Stop</li>
+                            <li class="list-group-item list-group-item-action">Beckenham Junction Tram Stop</li>
+                            <li class="list-group-item list-group-item-action">Beckenham Road Tram Stop</li>
+                            <li class="list-group-item list-group-item-action">Beddington Lane Tram Stop</li>
+                            <li class="list-group-item list-group-item-action">Belgrave Walk Tram Stop</li>
+                            <li class="list-group-item list-group-item-action">Birkbeck Tram Stop</li>
+                            <li class="list-group-item list-group-item-action">Blackhorse Lane Tram Stop</li>
+                            <li class="list-group-item list-group-item-action">Centrale Tram Stop</li>
+                            <li class="list-group-item list-group-item-action">Church Street Tram Stop</li>
+                            <li class="list-group-item list-group-item-action">Coombe Lane Tram Stop</li>
+                            <li class="list-group-item list-group-item-action">Dundonald Road Tram Stop</li>
+                            <li class="list-group-item list-group-item-action">East Croydon Tram Stop</li>
+                            <li class="list-group-item list-group-item-action">Elmers End Tram Stop</li>
+                            <li class="list-group-item list-group-item-action">Fieldway Tram Stop</li>
+                            <li class="list-group-item list-group-item-action">George Street Tram Stop</li>
+                            <li class="list-group-item list-group-item-action">Gravel Hill Tram Stop</li>
+                            <li class="list-group-item list-group-item-action">Harrington Road Tram Stop</li>
+                            <li class="list-group-item list-group-item-action">King Henry's Drive Tram Stop</li>
+                            <li class="list-group-item list-group-item-action">Lebanon Road Tram Stop</li>
+                            <li class="list-group-item list-group-item-action">Lloyd Park Tram Stop</li>
+                            <li class="list-group-item list-group-item-action">Merton Park Tram Stop</li>
+                            <li class="list-group-item list-group-item-action">Mitcham Junction Tram Stop</li>
+                            <li class="list-group-item list-group-item-action">Mitcham Tram Stop</li>
+                            <li class="list-group-item list-group-item-action">Morden Road Tram Stop</li>
+                            <li class="list-group-item list-group-item-action">New Addington Tram Stop</li>
+                            <li class="list-group-item list-group-item-action">Phipps Bridge Tram Stop</li>
+                            <li class="list-group-item list-group-item-action">Reeves Corner Tram Stop</li>
+                            <li class="list-group-item list-group-item-action">Sandilands Tram Stop</li>
+                            <li class="list-group-item list-group-item-action">Therapia Lane Tram Stop</li>
+                            <li class="list-group-item list-group-item-action">Waddon Marsh Tram Stop</li>
+                            <li class="list-group-item list-group-item-action">Wandle Park Tram Stop</li>
+                            <li class="list-group-item list-group-item-action">Wellesley Road Tram Stop</li>
+                            <li class="list-group-item list-group-item-action">West Croydon Tram Stop</li>
+                            <li class="list-group-item list-group-item-action">Wimbledon Tram Stop</li>
+                            <li class="list-group-item list-group-item-action">Woodside Tram Stop</li>
+                        </ul>
+                </ul>
+            
+
+            </div>
         </div>
-        <input type="text" class="form-control" id="to" placeholder="Postcode / Station" aria-label="postcode or station" aria-describedby="basic-addon1">
+    
+    <div class="container">
+
+        <div id="toInput"class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1" >To:</span>
+            </div>
+            <input type="text" class="form-control" id="to" placeholder="Postcode / Station" aria-label="postcode or station" aria-describedby="basic-addon1">  
+        </div>
+        <ul class="list-group list-group-flush accordian" id="toAccordion">
+            <li class="list-group-item list-group-item-action" id="toButtonHeading" data-toggle="collapse" data-target="#toPickerButton" aria-expanded="true" aria-controls="toPickerButton">Station Picker</li>
+        </ul>
+        <ul id="toPickerButton" class="collapse list-group list-group-flush accordian" aria-labelledby="toButtonHeading" data-parent="#toAccordion">
+            <li class="list-group-item list-group-item-action bakerloo" id="toBakerlooLine" data-toggle="collapse" data-target="#toBakerlooStations" aria-expanded="true" aria-controls="toBakerlooStations">Bakerloo</li>
+                <ul id="toBakerlooStations" class="collapse list-group list-group-flush stations" aria-labelledby="toBakerlooLine" data-parent="#toPickerButton">
+                    <li class="list-group-item list-group-item-action">Baker Street Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Charing Cross Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Edgware Road (Bakerloo) Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Elephant & Castle Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Embankment Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Harlesden Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Harrow & Wealdstone Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Kensal Green Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Kenton Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Kilburn Park Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Lambeth North Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Maida Vale Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Marylebone Underground Station </li>
+                    <li class="list-group-item list-group-item-action">North Wembley Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Oxford Circus Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Paddington Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Piccadilly Circus Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Queen's Park Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Regent's Park Underground Station </li>
+                    <li class="list-group-item list-group-item-action">South Kenton Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Stonebridge Park Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Warwick Avenue Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Waterloo Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Wembley Central Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Willesden Junction Underground Station </li>
+                </ul>
+            <li class="list-group-item list-group-item-action central" id="toCentralLine" data-toggle="collapse" data-target="#toCentralStations" aria-expanded="true" aria-controls="toCentralStations">Central</li>
+                <ul id="toCentralStations" class="collapse list-group list-group-flush stations" aria-labelledby="toCentralLine" data-parent="#toPickerButton">
+                        <li class="list-group-item list-group-item-action">Bank Underground Station </li>
+                        <li class="list-group-item list-group-item-action">Barkingside Underground Station </li>
+                        <li class="list-group-item list-group-item-action">Bethnal Green Underground Station </li>
+                        <li class="list-group-item list-group-item-action">Bond Street Underground Station </li>
+                        <li class="list-group-item list-group-item-action">Buckhurst Hill Underground Station </li>
+                        <li class="list-group-item list-group-item-action">Chancery Lane Underground Station </li>
+                        <li class="list-group-item list-group-item-action">Chigwell Underground Station </li>
+                        <li class="list-group-item list-group-item-action">Debden Underground Station </li>
+                        <li class="list-group-item list-group-item-action">Ealing Broadway Underground Station </li>
+                        <li class="list-group-item list-group-item-action">East Acton Underground Station </li>
+                        <li class="list-group-item list-group-item-action">Epping Underground Station </li>
+                        <li class="list-group-item list-group-item-action">Fairlop Underground Station </li>
+                        <li class="list-group-item list-group-item-action">Gants Hill Underground Station </li>
+                        <li class="list-group-item list-group-item-action">Grange Hill Underground Station </li>
+                        <li class="list-group-item list-group-item-action">Greenford Underground Station </li>
+                        <li class="list-group-item list-group-item-action">Hainault Underground Station </li>
+                        <li class="list-group-item list-group-item-action">Hanger Lane Underground Station </li>
+                        <li class="list-group-item list-group-item-action">Holborn Underground Station </li>
+                        <li class="list-group-item list-group-item-action">Holland Park Underground Station </li>
+                        <li class="list-group-item list-group-item-action">Lancaster Gate Underground Station </li>
+                        <li class="list-group-item list-group-item-action">Leyton Underground Station </li>
+                        <li class="list-group-item list-group-item-action">Leytonstone Underground Station </li>
+                        <li class="list-group-item list-group-item-action">Liverpool Street Underground Station </li>
+                        <li class="list-group-item list-group-item-action">Loughton Underground Station </li>
+                        <li class="list-group-item list-group-item-action">Marble Arch Underground Station </li>
+                        <li class="list-group-item list-group-item-action">Mile End Underground Station </li>
+                        <li class="list-group-item list-group-item-action">Newbury Park Underground Station </li>
+                        <li class="list-group-item list-group-item-action">North Acton Underground Station </li>
+                        <li class="list-group-item list-group-item-action">Northolt Underground Station </li>
+                        <li class="list-group-item list-group-item-action">Notting Hill Gate Underground Station </li>
+                        <li class="list-group-item list-group-item-action">Oxford Circus Underground Station </li>
+                        <li class="list-group-item list-group-item-action">Perivale Underground Station </li>
+                        <li class="list-group-item list-group-item-action">Queensway Underground Station </li>
+                        <li class="list-group-item list-group-item-action">Redbridge Underground Station </li>
+                        <li class="list-group-item list-group-item-action">Roding Valley Underground Station </li>
+                        <li class="list-group-item list-group-item-action">Ruislip Gardens Underground Station </li>
+                        <li class="list-group-item list-group-item-action">Shepherd's Bush (Central) Underground Station </li>
+                        <li class="list-group-item list-group-item-action">Snaresbrook Underground Station </li>
+                        <li class="list-group-item list-group-item-action">South Ruislip Underground Station </li>
+                        <li class="list-group-item list-group-item-action">South Woodford Underground Station </li>
+                        <li class="list-group-item list-group-item-action">St. Paul's Underground Station </li>
+                        <li class="list-group-item list-group-item-action">Stratford Underground Station </li>
+                        <li class="list-group-item list-group-item-action">Theydon Bois Underground Station </li>
+                        <li class="list-group-item list-group-item-action">Tottenham Court Road Underground Station </li>
+                        <li class="list-group-item list-group-item-action">Wanstead Underground Station </li>
+                        <li class="list-group-item list-group-item-action">West Acton Underground Station </li>
+                        <li class="list-group-item list-group-item-action">West Ruislip Underground Station </li>
+                        <li class="list-group-item list-group-item-action">White City Underground Station </li>
+                        <li class="list-group-item list-group-item-action">Woodford Underground Station </li>
+                </ul>
+            <li class="list-group-item list-group-item-action cirlcle" id="toCircleLine" data-toggle="collapse" data-target="#toCircleStations" aria-expanded="true" aria-controls="toCircleStations">Circle</li>
+                <ul id="toCircleStations" class="collapse list-group list-group-flush stations" aria-labelledby="toCircleLine" data-parent="#toPickerButton">
+                    <li class="list-group-item list-group-item-action">Aldgate Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Baker Street Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Barbican Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Bayswater Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Blackfriars Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Cannon Street Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Edgware Road (Circle Line) Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Embankment Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Euston Square Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Farringdon Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Gloucester Road Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Goldhawk Road Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Great Portland Street Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Hammersmith (H&C Line) Underground Station </li>
+                    <li class="list-group-item list-group-item-action">High Street Kensington Underground Station </li>
+                    <li class="list-group-item list-group-item-action">King's Cross St. Pancras Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Ladbroke Grove Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Latimer Road Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Liverpool Street Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Mansion House Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Monument Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Moorgate Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Notting Hill Gate Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Paddington (H&C Line)-Underground </li>
+                    <li class="list-group-item list-group-item-action">Paddington Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Royal Oak Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Shepherd's Bush Market Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Sloane Square Underground Station </li>
+                    <li class="list-group-item list-group-item-action">South Kensington Underground Station </li>
+                    <li class="list-group-item list-group-item-action">St. James's Park Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Temple Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Tower Hill Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Victoria Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Westbourne Park Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Westminster Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Wood Lane Underground Station </li>
+                </ul>
+            <li class="list-group-item list-group-item-action district" id="toDistrictLine" data-toggle="collapse" data-target="#toDistrictStations" aria-expanded="true" aria-controls="toDistrictStations">District</li>
+                <ul id="toDistrictStations" class="collapse list-group list-group-flush stations" aria-labelledby="toDistrictLine" data-parent="#toPickerButton">
+                    <li class="list-group-item list-group-item-action">Acton Town Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Aldgate East Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Barking Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Barons Court Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Bayswater Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Becontree Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Blackfriars Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Bow Road Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Bromley-by-Bow Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Cannon Street Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Chiswick Park Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Dagenham East Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Dagenham Heathway Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Ealing Broadway Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Ealing Common Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Earl's Court Underground Station </li>
+                    <li class="list-group-item list-group-item-action">East Ham Underground Station </li>
+                    <li class="list-group-item list-group-item-action">East Putney Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Edgware Road (Circle Line) Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Elm Park Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Embankment Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Fulham Broadway Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Gloucester Road Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Gunnersbury Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Hammersmith (Dist&Picc Line) Underground Station </li>
+                    <li class="list-group-item list-group-item-action">High Street Kensington Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Hornchurch Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Kensington (Olympia) Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Kew Gardens Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Mansion House Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Mile End Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Monument Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Notting Hill Gate Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Paddington Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Parsons Green Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Plaistow Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Putney Bridge Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Ravenscourt Park Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Richmond Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Sloane Square Underground Station </li>
+                    <li class="list-group-item list-group-item-action">South Kensington Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Southfields Underground Station </li>
+                    <li class="list-group-item list-group-item-action">St. James's Park Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Stamford Brook Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Stepney Green Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Temple Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Tower Hill Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Turnham Green Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Upminster Bridge Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Upminster Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Upney Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Upton Park Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Victoria Underground Station </li>
+                    <li class="list-group-item list-group-item-action">West Brompton Underground Station </li>
+                    <li class="list-group-item list-group-item-action">West Ham Underground Station </li>
+                    <li class="list-group-item list-group-item-action">West Kensington Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Westminster Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Whitechapel Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Wimbledon Park Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Wimbledon Underground Station </li>
+                </ul>
+            <li class="list-group-item list-group-item-action HAC" id="toHACLine" data-toggle="collapse" data-target="#toHACStations" aria-expanded="true" aria-controls="toHACStations">Hammersmith and City</li>
+                <ul id="toHACStations" class="collapse list-group list-group-flush stations" aria-labelledby="toHACLine" data-parent="#toPickerButton">
+                    <li class="list-group-item list-group-item-action">Aldgate East Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Baker Street Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Barbican Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Barking Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Bow Road Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Bromley-by-Bow Underground Station </li>
+                    <li class="list-group-item list-group-item-action">East Ham Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Edgware Road (Circle Line) Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Euston Square Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Farringdon Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Goldhawk Road Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Great Portland Street Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Hammersmith (H&C Line) Underground Station </li>
+                    <li class="list-group-item list-group-item-action">King's Cross St. Pancras Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Ladbroke Grove Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Latimer Road Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Liverpool Street Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Mile End Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Moorgate Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Plaistow Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Royal Oak Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Shepherd's Bush Market Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Stepney Green Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Upton Park Underground Station </li>
+                    <li class="list-group-item list-group-item-action">West Ham Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Westbourne Park Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Whitechapel Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Wood Lane Underground Station </li>
+                </ul>
+            <li class="list-group-item list-group-item-action Jubilee" id="toJubileeLine" data-toggle="collapse" data-target="#toJubileeStations" aria-expanded="true" aria-controls="toJubileeStations">Jubilee</li>
+                <ul id="toJubileeStations" class="collapse list-group list-group-flush stations" aria-labelledby="toJubileeLine" data-parent="#toPickerButton">
+                    <li class="list-group-item list-group-item-action">Baker Street Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Bermondsey Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Bond Street Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Canada Water Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Canary Wharf Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Canning Town Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Canons Park Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Dollis Hill Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Finchley Road Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Green Park Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Kilburn Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Kingsbury Underground Station </li>
+                    <li class="list-group-item list-group-item-action">London Bridge Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Neasden Underground Station </li>
+                    <li class="list-group-item list-group-item-action">North Greenwich Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Queensbury Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Southwark Underground Station </li>
+                    <li class="list-group-item list-group-item-action">St. John's Wood Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Stanmore Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Stratford Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Swiss Cottage Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Waterloo Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Wembley Park Underground Station </li>
+                    <li class="list-group-item list-group-item-action">West Ham Underground Station </li>
+                    <li class="list-group-item list-group-item-action">West Hampstead Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Westminster Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Willesden Green Underground Station </li>
+                </ul>
+            <li class="list-group-item list-group-item-action metropolitan" id="toMetropolitanLine" data-toggle="collapse" data-target="#toMetropolitanStations" aria-expanded="true" aria-controls="toMetropolitanStations">Metropolitan</li>
+                <ul id="toMetropolitanStations" class="collapse list-group list-group-flush stations" aria-labelledby="toMetropolitanLine" data-parent="#toPickerButton">
+                    <li class="list-group-item list-group-item-action">Aldgate Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Amersham Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Baker Street Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Barbican Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Chalfont & Latimer Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Chesham Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Chorleywood Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Croxley Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Eastcote Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Euston Square Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Farringdon Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Finchley Road Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Great Portland Street Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Harrow-on-the-Hill Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Hillingdon Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Ickenham Underground Station </li>
+                    <li class="list-group-item list-group-item-action">King's Cross St. Pancras Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Liverpool Street Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Moor Park Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Moorgate Underground Station </li>
+                    <li class="list-group-item list-group-item-action">North Harrow Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Northwick Park Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Northwood Hills Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Northwood Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Pinner Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Preston Road Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Rayners Lane Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Rickmansworth Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Ruislip Manor Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Ruislip Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Uxbridge Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Watford Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Wembley Park Underground Station </li>
+                    <li class="list-group-item list-group-item-action">West Harrow Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Willesden Green Underground Station </li>
+        
+                </ul>
+            <li class="list-group-item list-group-item-action northern" id="toNorthernLine" data-toggle="collapse" data-target="#toNorthernStations" aria-expanded="true" aria-controls="toNorthernStations">Northern</li>
+                <ul id="toNorthernStations" class="collapse list-group list-group-flush stations" aria-labelledby="toNorthernLine" data-parent="#toPickerButton">
+                    <li class="list-group-item list-group-item-action">Angel Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Archway Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Balham Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Bank Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Belsize Park Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Borough Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Brent Cross Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Burnt Oak Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Camden Town Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Chalk Farm Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Charing Cross Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Clapham Common Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Clapham North Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Clapham South Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Colindale Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Colliers Wood Underground Station </li>
+                    <li class="list-group-item list-group-item-action">East Finchley Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Edgware Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Elephant & Castle Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Embankment Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Euston Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Finchley Central Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Golders Green Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Goodge Street Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Hampstead Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Hendon Central Underground Station </li>
+                    <li class="list-group-item list-group-item-action">High Barnet Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Highgate Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Kennington Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Kentish Town Underground Station </li>
+                    <li class="list-group-item list-group-item-action">King's Cross St. Pancras Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Leicester Square Underground Station </li>
+                    <li class="list-group-item list-group-item-action">London Bridge Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Mill Hill East Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Moorgate Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Morden Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Mornington Crescent Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Old Street Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Oval Underground Station </li>
+                    <li class="list-group-item list-group-item-action">South Wimbledon Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Stockwell Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Tooting Bec Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Tooting Broadway Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Tottenham Court Road Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Totteridge & Whetstone Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Tufnell Park Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Warren Street Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Waterloo Underground Station </li>
+                    <li class="list-group-item list-group-item-action">West Finchley Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Woodside Park Underground Station </li>
+                </ul>
+            <li class="list-group-item list-group-item-action piccadilly" id="toPiccadillyLine" data-toggle="collapse" data-target="#toPiccadillyStations" aria-expanded="true" aria-controls="toPiccadillyStations">Piccadilly</li>
+                <ul id="toPiccadillyStations" class="collapse list-group list-group-flush stations" aria-labelledby="toPiccadillyLine" data-parent="#toPickerButton">
+                    <li class="list-group-item list-group-item-action">Acton Town Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Alperton Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Arnos Grove Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Arsenal Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Barons Court Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Boston Manor Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Bounds Green Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Caledonian Road Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Cockfosters Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Covent Garden Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Ealing Common Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Earl's Court Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Eastcote Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Finsbury Park Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Gloucester Road Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Green Park Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Hammersmith (Dist&Picc Line) Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Hatton Cross Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Heathrow Terminal  Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Heathrow Terminals  &  Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Hillingdon Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Holborn Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Holloway Road Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Hounslow Central Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Hounslow East Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Hounslow West Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Hyde Park Corner Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Ickenham Underground Station </li>
+                    <li class="list-group-item list-group-item-action">King's Cross St. Pancras Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Knightsbridge Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Leicester Square Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Manor House Underground Station </li>
+                    <li class="list-group-item list-group-item-action">North Ealing Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Northfields Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Oakwood Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Osterley Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Park Royal Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Piccadilly Circus Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Rayners Lane Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Ruislip Manor Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Ruislip Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Russell Square Underground Station </li>
+                    <li class="list-group-item list-group-item-action">South Ealing Underground Station </li>
+                    <li class="list-group-item list-group-item-action">South Harrow Underground Station </li>
+                    <li class="list-group-item list-group-item-action">South Kensington Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Southgate Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Sudbury Hill Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Sudbury Town Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Turnham Green Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Turnpike Lane Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Uxbridge Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Wood Green Underground Station </li>
+                </ul>
+            <li class="list-group-item list-group-item-action victoria" id="toVictoriaLine" data-toggle="collapse" data-target="#toVictoriaStations" aria-expanded="true" aria-controls="toVictoriaStations">Victoria</li>
+                <ul id="toVictoriaStations" class="collapse list-group list-group-flush stations" aria-labelledby="toVictoriaLine" data-parent="#toPickerButton">
+                    <li class="list-group-item list-group-item-action">Blackhorse Road Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Brixton Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Euston Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Finsbury Park Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Green Park Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Highbury & Islington Underground Station </li>
+                    <li class="list-group-item list-group-item-action">King's Cross St. Pancras Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Oxford Circus Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Pimlico Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Seven Sisters Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Stockwell Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Tottenham Hale Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Vauxhall Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Victoria Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Walthamstow Central Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Warren Street Underground Station </li>
+                </ul>
+            <li class="list-group-item list-group-item-action WAC" id="toWACLine" data-toggle="collapse" data-target="#toWACStations" aria-expanded="true" aria-controls="toWACStations">Waterloo and City</li>
+                <ul id="toWACStations" class="collapse list-group list-group-flush stations" aria-labelledby="toWACLine" data-parent="#toPickerButton">
+                    <li class="list-group-item list-group-item-action">Bank Underground Station </li>
+                    <li class="list-group-item list-group-item-action">Waterloo Underground Station </li>
+                </ul>
+            <li class="list-group-item list-group-item-action londonOverground" id="toLondonOvergroundLine" data-toggle="collapse" data-target="#toLondonOvergroundStations" aria-expanded="true" aria-controls="toLondonOvergroundStations">London Overground</li>
+                <ul id="toLondonOvergroundStations" class="collapse list-group list-group-flush stations" aria-labelledby="toLondonOvergroundLine" data-parent="#toPickerButton">
+                    <li class="list-group-item list-group-item-action">Acton Central Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Anerley Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Barking Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Bethnal Green Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Blackhorse Road Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Brockley Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Brondesbury Park Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Brondesbury Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Bruce Grove Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Bush Hill Park Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Bushey Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Caledonian Road & Barnsbury Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Cambridge Heath (London) Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Camden Road Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Canada Water Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Canonbury Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Carpenders Park Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Cheshunt Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Chingford Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Clapham High Street Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Clapham Junction Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Clapham Junction Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Clapton Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Crouch Hill Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Crystal Palace Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Dalston Junction Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Dalston Kingsland Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Denmark Hill Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Edmonton Green Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Emerson Park Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Enfield Town Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Finchley Road & Frognal Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Forest Hill Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Gospel Oak Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Gunnersbury Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Hackney Central Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Hackney Downs Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Hackney Wick Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Haggerston Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Hampstead Heath Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Harlesden Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Harringay Green Lanes Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Harrow & Wealdstone Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Hatch End Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Headstone Lane Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Highams Park Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Highbury & Islington Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Homerton Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Honor Oak Park Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Hoxton Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Imperial Wharf Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Kensal Green Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Kensal Rise Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Kensington (Olympia) Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Kentish Town West Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Kenton Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Kew Gardens Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Kilburn High Road Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Leyton Midland Road Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Leytonstone High Road Rail Station </li>
+                    <li class="list-group-item list-group-item-action">London Euston Rail Station </li>
+                    <li class="list-group-item list-group-item-action">London Fields Rail Station </li>
+                    <li class="list-group-item list-group-item-action">London Liverpool Street Rail Station </li>
+                    <li class="list-group-item list-group-item-action">New Cross ELL Rail Station </li>
+                    <li class="list-group-item list-group-item-action">New Cross Gate Rail Station </li>
+                    <li class="list-group-item list-group-item-action">North Wembley Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Norwood Junction Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Peckham Rye Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Penge West Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Queens Park (London) Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Queens Road Peckham Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Rectory Road Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Richmond (London) Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Romford Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Rotherhithe Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Seven Sisters Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Shadwell Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Shepherds Bush Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Shoreditch High Street Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Silver Street Rail Station </li>
+                    <li class="list-group-item list-group-item-action">South Acton Rail Station </li>
+                    <li class="list-group-item list-group-item-action">South Hampstead Rail Station </li>
+                    <li class="list-group-item list-group-item-action">South Kenton Rail Station </li>
+                    <li class="list-group-item list-group-item-action">South Tottenham Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Southbury Rail Station </li>
+                    <li class="list-group-item list-group-item-action">St James Street (London) Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Stamford Hill Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Stoke Newington Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Stonebridge Park Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Stratford (London) Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Surrey Quays Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Sydenham Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Theobalds Grove Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Turkey Street Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Upminster Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Upper Holloway Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Walthamstow Central Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Walthamstow Queens Road Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Wandsworth Road Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Wanstead Park Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Wapping Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Watford High Street Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Watford Junction Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Wembley Central Rail Station </li>
+                    <li class="list-group-item list-group-item-action">West Brompton Rail Station </li>
+                    <li class="list-group-item list-group-item-action">West Croydon Rail Station </li>
+                    <li class="list-group-item list-group-item-action">West Hampstead Rail Station </li>
+                    <li class="list-group-item list-group-item-action">White Hart Lane Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Whitechapel Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Willesden Junction Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Wood Street Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Woodgrange Park Rail Station </li>
+        
+                </ul>
+            <li class="list-group-item list-group-item-action tflRail" id="toTflRailLine" data-toggle="collapse" data-target="#toTflRailStations" aria-expanded="true" aria-controls="toTflRailStations">Tfl Rail</li>
+                <ul id="toTflRailStations" class="collapse list-group list-group-flush stations" aria-labelledby="toTflRailLine" data-parent="#toPickerButton">
+                    <li class="list-group-item list-group-item-action">Acton Main Line Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Brentwood Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Burnham (Berks) Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Chadwell Heath Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Ealing Broadway Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Forest Gate Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Gidea Park Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Goodmayes Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Hanwell Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Harold Wood Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Hayes & Harlington Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Heathrow Terminal  Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Heathrow Terminal (Heathrow Terminals  &  Rail Station) </li>
+                    <li class="list-group-item list-group-item-action">Ilford Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Iver Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Langley (Berks) Rail Station </li>
+                    <li class="list-group-item list-group-item-action">London Liverpool Street Rail Station </li>
+                    <li class="list-group-item list-group-item-action">London Paddington Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Maidenhead Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Manor Park Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Maryland Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Reading Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Romford Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Seven Kings Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Shenfield Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Slough Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Southall Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Stratford (London) Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Taplow Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Twyford Rail Station </li>
+                    <li class="list-group-item list-group-item-action">West Drayton Rail Station </li>
+                    <li class="list-group-item list-group-item-action">West Ealing Rail Station </li>
+                </ul>
+            <li class="list-group-item list-group-item-action DLR" id="toDLRLine" data-toggle="collapse" data-target="#toDLRStations" aria-expanded="true" aria-controls="toDLRStations">DLR</li>
+                <ul id="toDLRStations" class="collapse list-group list-group-flush stations" aria-labelledby="toDLRLine" data-parent="#toPickerButton">
+                    <li class="list-group-item list-group-item-action">Abbey Road DLR Station </li>
+                    <li class="list-group-item list-group-item-action">All Saints DLR Station </li>
+                    <li class="list-group-item list-group-item-action">Bank DLR Station </li>
+                    <li class="list-group-item list-group-item-action">Beckton DLR Station </li>
+                    <li class="list-group-item list-group-item-action">Beckton Park DLR Station </li>
+                    <li class="list-group-item list-group-item-action">Blackwall DLR Station </li>
+                    <li class="list-group-item list-group-item-action">Bow Church DLR Station </li>
+                    <li class="list-group-item list-group-item-action">Canary Wharf DLR Station </li>
+                    <li class="list-group-item list-group-item-action">Canning Town DLR Station </li>
+                    <li class="list-group-item list-group-item-action">Crossharbour DLR Station </li>
+                    <li class="list-group-item list-group-item-action">Custom House (for ExCel) DLR Station </li>
+                    <li class="list-group-item list-group-item-action">Cutty Sark (for Maritime Greenwich) DLR Station </li>
+                    <li class="list-group-item list-group-item-action">Cyprus DLR Station </li>
+                    <li class="list-group-item list-group-item-action">Deptford Bridge DLR Station </li>
+                    <li class="list-group-item list-group-item-action">Devons Road DLR Station </li>
+                    <li class="list-group-item list-group-item-action">East India DLR Station </li>
+                    <li class="list-group-item list-group-item-action">Elverson Road DLR Station </li>
+                    <li class="list-group-item list-group-item-action">Gallions Reach DLR Station </li>
+                    <li class="list-group-item list-group-item-action">Greenwich DLR Station </li>
+                    <li class="list-group-item list-group-item-action">Heron Quays DLR Station </li>
+                    <li class="list-group-item list-group-item-action">Island Gardens DLR Station </li>
+                    <li class="list-group-item list-group-item-action">King George V DLR Station </li>
+                    <li class="list-group-item list-group-item-action">Langdon Park DLR Station </li>
+                    <li class="list-group-item list-group-item-action">Lewisham DLR Station </li>
+                    <li class="list-group-item list-group-item-action">Limehouse DLR Station </li>
+                    <li class="list-group-item list-group-item-action">London City Airport DLR Station </li>
+                    <li class="list-group-item list-group-item-action">Mudchute DLR Station </li>
+                    <li class="list-group-item list-group-item-action">Pontoon Dock DLR Station </li>
+                    <li class="list-group-item list-group-item-action">Poplar DLR Station </li>
+                    <li class="list-group-item list-group-item-action">Prince Regent DLR Station </li>
+                    <li class="list-group-item list-group-item-action">Pudding Mill Lane DLR Station </li>
+                    <li class="list-group-item list-group-item-action">Royal Albert DLR Station </li>
+                    <li class="list-group-item list-group-item-action">Royal Victoria DLR Station </li>
+                    <li class="list-group-item list-group-item-action">Shadwell DLR Station </li>
+                    <li class="list-group-item list-group-item-action">South Quay DLR Station </li>
+                    <li class="list-group-item list-group-item-action">Star Lane DLR Station </li>
+                    <li class="list-group-item list-group-item-action">Stratford DLR Station </li>
+                    <li class="list-group-item list-group-item-action">Stratford High Street DLR Station </li>
+                    <li class="list-group-item list-group-item-action">Stratford International DLR Station </li>
+                    <li class="list-group-item list-group-item-action">Tower Gateway DLR Station </li>
+                    <li class="list-group-item list-group-item-action">West Ham DLR Station </li>
+                    <li class="list-group-item list-group-item-action">West India Quay DLR Station </li>
+                    <li class="list-group-item list-group-item-action">West Silvertown DLR Station </li>
+                    <li class="list-group-item list-group-item-action">Westferry DLR Station </li>
+                    <li class="list-group-item list-group-item-action">Woolwich Arsenal DLR Station </li>
+                </ul>
+            <li class="list-group-item list-group-item-action tram" id="toTramLine" data-toggle="collapse" data-target="#toTramStations" aria-expanded="true" aria-controls="toTramStations">Tram</li>
+                <ul id="toTramStations" class="collapse list-group list-group-flush stations" aria-labelledby="toTramLine" data-parent="#toPickerButton">
+                    <li class="list-group-item list-group-item-action">Addington Village Tram Stop</li>
+                    <li class="list-group-item list-group-item-action">Addiscombe Tram Stop</li>
+                    <li class="list-group-item list-group-item-action">Ampere Way Tram Stop</li>
+                    <li class="list-group-item list-group-item-action">Arena Tram Stop</li>
+                    <li class="list-group-item list-group-item-action">Avenue Road Tram Stop</li>
+                    <li class="list-group-item list-group-item-action">Beckenham Junction Tram Stop</li>
+                    <li class="list-group-item list-group-item-action">Beckenham Road Tram Stop</li>
+                    <li class="list-group-item list-group-item-action">Beddington Lane Tram Stop</li>
+                    <li class="list-group-item list-group-item-action">Belgrave Walk Tram Stop</li>
+                    <li class="list-group-item list-group-item-action">Birkbeck Tram Stop</li>
+                    <li class="list-group-item list-group-item-action">Blackhorse Lane Tram Stop</li>
+                    <li class="list-group-item list-group-item-action">Centrale Tram Stop</li>
+                    <li class="list-group-item list-group-item-action">Church Street Tram Stop</li>
+                    <li class="list-group-item list-group-item-action">Coombe Lane Tram Stop</li>
+                    <li class="list-group-item list-group-item-action">Dundonald Road Tram Stop</li>
+                    <li class="list-group-item list-group-item-action">East Croydon Tram Stop</li>
+                    <li class="list-group-item list-group-item-action">Elmers End Tram Stop</li>
+                    <li class="list-group-item list-group-item-action">Fieldway Tram Stop</li>
+                    <li class="list-group-item list-group-item-action">George Street Tram Stop</li>
+                    <li class="list-group-item list-group-item-action">Gravel Hill Tram Stop</li>
+                    <li class="list-group-item list-group-item-action">Harrington Road Tram Stop</li>
+                    <li class="list-group-item list-group-item-action">King Henry's Drive Tram Stop</li>
+                    <li class="list-group-item list-group-item-action">Lebanon Road Tram Stop</li>
+                    <li class="list-group-item list-group-item-action">Lloyd Park Tram Stop</li>
+                    <li class="list-group-item list-group-item-action">Merton Park Tram Stop</li>
+                    <li class="list-group-item list-group-item-action">Mitcham Junction Tram Stop</li>
+                    <li class="list-group-item list-group-item-action">Mitcham Tram Stop</li>
+                    <li class="list-group-item list-group-item-action">Morden Road Tram Stop</li>
+                    <li class="list-group-item list-group-item-action">New Addington Tram Stop</li>
+                    <li class="list-group-item list-group-item-action">Phipps Bridge Tram Stop</li>
+                    <li class="list-group-item list-group-item-action">Reeves Corner Tram Stop</li>
+                    <li class="list-group-item list-group-item-action">Sandilands Tram Stop</li>
+                    <li class="list-group-item list-group-item-action">Therapia Lane Tram Stop</li>
+                    <li class="list-group-item list-group-item-action">Waddon Marsh Tram Stop</li>
+                    <li class="list-group-item list-group-item-action">Wandle Park Tram Stop</li>
+                    <li class="list-group-item list-group-item-action">Wellesley Road Tram Stop</li>
+                    <li class="list-group-item list-group-item-action">West Croydon Tram Stop</li>
+                    <li class="list-group-item list-group-item-action">Wimbledon Tram Stop</li>
+                    <li class="list-group-item list-group-item-action">Woodside Tram Stop</li>
+                </ul>
+        </ul>
     </div>
+
         <button id="goButton"type="button" class="btn btn-primary" onclick="getInputValue();">GO!</button>
+    </div>
+        
+        
+        
     </section>
 
     
@@ -63,6 +1403,21 @@
     
         <div id="fare"></div>    
     </div>
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
     
     
     

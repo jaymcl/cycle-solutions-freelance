@@ -1,0 +1,1278 @@
+stations
+
+bakerloo
+
+<li>
+Baker Street Underground Station </li>
+<li>
+Charing Cross Underground Station </li>
+<li>
+Edgware Road (Bakerloo) Underground Station </li>
+<li>
+Elephant & Castle Underground Station </li>
+<li>
+Embankment Underground Station </li>
+<li>
+Harlesden Underground Station </li>
+<li>
+Harrow & Wealdstone Underground Station </li>
+<li>
+Kensal Green Underground Station </li>
+<li>
+Kenton Underground Station </li>
+<li>
+Kilburn Park Underground Station </li>
+<li>
+Lambeth North Underground Station </li>
+<li>
+Maida Vale Underground Station </li>
+<li>
+Marylebone Underground Station </li>
+<li>
+North Wembley Underground Station </li>
+<li>
+Oxford Circus Underground Station </li>
+<li>
+Paddington Underground Station </li>
+<li>
+Piccadilly Circus Underground Station </li>
+<li>
+Queen's Park Underground Station </li>
+<li>
+Regent's Park Underground Station </li>
+<li>
+South Kenton Underground Station </li>
+<li>
+Stonebridge Park Underground Station </li>
+<li>
+Warwick Avenue Underground Station </li>
+<li>
+Waterloo Underground Station </li>
+<li>
+Wembley Central Underground Station </li>
+<li>
+Willesden Junction Underground Station </li>
+
+
+
+Central
+<li>
+Bank Underground Station </li>
+<li>
+Barkingside Underground Station </li>
+<li>
+Bethnal Green Underground Station </li>
+<li>
+Bond Street Underground Station </li>
+<li>
+Buckhurst Hill Underground Station </li>
+<li>
+Chancery Lane Underground Station </li>
+<li>
+Chigwell Underground Station </li>
+<li>
+Debden Underground Station </li>
+<li>
+Ealing Broadway Underground Station </li>
+<li>
+East Acton Underground Station </li>
+<li>
+Epping Underground Station </li>
+<li>
+Fairlop Underground Station </li>
+<li>
+Gants Hill Underground Station </li>
+<li>
+Grange Hill Underground Station </li>
+<li>
+Greenford Underground Station </li>
+<li>
+Hainault Underground Station </li>
+<li>
+Hanger Lane Underground Station </li>
+<li>
+Holborn Underground Station </li>
+<li>
+Holland Park Underground Station </li>
+<li>
+Lancaster Gate Underground Station </li>
+<li>
+ Leyton Underground Station </li>
+ <li>
+Leytonstone Underground Station </li>
+<li>
+Liverpool Street Underground Station </li>
+<li>
+Loughton Underground Station </li>
+<li>
+Marble Arch Underground Station </li>
+<li>
+Mile End Underground Station </li>
+<li>
+Newbury Park Underground Station </li>
+<li>
+North Acton Underground Station </li>
+<li>
+Northolt Underground Station </li>
+<li>
+Notting Hill Gate Underground Station </li>
+<li>
+Oxford Circus Underground Station </li>
+<li>
+Perivale Underground Station </li>
+<li>
+Queensway Underground Station </li>
+<li>
+Redbridge Underground Station </li>
+<li>
+Roding Valley Underground Station </li>
+<li>
+Ruislip Gardens Underground Station </li>
+<li>
+Shepherd's Bush (Central) Underground Station </li>
+<li>
+Snaresbrook Underground Station </li>
+<li>
+South Ruislip Underground Station </li>
+<li>
+South Woodford Underground Station </li>
+<li>
+St. Paul's Underground Station </li>
+<li>
+Stratford Underground Station </li>
+<li>
+Theydon Bois Underground Station </li>
+<li>
+Tottenham Court Road Underground Station </li>
+<li>
+Wanstead Underground Station </li>
+<li>
+West Acton Underground Station </li>
+<li>
+West Ruislip Underground Station </li>
+<li>
+White City Underground Station </li>
+<li>
+Woodford Underground Station </li>
+
+
+circle
+
+<li>
+Aldgate Underground Station </li>
+<li>
+Baker Street Underground Station </li>
+<li>
+Barbican Underground Station </li>
+<li>
+Bayswater Underground Station </li>
+<li>
+Blackfriars Underground Station </li>
+<li>
+Cannon Street Underground Station </li>
+<li>
+Edgware Road (Circle Line) Underground Station </li>
+<li>
+Embankment Underground Station </li>
+<li>
+Euston Square Underground Station </li>
+<li>
+Farringdon Underground Station </li>
+<li>
+Gloucester Road Underground Station </li>
+<li>
+Goldhawk Road Underground Station </li>
+<li>
+Great Portland Street Underground Station </li>
+<li>
+Hammersmith (H&C Line) Underground Station </li>
+<li>
+High Street Kensington Underground Station </li>
+<li>
+King's Cross St. Pancras Underground Station </li>
+<li>
+Ladbroke Grove Underground Station </li>
+<li>
+Latimer Road Underground Station </li>
+<li>
+Liverpool Street Underground Station </li>
+<li>
+Mansion House Underground Station </li>
+<li>
+Monument Underground Station </li>
+<li>
+Moorgate Underground Station </li>
+<li>
+Notting Hill Gate Underground Station </li>
+<li>
+Paddington (H&C Line)-Underground
+Paddington Underground Station </li>
+<li>
+Royal Oak Underground Station </li>
+<li>
+Shepherd's Bush Market Underground Station </li>
+<li>
+Sloane Square Underground Station </li>
+<li>
+South Kensington Underground Station </li>
+<li>
+St. James's Park Underground Station </li>
+<li>
+Temple Underground Station </li>
+<li>
+Tower Hill Underground Station </li>
+<li>
+Victoria Underground Station </li>
+<li>
+Westbourne Park Underground Station </li>
+<li>
+Westminster Underground Station </li>
+<li>
+Wood Lane Underground Station </li>
+
+
+district
+
+<li>
+Acton Town Underground Station </li>
+<li>
+Aldgate East Underground Station </li>
+<li>
+Barking Underground Station </li>
+<li>
+Barons Court Underground Station </li>
+<li>
+Bayswater Underground Station </li>
+<li>
+Becontree Underground Station </li>
+<li>
+Blackfriars Underground Station </li>
+<li>
+Bow Road Underground Station </li>
+<li>
+Bromley-by-Bow Underground Station </li>
+<li>
+Cannon Street Underground Station </li>
+<li>
+Chiswick Park Underground Station </li>
+<li>
+Dagenham East Underground Station </li>
+<li>
+Dagenham Heathway Underground Station </li>
+<li>
+Ealing Broadway Underground Station </li>
+<li>
+Ealing Common Underground Station </li>
+<li>
+Earl's Court Underground Station </li>
+<li>
+East Ham Underground Station </li>
+<li>
+East Putney Underground Station </li>
+<li>
+Edgware Road (Circle Line) Underground Station </li>
+<li>
+Elm Park Underground Station </li>
+<li>
+Embankment Underground Station </li>
+<li>
+Fulham Broadway Underground Station </li>
+<li>
+Gloucester Road Underground Station </li>
+<li>
+Gunnersbury Underground Station </li>
+<li>
+Hammersmith (Dist&Picc Line) Underground Station </li>
+<li>
+High Street Kensington Underground Station </li>
+<li>
+Hornchurch Underground Station </li>
+<li>
+Kensington (Olympia) Underground Station </li>
+<li>
+Kew Gardens Underground Station </li>
+<li>
+Mansion House Underground Station </li>
+<li>
+Mile End Underground Station </li>
+<li>
+Monument Underground Station </li>
+<li>
+Notting Hill Gate Underground Station </li>
+<li>
+Paddington Underground Station </li>
+<li>
+Parsons Green Underground Station </li>
+<li>
+Plaistow Underground Station </li>
+<li>
+Putney Bridge Underground Station </li>
+<li>
+Ravenscourt Park Underground Station </li>
+<li>
+Richmond Underground Station </li>
+<li>
+Sloane Square Underground Station </li>
+<li>
+South Kensington Underground Station </li>
+<li>
+Southfields Underground Station </li>
+<li>
+St. James's Park Underground Station </li>
+<li>
+Stamford Brook Underground Station </li>
+<li>
+Stepney Green Underground Station </li>
+<li>
+Temple Underground Station </li>
+<li>
+Tower Hill Underground Station </li>
+<li>
+Turnham Green Underground Station </li>
+<li>
+Upminster Bridge Underground Station </li>
+<li>
+Upminster Underground Station </li>
+<li>
+Upney Underground Station </li>
+<li>
+Upton Park Underground Station </li>
+<li>
+Victoria Underground Station </li>
+<li>
+West Brompton Underground Station </li>
+<li>
+West Ham Underground Station </li>
+<li>
+West Kensington Underground Station </li>
+<li>
+Westminster Underground Station </li>
+<li>
+Whitechapel Underground Station </li>
+<li>
+Wimbledon Park Underground Station </li>
+<li>
+Wimbledon Underground Station </li>
+
+
+hammersmith and City
+
+<li>
+Aldgate East Underground Station </li>
+<li>
+Baker Street Underground Station </li>
+<li>
+Barbican Underground Station </li>
+<li>
+Barking Underground Station </li>
+<li>
+Bow Road Underground Station </li>
+<li>
+Bromley-by-Bow Underground Station </li>
+<li>
+East Ham Underground Station </li>
+<li>
+Edgware Road (Circle Line) Underground Station </li>
+<li>
+Euston Square Underground Station </li>
+<li>
+Farringdon Underground Station </li>
+<li>
+ Goldhawk Road Underground Station </li>
+ <li>
+Great Portland Street Underground Station </li>
+<li>
+Hammersmith (H&C Line) Underground Station </li>
+<li>
+King's Cross St. Pancras Underground Station </li>
+<li>
+Ladbroke Grove Underground Station </li>
+<li>
+Latimer Road Underground Station </li>
+<li>
+Liverpool Street Underground Station </li>
+<li>
+Mile End Underground Station </li>
+<li>
+Moorgate Underground Station </li>
+<li>
+Paddington (H&C Line)-Underground
+Plaistow Underground Station </li>
+<li>
+Royal Oak Underground Station </li>
+<li>
+Shepherd's Bush Market Underground Station </li>
+<li>
+Stepney Green Underground Station </li>
+<li>
+Upton Park Underground Station </li>
+<li>
+West Ham Underground Station </li>
+<li>
+Westbourne Park Underground Station </li>
+<li>
+Whitechapel Underground Station </li>
+<li>
+Wood Lane Underground Station </li>
+
+
+jubilee
+
+<li>
+Baker Street Underground Station </li>
+<li>
+Bermondsey Underground Station </li>
+<li>
+Bond Street Underground Station </li>
+<li>
+Canada Water Underground Station </li>
+<li>
+Canary Wharf Underground Station </li>
+<li>
+Canning Town Underground Station </li>
+<li>
+Canons Park Underground Station </li>
+<li>
+Dollis Hill Underground Station </li>
+<li>
+Finchley Road Underground Station </li>
+<li>
+Green Park Underground Station </li>
+<li>
+Kilburn Underground Station </li>
+<li>
+Kingsbury Underground Station </li>
+<li>
+London Bridge Underground Station </li>
+<li>
+Neasden Underground Station </li>
+<li>
+North Greenwich Underground Station </li>
+<li>
+Queensbury Underground Station </li>
+<li>
+Southwark Underground Station </li>
+<li>
+St. John's Wood Underground Station </li>
+<li>
+Stanmore Underground Station </li>
+<li>
+Stratford Underground Station </li>
+<li>
+Swiss Cottage Underground Station </li>
+<li>
+Waterloo Underground Station </li>
+<li>
+Wembley Park Underground Station </li>
+<li>
+West Ham Underground Station </li>
+<li>
+West Hampstead Underground Station </li>
+<li>
+Westminster Underground Station </li>
+<li>
+Willesden Green Underground Station </li>
+
+
+metropolitan
+
+<li>
+Aldgate Underground Station </li>
+<li>
+Amersham Underground Station </li>
+<li>
+Baker Street Underground Station </li>
+<li>
+Barbican Underground Station </li>
+<li>
+Chalfont & Latimer Underground Station </li>
+<li>
+Chesham Underground Station </li>
+<li>
+Chorleywood Underground Station </li>
+<li>
+Croxley Underground Station </li>
+<li>
+Eastcote Underground Station </li>
+<li>
+Euston Square Underground Station </li>
+<li>
+Farringdon Underground Station </li>
+<li>
+Finchley Road Underground Station </li>
+<li>
+Great Portland Street Underground Station </li>
+<li>
+Harrow-on-the-Hill Underground Station </li>
+<li>
+Hillingdon Underground Station </li>
+<li>
+Ickenham Underground Station </li>
+<li>
+King's Cross St. Pancras Underground Station </li>
+<li>
+Liverpool Street Underground Station </li>
+<li>
+Moor Park Underground Station </li>
+<li>
+Moorgate Underground Station </li>
+<li>
+North Harrow Underground Station </li>
+<li>
+Northwick Park Underground Station </li>
+<li>
+Northwood Hills Underground Station </li>
+<li>
+Northwood Underground Station </li>
+<li>
+Pinner Underground Station </li>
+<li>
+Preston Road Underground Station </li>
+<li>
+Rayners Lane Underground Station </li>
+<li>
+Rickmansworth Underground Station </li>
+<li>
+Ruislip Manor Underground Station </li>
+<li>
+Ruislip Underground Station </li>
+<li>
+Uxbridge Underground Station </li>
+<li>
+Watford Underground Station </li>
+<li>
+Wembley Park Underground Station </li>
+<li>
+West Harrow Underground Station </li>
+<li>
+Willesden Green Underground Station </li>
+
+
+Northern
+
+
+<li>
+Angel Underground Station </li>
+<li>
+Archway Underground Station </li>
+<li>
+Balham Underground Station </li>
+<li>
+Bank Underground Station </li>
+<li>
+Belsize Park Underground Station </li>
+<li>
+Borough Underground Station </li>
+<li>
+Brent Cross Underground Station </li>
+<li>
+Burnt Oak Underground Station </li>
+<li>
+Camden Town Underground Station </li>
+<li>
+Chalk Farm Underground Station </li>
+<li>
+Charing Cross Underground Station </li>
+<li>
+Clapham Common Underground Station </li>
+<li>
+Clapham North Underground Station </li>
+<li>
+Clapham South Underground Station </li>
+<li>
+Colindale Underground Station </li>
+<li>
+Colliers Wood Underground Station </li>
+<li>
+East Finchley Underground Station </li>
+<li>
+Edgware Underground Station </li>
+<li>
+Elephant & Castle Underground Station </li>
+<li>
+Embankment Underground Station </li>
+<li>
+Euston Underground Station </li>
+<li>
+Finchley Central Underground Station </li>
+<li>
+Golders Green Underground Station </li>
+<li>
+Goodge Street Underground Station </li>
+<li>
+Hampstead Underground Station </li>
+<li>
+Hendon Central Underground Station </li>
+<li>
+High Barnet Underground Station </li>
+<li>
+Highgate Underground Station </li>
+<li>
+Kennington Underground Station </li>
+<li>
+Kentish Town Underground Station </li>
+<li>
+King's Cross St. Pancras Underground Station </li>
+<li>
+Leicester Square Underground Station </li>
+<li>
+London Bridge Underground Station </li>
+<li>
+Mill Hill East Underground Station </li>
+<li>
+Moorgate Underground Station </li>
+<li>
+Morden Underground Station </li>
+<li>
+Mornington Crescent Underground Station </li>
+<li>
+Old Street Underground Station </li>
+<li>
+Oval Underground Station </li>
+<li>
+South Wimbledon Underground Station </li>
+<li>
+Stockwell Underground Station </li>
+<li>
+Tooting Bec Underground Station </li>
+<li>
+Tooting Broadway Underground Station </li>
+<li>
+Tottenham Court Road Underground Station </li>
+<li>
+Totteridge & Whetstone Underground Station </li>
+<li>
+Tufnell Park Underground Station </li>
+<li>
+Warren Street Underground Station </li>
+<li>
+Waterloo Underground Station </li>
+<li>
+West Finchley Underground Station </li>
+<li>
+Woodside Park Underground Station </li>
+
+
+Piccadilly
+<li>
+Acton Town Underground Station </li>
+<li>
+Alperton Underground Station </li>
+<li>
+Arnos Grove Underground Station </li>
+<li>
+Arsenal Underground Station </li>
+<li>
+Barons Court Underground Station </li>
+<li>
+Boston Manor Underground Station </li>
+<li>
+Bounds Green Underground Station </li>
+<li>
+Caledonian Road Underground Station </li>
+<li>
+Cockfosters Underground Station </li>
+<li>
+Covent Garden Underground Station </li>
+<li>
+Ealing Common Underground Station </li>
+<li>
+Earl's Court Underground Station </li>
+<li>
+Eastcote Underground Station </li>
+<li>
+Finsbury Park Underground Station </li>
+<li>
+Gloucester Road Underground Station </li>
+<li>
+Green Park Underground Station </li>
+<li>
+Hammersmith (Dist&Picc Line) Underground Station </li>
+<li>
+Hatton Cross Underground Station </li>
+<li>
+Heathrow Terminal  Underground Station </li>
+<li>
+Heathrow Terminals  &  Underground Station </li>
+<li>
+Hillingdon Underground Station </li>
+<li>
+Holborn Underground Station </li>
+<li>
+Holloway Road Underground Station </li>
+<li>
+Hounslow Central Underground Station </li>
+<li>
+Hounslow East Underground Station </li>
+<li>
+Hounslow West Underground Station </li>
+<li>
+Hyde Park Corner Underground Station </li>
+<li>
+Ickenham Underground Station </li>
+<li>
+King's Cross St. Pancras Underground Station </li>
+<li>
+Knightsbridge Underground Station </li>
+<li>
+Leicester Square Underground Station </li>
+<li>
+Manor House Underground Station </li>
+<li>
+North Ealing Underground Station </li>
+<li>
+Northfields Underground Station </li>
+<li>
+Oakwood Underground Station </li>
+<li>
+Osterley Underground Station </li>
+<li>
+Park Royal Underground Station </li>
+<li>
+Piccadilly Circus Underground Station </li>
+<li>
+Rayners Lane Underground Station </li>
+<li>
+Ruislip Manor Underground Station </li>
+<li>
+Ruislip Underground Station </li>
+<li>
+Russell Square Underground Station </li>
+<li>
+South Ealing Underground Station </li>
+<li>
+South Harrow Underground Station </li>
+<li>
+South Kensington Underground Station </li>
+<li>
+Southgate Underground Station </li>
+<li>
+Sudbury Hill Underground Station </li>
+<li>
+Sudbury Town Underground Station </li>
+<li>
+Turnham Green Underground Station </li>
+<li>
+Turnpike Lane Underground Station </li>
+<li>
+Uxbridge Underground Station </li>
+<li>
+Wood Green Underground Station </li>
+
+
+
+Victoria
+
+<li>
+Blackhorse Road Underground Station </li>
+<li>
+Brixton Underground Station </li>
+<li>
+Euston Underground Station </li>
+<li>
+Finsbury Park Underground Station </li>
+<li>
+Green Park Underground Station </li>
+<li>
+Highbury & Islington Underground Station </li>
+<li>
+King's Cross St. Pancras Underground Station </li>
+<li>
+Oxford Circus Underground Station </li>
+<li>
+Pimlico Underground Station </li>
+<li>
+Seven Sisters Underground Station </li>
+<li>
+Stockwell Underground Station </li>
+<li>
+Tottenham Hale Underground Station </li>
+<li>
+Vauxhall Underground Station </li>
+<li>
+Victoria Underground Station </li>
+<li>
+Walthamstow Central Underground Station </li>
+<li>
+Warren Street Underground Station </li>
+
+
+waterloo and City WAC
+
+<li>
+Bank Underground Station </li>
+<li>
+Waterloo Underground Station </li>
+
+
+LondonOverground
+
+<li>
+Acton Central Rail Station </li>
+<li>
+Anerley Rail Station </li>
+<li>
+Barking Rail Station </li>
+<li>
+Bethnal Green Rail Station </li>
+<li>
+Blackhorse Road Rail Station </li>
+<li>
+Brockley Rail Station </li>
+<li>
+Brondesbury Park Rail Station </li>
+<li>
+Brondesbury Rail Station </li>
+<li>
+Bruce Grove Rail Station </li>
+<li>
+Bush Hill Park Rail Station </li>
+<li>
+Bushey Rail Station </li>
+<li>
+Caledonian Road & Barnsbury Rail Station </li>
+<li>
+Cambridge Heath (London) Rail Station </li>
+<li>
+Camden Road Rail Station </li>
+<li>
+Canada Water Rail Station </li>
+<li>
+Canonbury Rail Station </li>
+<li>
+Carpenders Park Rail Station </li>
+<li>
+Cheshunt Rail Station </li>
+<li>
+Chingford Rail Station </li>
+<li>
+Clapham High Street Rail Station </li>
+<li>
+Clapham Junction Rail Station </li>
+<li>
+Clapham Junction Rail Station </li>
+<li>
+Clapton Rail Station </li>
+<li>
+Crouch Hill Rail Station </li>
+<li>
+Crystal Palace Rail Station </li>
+<li>
+Dalston Junction Rail Station </li>
+<li>
+Dalston Kingsland Rail Station </li>
+<li>
+Denmark Hill Rail Station </li>
+<li>
+Edmonton Green Rail Station </li>
+<li>
+Emerson Park Rail Station </li>
+<li>
+Enfield Town Rail Station </li>
+<li>
+Finchley Road & Frognal Rail Station </li>
+<li>
+Forest Hill Rail Station </li>
+<li>
+Gospel Oak Rail Station </li>
+<li>
+Gunnersbury Rail Station </li>
+<li>
+Hackney Central Rail Station </li>
+<li>
+Hackney Downs Rail Station </li>
+<li>
+Hackney Wick Rail Station </li>
+<li>
+Haggerston Rail Station </li>
+<li>
+Hampstead Heath Rail Station </li>
+<li>
+Harlesden Rail Station </li>
+<li>
+Harringay Green Lanes Rail Station </li>
+<li>
+Harrow & Wealdstone Rail Station </li>
+<li>
+Hatch End Rail Station </li>
+<li>
+Headstone Lane Rail Station </li>
+<li>
+Highams Park Rail Station </li>
+<li>
+Highbury & Islington Rail Station </li>
+<li>
+Homerton Rail Station </li>
+<li>
+Honor Oak Park Rail Station </li>
+<li>
+Hoxton Rail Station </li>
+<li>
+Imperial Wharf Rail Station </li>
+<li>
+Kensal Green Rail Station </li>
+<li>
+Kensal Rise Rail Station </li>
+<li>
+Kensington (Olympia) Rail Station </li>
+<li>
+Kentish Town West Rail Station </li>
+<li>
+Kenton Rail Station </li>
+<li>
+Kew Gardens Rail Station </li>
+<li>
+Kilburn High Road Rail Station </li>
+<li>
+Leyton Midland Road Rail Station </li>
+<li>
+Leytonstone High Road Rail Station </li>
+<li>
+London Euston Rail Station </li>
+<li>
+London Fields Rail Station </li>
+<li>
+London Liverpool Street Rail Station </li>
+<li>
+New Cross ELL Rail Station </li>
+<li>
+New Cross Gate Rail Station </li>
+<li>
+North Wembley Rail Station </li>
+<li>
+Norwood Junction Rail Station </li>
+<li>
+Peckham Rye Rail Station </li>
+<li>
+Penge West Rail Station </li>
+<li>
+Queens Park (London) Rail Station </li>
+<li>
+Queens Road Peckham Rail Station </li>
+<li>
+Rectory Road Rail Station </li>
+<li>
+Richmond (London) Rail Station </li>
+<li>
+Romford Rail Station </li>
+<li>
+Rotherhithe Rail Station </li>
+<li>
+Seven Sisters Rail Station </li>
+<li>
+Shadwell Rail Station </li>
+<li>
+Shepherds Bush Rail Station </li>
+<li>
+Shoreditch High Street Rail Station </li>
+<li>
+Silver Street Rail Station </li>
+<li>
+South Acton Rail Station </li>
+<li>
+South Hampstead Rail Station </li>
+<li>
+South Kenton Rail Station </li>
+<li>
+South Tottenham Rail Station </li>
+<li>
+Southbury Rail Station </li>
+<li>
+St James Street (London) Rail Station </li>
+<li>
+Stamford Hill Rail Station </li>
+<li>
+Stoke Newington Rail Station </li>
+<li>
+Stonebridge Park Rail Station </li>
+<li>
+Stratford (London) Rail Station </li>
+<li>
+Surrey Quays Rail Station </li>
+<li>
+Sydenham Rail Station </li>
+<li>
+Theobalds Grove Rail Station </li>
+<li>
+Turkey Street Rail Station </li>
+<li>
+Upminster Rail Station </li>
+<li>
+Upper Holloway Rail Station </li>
+<li>
+Walthamstow Central Rail Station </li>
+<li>
+Walthamstow Queens Road Rail Station </li>
+<li>
+Wandsworth Road Rail Station </li>
+<li>
+Wanstead Park Rail Station </li>
+<li>
+Wapping Rail Station </li>
+<li>
+Watford High Street Rail Station </li>
+<li>
+Watford Junction Rail Station </li>
+<li>
+Wembley Central Rail Station </li>
+<li>
+West Brompton Rail Station </li>
+<li>
+West Croydon Rail Station </li>
+<li>
+West Hampstead Rail Station </li>
+<li>
+White Hart Lane Rail Station </li>
+<li>
+Whitechapel Rail Station </li>
+<li>
+Willesden Junction Rail Station </li>
+<li>
+Wood Street Rail Station </li>
+<li>
+Woodgrange Park Rail Station </li>
+
+
+TflRail
+
+<li>
+Acton Main Line Rail Station </li>
+<li>
+Brentwood Rail Station </li>
+<li>
+Burnham (Berks) Rail Station </li>
+<li>
+Chadwell Heath Rail Station </li>
+<li>
+Ealing Broadway Rail Station </li>
+<li>
+Forest Gate Rail Station </li>
+<li>
+Gidea Park Rail Station </li>
+<li>
+Goodmayes Rail Station </li>
+<li>
+Hanwell Rail Station </li>
+<li>
+Harold Wood Rail Station </li>
+<li>
+Hayes & Harlington Rail Station </li>
+<li>
+Heathrow Terminal  Rail Station </li>
+<li>
+Heathrow Terminal 
+Heathrow Terminals  &  Rail Station </li>
+<li>
+Ilford Rail Station </li>
+<li>
+Iver Rail Station </li>
+<li>
+Langley (Berks) Rail Station </li>
+<li>
+London Liverpool Street Rail Station </li>
+<li>
+London Paddington Rail Station </li>
+<li>
+Maidenhead Rail Station </li>
+<li>
+Manor Park Rail Station </li>
+<li>
+Maryland Rail Station </li>
+<li>
+Reading Rail Station </li>
+<li>
+Romford Rail Station </li>
+<li>
+Seven Kings Rail Station </li>
+<li>
+Shenfield Rail Station </li>
+<li>
+Slough Rail Station </li>
+<li>
+Southall Rail Station </li>
+<li>
+Stratford (London) Rail Station </li>
+<li>
+Taplow Rail Station </li>
+<li>
+Twyford Rail Station </li>
+<li>
+West Drayton Rail Station </li>
+<li>
+West Ealing Rail Station </li>
+
+
+DLR
+
+<li>
+Abbey Road DLR Station </li>
+<li>
+All Saints DLR Station </li>
+<li>
+Bank DLR Station </li>
+<li>
+Beckton DLR Station </li>
+<li>
+Beckton Park DLR Station </li>
+<li>
+Blackwall DLR Station </li>
+<li>
+Bow Church DLR Station </li>
+<li>
+Canary Wharf DLR Station </li>
+<li>
+Canning Town DLR Station </li>
+<li>
+Crossharbour DLR Station </li>
+<li>
+Custom House (for ExCel) DLR Station </li>
+<li>
+Cutty Sark (for Maritime Greenwich) DLR Station </li>
+<li>
+Cyprus DLR Station </li>
+<li>
+Deptford Bridge DLR Station </li>
+<li>
+Devons Road DLR Station </li>
+<li>
+East India DLR Station </li>
+<li>
+Elverson Road DLR Station </li>
+<li>
+Gallions Reach DLR Station </li>
+<li>
+Greenwich DLR Station </li>
+<li>
+Heron Quays DLR Station </li>
+<li>
+Island Gardens DLR Station </li>
+<li>
+King George V DLR Station </li>
+<li>
+Langdon Park DLR Station </li>
+<li>
+Lewisham DLR Station </li>
+<li>
+Limehouse DLR Station </li>
+<li>
+London City Airport DLR Station </li>
+<li>
+Mudchute DLR Station </li>
+<li>
+Pontoon Dock DLR Station </li>
+<li>
+Poplar DLR Station </li>
+<li>
+Prince Regent DLR Station </li>
+<li>
+Pudding Mill Lane DLR Station </li>
+<li>
+Royal Albert DLR Station </li>
+<li>
+Royal Victoria DLR Station </li>
+<li>
+Shadwell DLR Station </li>
+<li>
+South Quay DLR Station </li>
+<li>
+Star Lane DLR Station </li>
+<li>
+Stratford DLR Station </li>
+<li>
+Stratford High Street DLR Station </li>
+<li>
+Stratford International DLR Station </li>
+<li>
+Tower Gateway DLR Station </li>
+<li>
+West Ham DLR Station </li>
+<li>
+West India Quay DLR Station </li>
+<li>
+West Silvertown DLR Station </li>
+<li>
+Westferry DLR Station </li>
+<li>
+Woolwich Arsenal DLR Station </li>
+
+
+Tram  
+
+<li>
+Addington Village Tram Stop</li>
+<li>
+Addiscombe Tram Stop</li>
+<li>
+Ampere Way Tram Stop</li>
+<li>
+Arena Tram Stop</li>
+<li>
+Avenue Road Tram Stop</li>
+<li>
+Beckenham Junction Tram Stop</li>
+<li>
+Beckenham Road Tram Stop</li>
+<li>
+Beddington Lane Tram Stop</li>
+<li>
+Belgrave Walk Tram Stop</li>
+<li>
+Birkbeck Tram Stop</li>
+<li>
+Blackhorse Lane Tram Stop</li>
+<li>
+Centrale Tram Stop</li>
+<li>
+Church Street Tram Stop</li>
+<li>
+Coombe Lane Tram Stop</li>
+<li>
+Dundonald Road Tram Stop</li>
+<li>
+East Croydon Tram Stop</li>
+<li>
+Elmers End Tram Stop</li>
+<li>
+Fieldway Tram Stop</li>
+<li>
+George Street Tram Stop</li>
+<li>
+Gravel Hill Tram Stop</li>
+<li>
+Harrington Road Tram Stop</li>
+<li>
+King Henry's Drive Tram Stop</li>
+<li>
+Lebanon Road Tram Stop</li>
+<li>
+Lloyd Park Tram Stop</li>
+<li>
+Merton Park Tram Stop</li>
+<li>
+Mitcham Junction Tram Stop</li>
+<li>
+Mitcham Tram Stop</li>
+<li>
+Morden Road Tram Stop</li>
+<li>
+New Addington Tram Stop</li>
+<li>
+Phipps Bridge Tram Stop</li>
+<li>
+Reeves Corner Tram Stop</li>
+<li>
+Sandilands Tram Stop</li>
+<li>
+Therapia Lane Tram Stop</li>
+<li>
+Waddon Marsh Tram Stop</li>
+<li>
+Wandle Park Tram Stop</li>
+<li>
+Wellesley Road Tram Stop</li>
+<li>
+West Croydon Tram Stop</li>
+<li>
+Wimbledon Tram Stop</li>
+<li>
+Woodside Tram Stop</li>
