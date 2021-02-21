@@ -1,12 +1,13 @@
-//selectors and placeholders
-
-
-//on hover make stations grow
 
 let divApi = document.getElementById("api");
 let divMins = document.getElementById("mins");
 let divBike = document.getElementById("bike");
 let divFare = document.getElementById("fare");
+let dailyFare =document.getElementById("dailyFare");
+let weeklyFare =document.getElementById("weeklyFare");
+let monthlyFare =document.getElementById("monthlyFare");
+let yearlyFare =document.getElementById("yearlyFare");
+let invested =document.getElementById("invested");
 let divCom = document.getElementById("speedCom");
 let results={};
 let bikeResults="";
@@ -72,7 +73,16 @@ for (let index = 0; index < allStations.length; index++) {
     }
 }
 
-function getInputValue(){
+const compoundInt = (years, principle) =>{
+    let counter= 0;
+    for (let index = 0; index < years;  index++) {
+        counter = +counter + +principle
+        counter = +counter * 1.135;
+    } return counter
+    
+}
+
+const getInputValue = () => {
             // Selecting the input element and get its value 
     inputChoiceFrom = inputFromEle.value;
     inputChoiceTo = inputToEle.value;
@@ -116,13 +126,12 @@ axios.get(`${tflApi}${tflJour}${from}/to/${to}${tflModes}`, {
                     newLi.appendChild(newTn);
                     newLi.classList.add("list-group-item");
                     document.getElementById("fromUL").appendChild(newLi);
-                    document.getElementById("disamOptions").classList.remove("hideCard");
+                    document.getElementById("fromDisamOptions").classList.remove("hideCard");
                     newLi.addEventListener("click",() => {
                         fromToArgs[0] = ele.parameterValue;
                         if (fromToArgs.length == 2){
                             journeyPlan(fromToArgs[0], fromToArgs[1]);
                             document.getElementById("journey").classList.add("hideCard");
-                            document.getElementsByTagName("h3")[0].remove();
                         }
                         document.getElementById("fromOptions").classList.add("hideCard");
                         
@@ -130,10 +139,6 @@ axios.get(`${tflApi}${tflJour}${from}/to/${to}${tflModes}`, {
                 });
                 }else {
                 document.getElementById("fromOptions").classList.add("hideCard");
-                let journeyPara = document.createElement("h3");
-                let journeyText = document.createTextNode(`FROM : ${from}`);
-                journeyPara.appendChild(journeyText);
-                document.getElementById("journey").appendChild(journeyPara);
                 fromToArgs[0] = from;
                 };
 
@@ -146,26 +151,19 @@ axios.get(`${tflApi}${tflJour}${from}/to/${to}${tflModes}`, {
                     newLi.appendChild(newTn);
                     newLi.classList.add("list-group-item");
                     document.getElementById("toUL").appendChild(newLi);
-                    document.getElementById("disamOptions").classList.remove("hideCard");
+                    document.getElementById("toDisamOptions").classList.remove("hideCard");
                     newLi.addEventListener("click",() => {
                         fromToArgs[1] = ele.parameterValue;
                         if (fromToArgs.length == 2){
                             journeyPlan(fromToArgs[0], fromToArgs[1]);
-                            // document.getElementsByTagName("h3")[0].remove();
+
                         }
                         document.getElementById("toOptions").classList.add("hideCard");
                         })
                 })} else{
                 document.getElementById("toOptions").classList.add("hideCard");
-                let journeyPara = document.createElement("h3");
-                let journeyText = document.createTextNode(`TO : ${to}`);
-                journeyPara.appendChild(journeyText);
-                document.getElementById("journey").appendChild(journeyPara);
                 fromToArgs[1] = to;
             };
-            //             let fromToArr = disambiguationSort(from, to, res);
-            //             //picking first option from list of 300 status request
-            //             axios.get(tflApi + tflJour + fromToArr[0] + "/to/" + fromToArr[1] + tflTime + appKey
             
         }else {
             let contentParse = res.data;
@@ -190,17 +188,6 @@ axios.get(`${tflApi}${tflJour}${from}/to/${to}${tflModes}`, {
                 }
 
                 
-                    
-                        
-                        
-                        
-                            //to do 
-                            //grab pay as you go fare peak
-                            //display fare 
-                            // [1].mode.id on leg
-                            //farefinder travel mode first then fare
-                            //£1.50 bus
-                            //
                           
                 let fareBoth = fareFind(legArray);
                 console.log(fareBoth);
@@ -213,40 +200,52 @@ axios.get(`${tflApi}${tflJour}${from}/to/${to}${tflModes}`, {
                     ).then((res) => {
                         console.log(res);
                         
+                        
+
                         if (fareBoth[0].length >= 1)
                         {
                             let faresTotal = (1.50 * fareBoth[0].length) + +res.data[0].rows[0].ticketsAvailable[res.data[0].rows[0].ticketsAvailable.length-1].cost ; 
-                            divFare.innerHTML = "£" + faresTotal.toFixed(2);
+                            const fareYear = (faresTotal* 522).toFixed(2);
+                            divFare.innerHTML = "£" + faresTotal + " " + "£" + "PA:" + fareYear + " 10yr Returns: £" + compoundInt(10,fareYear).toFixed(2);
+                            dailyFare.innerHTML = "£" + (faresTotal*2).toFixed(2);
+                            weeklyFare.innerHTML = "£" + ((faresTotal*2)*5).toFixed(2);
+                            monthlyFare.innerHTML = "£" + (((faresTotal*2)*5)*4.3).toFixed(2);
+                            yearlyFare.innerHTML = "£" + fareYear;
+                            invested.innerHTML = "£" + compoundInt(10,fareYear).toFixed(2);
                             console.log(faresTotal)
                             console.log(fareBoth[0].length);
                         }else {
                             let faresTotal = res.data[0].rows[0].ticketsAvailable[res.data[0].rows[0].ticketsAvailable.length-1].cost;
-                            divFare.innerHTML = "£" + faresTotal;
+                            const fareYear = (faresTotal* 522).toFixed(2);
+                            divFare.innerHTML = "£" + faresTotal + " " + "£" + "PA:" + fareYear + " 10yr Returns: £" + compoundInt(10,fareYear).toFixed(2);
+                            dailyFare.innerHTML = "£" + (faresTotal*2).toFixed(2);
+                            weeklyFare.innerHTML = "£" + ((faresTotal*2)*5).toFixed(2);
+                            monthlyFare.innerHTML = "£" + (((faresTotal*2)*5)*4.3).toFixed(2);
+                            yearlyFare.innerHTML = "£" + fareYear;
+                            invested.innerHTML = "£" + compoundInt(10,fareYear).toFixed(2);
+
                             console.log(faresTotal)
                         }
-                        
                     })
 
                 } else {
-                    faresTotal = fareBoth[0].length * 1.50;
-                    divFare.innerHTML = `£${(fareBoth[0].length * 1.50).toFixed(2)}`;
+                    faresTotal = fareBoth[0].length * 1.50.toFixed(2);
+                    const fareYear = (faresTotal* 522).toFixed(2);
+                    divFare.innerHTML = "£" + faresTotal + " " + "£" + "PA:" + fareYear + " 10yr Returns: £" + compoundInt(10,fareYear).toFixed(2);
+                    dailyFare.innerHTML = "£" + (faresTotal*2).toFixed(2);
+                    weeklyFare.innerHTML = "£" + ((faresTotal*2)*5).toFixed(2);
+                    monthlyFare.innerHTML = "£" + (((faresTotal*2)*5)*4.3).toFixed(2);
+                    yearlyFare.innerHTML = "£" + fareYear;
+                    invested.innerHTML = "£" + compoundInt(10,fareYear).toFixed(2);
                     console.log(faresTotal);
                     console.log(fareBoth[0].length);
                 }
-
-
-
-                
-                
-
-
-
 
             results = {from: contentParse.journeys[0].legs[0].departurePoint.commonName,
                                     to: contentParse.journeys[0].legs[toLeng].arrivalPoint.commonName,
                                     duration: contentParse.journeys[0].duration};
                                      //assigning to elements
-                                    divApi.innerHTML = "From "+ results.from + " to  " + results.to;
+                                    divApi.firstElementChild.innerHTML= "From "+ results.from + "\n" + " to  " + results.to;
                                     divMins.innerHTML = "This journey takes " + hrsAndMins(results.duration);
                                     console.log(from, to);
 

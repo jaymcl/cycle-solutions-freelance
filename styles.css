@@ -19,21 +19,24 @@
 #goButton {
     display: block;
     margin: auto;
+    margin-top: 1rem;
 }
 
 h1{
-    padding: 2rem;
+    padding: 1rem;
     text-align: center;
+    font-size: 2rem;
+    font-weight: 300;
 }
 
 #basic-addon1{
     width: 4rem;
     height: 100%;
+    background-color: rgba(0,0,0,.03) ;
 }
 
 .card {
     padding:0;
-    margin: 1rem;
 }
 
 .hideCard {
@@ -60,4 +63,237 @@ ul {
 .dropdown-item {
     float:left;
 }
+#fromButtonHeading {
+    background-color: rgba(0,0,0,.03) ;
+    border: 1px solid  rgba(0,0,0,.10) ;
+    border-radius: .25rem;
+    text-align: center;
+}
+#toButtonHeading {
+    background-color:  rgba(0,0,0,.03) ;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    text-align: center;
+}
 
+.linesColor> li::before{
+    content: "";
+    display: block;
+    width: 1rem;
+    height: 3rem;
+    margin-right: 0.3rem;
+    float:left;
+}
+
+.linesColor> li{ 
+    padding:0;
+    line-height: 3;
+}
+:root{
+    --bakerlooColor:#894e24;
+    --centralColor:#dc241f;
+    --circleColor:#ffce00;
+    --districtColor:#007229;
+    --HACColor:#d799af;
+    --jubileeColor:#6a7278;
+    --metropolitanColor:#751056;
+    --northernColor:#000;
+    --piccadillyColor:#0019a8;
+    --victoriaColor:#00a0e2;
+    --WACColor:#76d0bd;
+    --londonOvergroundColor:#e86a10;
+    --tflRailColor:#0019a8;
+    --DLRColor:#00afad;
+    --tramColor:#6c0;
+
+}
+.bakerloo::before {
+    background-color: var(--bakerlooColor);
+}
+.bakerloo+ul>li:before{
+    background-color: var(--bakerlooColor)
+}
+.bakerloo+ul>li:after{
+    background-color: var(--bakerlooColor)
+}
+
+.central::before{
+    background-color: var(--centralColor);
+}
+.central+ul>li:before{
+    background-color: var(--centralColor);
+}
+.central+ul>li:after{
+    background-color: var(--centralColor);
+}
+
+.circle::before{
+    background-color: var(--circleColor);
+}
+.circle+ul>li:before{
+    background-color: var(--circleColor);
+}
+.circle+ul>li:after{
+    background-color: var(--circleColor);
+}
+.district::before{
+    background-color: var(--districtColor);
+}
+.district+ul>li:before{
+    background-color: var(--districtColor);
+}
+.district+ul>li:after{
+    background-color: var(--districtColor);
+}
+.HAC::before{
+    background-color: var(--HACColor);
+}
+.HAC+ul>li:before{
+    background-color: var(--HACColor);
+}
+.HAC+ul>li:after{
+    background-color: var(--HACColor);
+}
+.jubilee::before{
+    background-color: var(--jubileeColor);
+}
+.jubilee+ul>li:before{
+    background-color: var(--jubileeColor);
+}
+.jubilee+ul>li:after{
+    background-color: var(--jubileeColor);
+}
+.metropolitan::before{
+    background-color: var(--metropolitanColor);
+}
+.metropolitan+ul>li:before{
+    background-color: var(--metropolitanColor);
+}
+.metropolitan+ul>li:after{
+    background-color: var(--metropolitanColor);
+}
+.northern::before{
+    background-color: var(--northernColor);
+}
+.northern+ul>li:before{
+    background-color: var(--northernColor);
+}
+.northern+ul>li:after{
+    background-color: var(--northernColor);
+}
+.piccadilly::before{
+    background-color: var(--piccadillyColor);
+}
+.piccadilly+ul>li:before{
+    background-color: var(--piccadillyColor);
+}
+.piccadilly+ul>li:after{
+    background-color: var(--piccadillyColor);
+}
+.victoria::before{
+    background-color:  var(--victoriaColor);
+}
+.victoria+ul>li:before{
+    background-color:  var(--victoriaColor);
+}
+.victoria+ul>li:after{
+    background-color:  var(--victoriaColor);
+}
+.WAC::before{
+    background-color: var(--WACColor);
+}
+.WAC+ul>li:before{
+    background-color: var(--WACColor);
+}
+.WAC+ul>li:after{
+    background-color: var(--WACColor);
+}
+.londonOverground::before{
+    background-color: var(--londonOvergroundColor)
+}
+.londonOverground+ul>li:before{
+    background-color: var(--londonOvergroundColor)
+}
+.londonOverground+ul>li:after{
+    background-color: var(--londonOvergroundColor)
+}
+.tflRail::before{
+    background-color: var(--tflRailColor);
+}
+.tflRail+ul>li:before{
+    background-color: var(--tflRailColor);
+}
+.tflRail+ul>li:after{
+    background-color: var(--tflRailColor);
+}
+.DLR::before{
+    background-color: var(--DLRColor);
+}
+.DLR+ul>li:before{
+    background-color: var(--DLRColor);
+}
+.DLR+ul>li:after{
+    background-color: var(--DLRColor);
+}
+.tram::before{
+    background-color: var(--tramColor);
+}
+.tram+ul>li:before{
+    background-color: var(--tramColor);
+}
+.tram+ul>li:after{
+    background-color: var(--tramColor);
+}
+
+.stations>li::before{
+    content: "";
+    display: block;
+    width: 0.3rem;
+    height: 3rem;
+    margin-left:0.3rem;
+    float:left;
+}
+.stations>li::after{
+    content: "";
+    display: block;
+    width: 0.3rem;
+    height: 0.3rem;
+    margin-right: 0.3rem;
+    float:left;
+    margin-top: 1.4rem;
+    margin-bottom: 1.4rem;
+
+}
+.stations>li{
+    padding:0;
+    line-height: 3.5;
+    font-size: 14px;
+    max-width: 90vw;
+    
+    
+}
+
+.list-group-item{
+    border: none;
+    max-height: 3rem;
+}
+.accordian+ul{
+    max-height: 16rem;
+    overflow-y: scroll;
+
+}
+
+#toUL>li{
+    max-height: fit-content;
+}
+#fromUL>li{
+    max-height: fit-content;
+}
+
+#backIllu{
+    margin: 0 auto;
+    width: 80%;
+    height: 50vw;
+    display: block;
+    padding-top: 1rem;
+}
