@@ -10,18 +10,11 @@
 </head>
 <body>
     
-    
-   
-        
-    
-    
+    <h1>Reroute my commute</h1>
     <div>
         <img id="backIllu" src="backpngNoGap.png">
-        
     </div>
-
-    <h1>Reroute my commute</h1>
-
+    
     <section id="inputsSection">
         <div class="container" >
             <div id="fromInput"class="input-group ">           
@@ -30,6 +23,13 @@
             </div>
             <input  type="text" class="form-control " id="from"placeholder="Postcode / Station" aria-label="postcode or station" aria-describedby="basic-addon1">
         </div>
+        <ul id="fromSuggestions" class="list-group list-group-flush stations">
+            <li class=" bakerloo list-group-item list-group-item-action">Baker Street Underground Station </li>
+            <li class=" jubilee list-group-item list-group-item-action">kilburn </li>
+            <li class=" HAC list-group-item list-group-item-action">kilburn </li>
+            <li class=" central list-group-item list-group-item-action">boogaloo </li>
+            <li class=" jubilee list-group-item list-group-item-action">willesden green </li>
+        </ul>
         
         <ul class="list-group list-group-flush accordian" id="fromAccordion">
             <li class="list-group-item list-group-item-action" id="fromButtonHeading" data-toggle="collapse" data-target="#fromPickerButton" aria-expanded="true" aria-controls="fromPickerButton">Station Picker</li>
@@ -1402,10 +1402,6 @@
         
     </section>
 
-    
-     
-
-    
     <section id="journey">
         <div id="api">
             <h3></h3>
@@ -1431,8 +1427,32 @@
     
         <div id="bike"></div>
     
-        <div id="speedCom"></div>
+        <div id="speedCom">
+            <h5>Speed:<h3 id="speedVsPT"></h3>
+            </h5>
+        </div>
     
+        <div id=health>
+            <div id="exercise">
+                <h5>Daily excercise: <h3 id="dailyExcer"></h3>
+                </h5>
+                <h5>Weekly excercise: <h3 id="weeklyExcer"></h3>
+                </h5>
+                <h5>Yearly excercise: <h3 id="yearlyExcer"></h3>
+                </h5>
+            </div>
+
+
+
+            <div id="calories">
+                <h5>Daily calories:<h3 id="dailyKcals"></h3>
+                </h5>
+                <h5>Weekly calories:<h3 id="weeklyKcals"></h3>
+                </h5>
+                <h5>Yearly calories:<h3 id="yearlyKcals"></h3>
+                </h5>
+            </div>
+        </div>
     </section>
     
     
