@@ -21,7 +21,8 @@ let inputChoiceFrom = "";
 let inputChoiceTo = "";
 let inputFromEle = document.getElementById("from");
 let inputToEle = document.getElementById("to");
-
+let fromSuggestions = document.getElementById("fromSuggestions");
+let toSuggestions = document.getElementById("toSuggestions");
 
 
 
@@ -92,26 +93,48 @@ const suggestionsAuto =  (inp, obj) => {
 
     inp.addEventListener("input", function(){
         let value = this.value;
-        console.log(value);
+        closeAllLists();
+        let li;
+        
         //close all lists 
         if(!value){return false};
         let objKeys = Object.keys(obj);
             for (let i = 0; i < objKeys.length; i++) {
                 //console.log(objKeys[i]);
-                const goopta = obj[objKeys[i]];
-                for (let j = 0; j < goopta.length; j++) {
-                  //  console.log(goopta[j]);
-                    if (goopta[j].substr(0, value.length).toUpperCase() == value.toUpperCase()){
-                        console.log(goopta[j]);
-                        console.log(objKeys[i]);
+                const objValues = obj[objKeys[i]];
+                for (let j = 0; j < objValues.length; j++) {
+                  //  console.log(objValues[j]);
+                    if (objValues[j].substr(0, value.length).toUpperCase() == value.toUpperCase()){
+                        
+                        li = document.createElement("LI");
+                        li.innerHTML = "<strong>" + objValues[j].substr(0, value.length) + "</strong>";
+                        li.innerHTML += objValues[j].substr(value.length);
+                        li.classList.add("list-group-item");
+                        li.classList.add("list-group-item-action");
+                        li.classList.add(objKeys[i]);
+                        li.innerHTML += "<input type='hidden' value='" + objValues[j] + "'>";
+                        li.addEventListener("click" ,function(){
+                            inp.value = this.getElementsByTagName("input")[0].value;
+                            closeAllLists();
+                        })
+                        inp.id == "from" ? fromSuggestions.appendChild(li): toSuggestions.appendChild(li);
+                        
                     }
-                }
-                
+                }  
             }
-
-
-
     })
+    function closeAllLists() {
+        /*close all autocomplete lists in the document,
+        except the one passed as an argument:*/
+        let f = document.getElementById("fromSuggestions");
+            f.innerHTML="";
+        let t = document.getElementById("toSuggestions");
+            t.innerHTML="";
+      }
+
+      document.addEventListener("click", function (e) {
+        closeAllLists(e.target);
+    });
 }
 
 
@@ -164,7 +187,7 @@ axios.get(`${tflApi}${tflJour}${from}/to/${to}${tflModes}`, {
                         fromToArgs[0] = ele.parameterValue;
                         if (fromToArgs.length == 2){
                             journeyPlan(fromToArgs[0], fromToArgs[1]);
-                            document.getElementById("journey").classList.add("hideCard");
+                            
                         }
                         document.getElementById("fromOptions").classList.add("hideCard");
                         
@@ -307,7 +330,7 @@ axios.get(`${tflApi}${tflJour}${from}/to/${to}${tflModes}`, {
                     weeklyKcals.innerHTML = "Your weekly calories burned is around " + Math.round(((bikeDuration * 9.52)*2)*5) + " kcals";
                     yearlyKcals.innerHTML = "Your yearly calories burned is around " + Math.round((bikeDuration * 9.52)*522) + " kcals";
 
-
+                    document.getElementById("journey").classList.remove("hideCard");
                 })               
         }
     })
@@ -731,7 +754,7 @@ const hrsAndMins = (n) => {
     "Bank Underground Station",
     "Waterloo Underground Station"
     ],
-    LondonOverground:[
+    londonOverground:[
     "Acton Central Rail Station",
     "Anerley Rail Station",
     "Barking Rail Station",
@@ -969,3 +992,4 @@ const hrsAndMins = (n) => {
     ]} ;
     console.log(autoStations);
     suggestionsAuto(inputFromEle,autoStations);
+    suggestionsAuto(inputToEle,autoStations);

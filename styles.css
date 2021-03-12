@@ -107,7 +107,7 @@ ul {
     --tramColor:#6c0;
 
 }
-.bakerloo::before {
+.bakerloo::before ,.bakerloo::after {
     background-color: var(--bakerlooColor);
 }
 .bakerloo+ul>li:before{
@@ -117,7 +117,7 @@ ul {
     background-color: var(--bakerlooColor)
 }
 
-.central::before{
+.central::before, .central::after {
     background-color: var(--centralColor);
 }
 .central+ul>li:before{
@@ -127,7 +127,7 @@ ul {
     background-color: var(--centralColor);
 }
 
-.circle::before{
+.circle::before, .circle::after {
     background-color: var(--circleColor);
 }
 .circle+ul>li:before{
@@ -136,7 +136,7 @@ ul {
 .circle+ul>li:after{
     background-color: var(--circleColor);
 }
-.district::before{
+.district::before, .district::after{
     background-color: var(--districtColor);
 }
 .district+ul>li:before{
@@ -145,7 +145,7 @@ ul {
 .district+ul>li:after{
     background-color: var(--districtColor);
 }
-.HAC::before{
+.HAC::before, .HAC::after{
     background-color: var(--HACColor);
 }
 .HAC+ul>li:before{
@@ -154,7 +154,7 @@ ul {
 .HAC+ul>li:after{
     background-color: var(--HACColor);
 }
-.jubilee::before{
+.jubilee::before, .jubilee::after{
     background-color: var(--jubileeColor);
 }
 .jubilee+ul>li:before{
@@ -163,7 +163,7 @@ ul {
 .jubilee+ul>li:after{
     background-color: var(--jubileeColor);
 }
-.metropolitan::before{
+.metropolitan::before, .metropolitan::after{
     background-color: var(--metropolitanColor);
 }
 .metropolitan+ul>li:before{
@@ -172,7 +172,7 @@ ul {
 .metropolitan+ul>li:after{
     background-color: var(--metropolitanColor);
 }
-.northern::before{
+.northern::before, .northern::after{
     background-color: var(--northernColor);
 }
 .northern+ul>li:before{
@@ -181,7 +181,7 @@ ul {
 .northern+ul>li:after{
     background-color: var(--northernColor);
 }
-.piccadilly::before{
+.piccadilly::before, .piccadilly::after{
     background-color: var(--piccadillyColor);
 }
 .piccadilly+ul>li:before{
@@ -190,7 +190,7 @@ ul {
 .piccadilly+ul>li:after{
     background-color: var(--piccadillyColor);
 }
-.victoria::before{
+.victoria::before, .victoria::after{
     background-color:  var(--victoriaColor);
 }
 .victoria+ul>li:before{
@@ -199,7 +199,7 @@ ul {
 .victoria+ul>li:after{
     background-color:  var(--victoriaColor);
 }
-.WAC::before{
+.WAC::before, .WAC::after{
     background-color: var(--WACColor);
 }
 .WAC+ul>li:before{
@@ -208,7 +208,7 @@ ul {
 .WAC+ul>li:after{
     background-color: var(--WACColor);
 }
-.londonOverground::before{
+.londonOverground::before, .londonOverground::after{
     background-color: var(--londonOvergroundColor)
 }
 .londonOverground+ul>li:before{
@@ -217,7 +217,7 @@ ul {
 .londonOverground+ul>li:after{
     background-color: var(--londonOvergroundColor)
 }
-.tflRail::before{
+.tflRail::before, .tflRail::after{
     background-color: var(--tflRailColor);
 }
 .tflRail+ul>li:before{
@@ -226,7 +226,7 @@ ul {
 .tflRail+ul>li:after{
     background-color: var(--tflRailColor);
 }
-.DLR::before{
+.DLR::before, .DLR::after{
     background-color: var(--DLRColor);
 }
 .DLR+ul>li:before{
@@ -235,7 +235,7 @@ ul {
 .DLR+ul>li:after{
     background-color: var(--DLRColor);
 }
-.tram::before{
+.tram::before, .tram::after{
     background-color: var(--tramColor);
 }
 .tram+ul>li:before{
@@ -296,4 +296,19 @@ ul {
     height: 50vw;
     display: block;
     padding-top: 1rem;
+}
+
+#fromSuggestions {
+    max-height: 15rem;
+    overflow: overlay;
+}
+#fromSuggestions  li {
+    padding-left: 3.5rem;
+}
+#toSuggestions {
+    max-height: 15rem;
+    overflow: overlay;
+}
+#toSuggestions li {
+    padding-left: 3.5rem;
 }

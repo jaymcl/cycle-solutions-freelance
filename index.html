@@ -12,7 +12,7 @@
     
     <h1>Reroute my commute</h1>
     <div>
-        <img id="backIllu" src="backpngNoGap.png">
+        <!-- <img id="backIllu" src="backpngNoGap.png"> -->
     </div>
     
     <section id="inputsSection">
@@ -24,11 +24,7 @@
             <input  type="text" class="form-control " id="from"placeholder="Postcode / Station" aria-label="postcode or station" aria-describedby="basic-addon1">
         </div>
         <ul id="fromSuggestions" class="list-group list-group-flush stations">
-            <li class=" bakerloo list-group-item list-group-item-action">Baker Street Underground Station </li>
-            <li class=" jubilee list-group-item list-group-item-action">kilburn </li>
-            <li class=" HAC list-group-item list-group-item-action">kilburn </li>
-            <li class=" central list-group-item list-group-item-action">boogaloo </li>
-            <li class=" jubilee list-group-item list-group-item-action">willesden green </li>
+           
         </ul>
         
         <ul class="list-group list-group-flush accordian" id="fromAccordion">
@@ -717,6 +713,12 @@
             </div>
             <input type="text" class="form-control" id="to" placeholder="Postcode / Station" aria-label="postcode or station" aria-describedby="basic-addon1">  
         </div>
+        <ul id="toSuggestions" class="list-group list-group-flush stations">
+           
+        </ul>
+
+
+
         <ul class="list-group list-group-flush accordian" id="toAccordion">
             <li class="list-group-item list-group-item-action" id="toButtonHeading" data-toggle="collapse" data-target="#toPickerButton" aria-expanded="true" aria-controls="toPickerButton">Station Picker</li>
         </ul>
@@ -1402,7 +1404,7 @@
         
     </section>
 
-    <section id="journey">
+    <section id="journey" class="hideCard" >
         <div id="api">
             <h3></h3>
         </div>
@@ -1419,7 +1421,7 @@
             </h5>
             <div >
                 <h5>If this money was invested for 10 years <h3 id="invested")></h3></h5>
-                <p>**based on 10year average returns 13.5% p/a (Vanguard Total Stock Market Index Fund Admiral Shares (VTSAX))</p>
+                <p>*Based on 10year average returns 13.5% p/a (Vanguard Total Stock Market Index Fund Admiral Shares (VTSAX))</p>
             </div>    
         </div>
             
