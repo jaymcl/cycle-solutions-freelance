@@ -18,7 +18,7 @@
         <!-- <img id="backIllu" src="backpngNoGap.png"> -->
     </div>
     
-    <section id="inputsSection">
+    <section id="inputsSection" class="inputsSection">
         <div class="container" >
         <div id="fromInput" class="input-group ">           
             <input  type="text" autocomplete="off" required id="from" aria-label="postcode or station">
@@ -1395,21 +1395,55 @@
                 </div>
             </div>
         </div>
+    </section>
 
     </div>
-
         <button id="goButton"type="button" class="btn btn-dark" onclick="getInputValue();">GO!</button>
     </div>
 
-        
-        
-        
-    </section>
+    
+    
+
+
+
+
+
 
     <section id="journey" class="hideCard" >
-        <div id="api">
+        <div id="journeyLocs" >
+            <h3></h3>
+            <label>To</label>
             <h3></h3>
         </div>
+        
+            
+        
+        <div id="commuteTime">
+            <h2 id="commuteTitle">Commute Time</h2>
+            <div class="containerButtons" id="commuteButtons">
+                <div class="custoBut custoButInvert" onclick="CommuteButtonsTog(this)">Daily</div>
+                <div class="custoBut" onclick="CommuteButtonsTog(this)">Weekly</div>
+                <div class="custoBut" onclick="CommuteButtonsTog(this)">Monthly</div>
+                <div class="custoBut" onclick="CommuteButtonsTog(this)">Yearly</div>
+            </div>
+            <div class="grid-container">
+                <Label class="gridItemLabel" >Public transport:</Label>
+                <h3 class="gridItemH3" id="mins"></h3>
+            </div>
+            <div class="grid-container">
+                <Label class="gridItemLabel" >Bicycle:</Label>
+                <h3 class="gridItemH3" id="bike"></h3>
+            </div>
+            <div class="grid-container">
+                <Label class="gridItemLabel" >Time saved:</Label>
+                <h3 class="gridItemH3" id="speedVsPT"></h3>
+            </div>
+            
+            
+            
+        </div>    
+            
+
         <div id="cashMoney">
             <div id="fare">
             </div>
@@ -1427,14 +1461,8 @@
             </div>    
         </div>
             
-        <div id="mins"></div>
-    
-        <div id="bike"></div>
-    
-        <div id="speedCom">
-            <h5>Speed:<h3 id="speedVsPT"></h3>
-            </h5>
-        </div>
+        
+        
     
         <div id=health>
             <div id="exercise">

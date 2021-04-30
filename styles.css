@@ -1,8 +1,41 @@
-#inputsSection {
+.inputsSection {
     width:90vw;
     margin: 0 auto;
-    padding: 2%;
+    height: 16rem;
 }
+
+.hideInputsSection{
+    height: 0; 
+    overflow: hidden; 
+    width: 0; 
+    transition: all 1s ease;
+    margin: 0 auto;
+}
+
+#fromHeader {
+    color: white;
+    background: black;
+    border: 1px solid black;
+    border-radius: 0%;
+}
+
+#toHeader {
+    color: white;
+    background: black;
+    border: 1px solid black;
+    border-radius: 0%;
+}
+
+#fromOptions {
+    border: 1px solid black;
+    padding-top: 1px;
+}
+
+#toOptions {
+    border: 1px solid black;
+    padding-top: 1px;
+}
+
 #fromInput{
     width: 100%;
     position: relative;
@@ -146,6 +179,7 @@ body{
     display: block;
     margin: auto;
     margin-top: 2rem;
+    margin-bottom: 3rem;
     background-color: #000;
     font-weight: 800;
 }
@@ -155,7 +189,7 @@ h1{
     text-align: center;
     font-size: 2rem;
     font-weight: 800;
-    margin-top: 20vw;
+    margin-top: 5rem;
     margin-bottom: 2.5rem;
 }
 
@@ -176,6 +210,7 @@ h1{
 #journey{
     text-align: center;
     margin:auto;
+    
 }
 
 img {
@@ -402,8 +437,8 @@ ul {
 }
 .stations>li{
     padding:0;
-    line-height: 3.5;
-    font-size: 14px;
+    line-height: 4;
+    font-size: 12px;
     max-width: 90vw;
     
     
@@ -449,5 +484,74 @@ ul {
 }
 #toSuggestions li {
     padding-left: 3.5rem;
+}
+
+h3{
+    font-weight: 600;
+}
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 20px;
+    padding: 2rem;
+}
+
+#commuteTime {
+    background: black;
+    color: white;
+    margin-top: 2rem;
+}
+
+#commuteTitle {
+    font-weight: 800;
+    padding: 1rem;
+    padding-top: 2rem;
+}
+
+.containerButtons {
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.custoBut {
+    background: white;
+    color: black;
+    border: 1px solid black;
+    border-radius: 4px;
+    width: 4rem;
+    text-align: center;
+    padding: 4px;
+    font-size: 12px;
+    font-weight: bold;
+}
+.custoButInvert{
+    background: black;
+    color: white;
+    border: 1px solid white;
+    border-radius: 4px;
+    width: 4rem;
+    text-align: center;
+    padding: 4px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+#journeyLocs{
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.gridItemLabel {
+    text-align: right;
+    align-self: center;
+}
+
+.gridItemH3 {
+    text-align: left;
+    font-size: 2rem;
 }
 

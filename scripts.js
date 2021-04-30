@@ -1,5 +1,5 @@
 
-let divApi = document.getElementById("api");
+let journeyLocs = document.getElementById("journeyLocs");
 let divMins = document.getElementById("mins");
 let divBike = document.getElementById("bike");
 let divFare = document.getElementById("fare");
@@ -23,6 +23,26 @@ let inputFromEle = document.getElementById("from");
 let inputToEle = document.getElementById("to");
 let fromSuggestions = document.getElementById("fromSuggestions");
 let toSuggestions = document.getElementById("toSuggestions");
+let inputSection = document.getElementById("inputsSection");
+let goButton = document.getElementById("goButton");
+let commuteButtons = document.getElementById("commuteButtons");
+
+const CommuteButtonsTog = (ele) => {
+    if(!ele.classList.contains("custoButInvert")){
+        for (let index = 0; index < commuteButtons.children.length; index++) {
+            if(commuteButtons.children[index].classList.contains("custoButInvert")){
+                commuteButtons.children[index].classList.remove("custoButInvert");
+            };
+            
+        }
+        ele.classList.add("custoButInvert");
+        
+    }
+    
+
+}
+
+
 
 
 
@@ -148,6 +168,7 @@ const getInputValue = () => {
     inputChoiceFrom = inputChoiceFrom.replace(/\&/g, '');
     inputChoiceTo = inputChoiceTo.replace(/\&/g, '');
     journeyPlan(inputChoiceFrom, inputChoiceTo);
+    goButton.innerHTML = "LOADING.";
 }
 
 // function to get data from api and assign to variables/elements
@@ -222,6 +243,8 @@ axios.get(`${tflApi}${tflJour}${from}/to/${to}${tflModes}`, {
             };
             
         }else {
+            inputSection.classList.toggle("inputsSection");
+            inputSection.classList.toggle("hideInputsSection");
             let contentParse = res.data;
             let toLeng = contentParse.journeys[0].legs.length -1;
             let legArray = contentParse.journeys[0].legs;
@@ -301,8 +324,9 @@ axios.get(`${tflApi}${tflJour}${from}/to/${to}${tflModes}`, {
                                     to: contentParse.journeys[0].legs[toLeng].arrivalPoint.commonName,
                                     duration: contentParse.journeys[0].duration};
                                      //assigning to elements
-                                    divApi.firstElementChild.innerHTML= "From "+ results.from + "\n" + " to  " + results.to;
-                                    divMins.innerHTML = "This journey takes " + hrsAndMins(results.duration);
+                                    journeyLocs.children[0].innerHTML= results.from;
+                                    journeyLocs.children[2].innerHTML= results.to;
+                                    divMins.innerHTML = hrsAndMins(results.duration);
                                     console.log(from, to);
 
              axios.get(`${tflApi}${tflJour}${from}/to/${to}${tflBikeMode}`                                       
@@ -313,14 +337,16 @@ axios.get(`${tflApi}${tflJour}${from}/to/${to}${tflModes}`, {
                     bikeDuration = res.data.journeys[0].duration;
                     bikeDistance = res.data.journeys[0].legs[0].distance;
 
-                    divBike.innerHTML = "This journey takes " + hrsAndMins(bikeDuration) + " on a bike";
-                        if(bikeDuration < results.duration){
-                            speedVsPT.innerHTML = "Bike is actually faster by " + (results.duration - bikeDuration) + "mins per trip." + "\n" + "That is an extra " +(results.duration - bikeDuration)*2 +" mins saved a day! " + "\n" +  ((results.duration - bikeDuration)*2)*5 + "mins saved a week! or " + (results.duration - bikeDuration)*522 + "mins a year saved";
-                        }else if (bikeDuration == results.duration){
-                            speedVsPT.innerHTML = "Bike and public transport are the same speed";
-                        }else {
-                            speedVsPT.innerHTML = "public transport is faster, but only by " + (bikeDuration - results.duration) + "mins"; 
-                        };
+                    divBike.innerHTML =  hrsAndMins(bikeDuration);
+                    speedVsPT.innerHTML = hrsAndMins(results.duration - bikeDuration);
+                
+                        // if(bikeDuration < results.duration){
+                        //     speedVsPT.innerHTML = "Bike is actually faster by " + (results.duration - bikeDuration) + "mins per trip." + "\n" + "That is an extra " +(results.duration - bikeDuration)*2 +" mins saved a day! " + "\n" +  ((results.duration - bikeDuration)*2)*5 + "mins saved a week! or " + (results.duration - bikeDuration)*522 + "mins a year saved";
+                        // }else if (bikeDuration == results.duration){
+                        //     speedVsPT.innerHTML = "Bike and public transport are the same speed";
+                        // }else {
+                        //     speedVsPT.innerHTML = "public transport is faster, but only by " + (bikeDuration - results.duration) + "mins"; 
+                        // };
 
                     dailyExcer.innerHTML = "Your daily excercise is " + hrsAndMins((bikeDuration)*2) + " traveling "  + Math.round(((bikeDistance)/1609.344)*2) + " miles";  
                     weeklyExcer.innerHTML = "Your weekly excercise is " + hrsAndMins(((bikeDuration)*2)*5) + " traveling "  + Math.round((((bikeDistance)/1609.344)*2)*5) + " miles";  
@@ -329,8 +355,11 @@ axios.get(`${tflApi}${tflJour}${from}/to/${to}${tflModes}`, {
                     dailyKcals.innerHTML = "Your daily calories burned is around " + Math.round((bikeDuration * 9.52)*2) + " kcals";
                     weeklyKcals.innerHTML = "Your weekly calories burned is around " + Math.round(((bikeDuration * 9.52)*2)*5) + " kcals";
                     yearlyKcals.innerHTML = "Your yearly calories burned is around " + Math.round((bikeDuration * 9.52)*522) + " kcals";
-
+                    
                     document.getElementById("journey").classList.remove("hideCard");
+                    goButton.innerHTML = "REFRESH";
+                    goButton.removeAttribute("onclick");
+                    goButton.setAttribute("onclick","refreshPage()");
                 })               
         }
     })
@@ -349,6 +378,9 @@ const hrsAndMins = (n) => {
         return rhours + " hour(s) and " + rminutes + "minutes"  
     }}
 
+    function refreshPage(){
+        window.location.reload();
+    } 
  
 
    
@@ -990,6 +1022,5 @@ const hrsAndMins = (n) => {
     "Wimbledon Tram Stop",
     "Woodside Tram Stop"
     ]} ;
-    console.log(autoStations);
     suggestionsAuto(inputFromEle,autoStations);
     suggestionsAuto(inputToEle,autoStations);
