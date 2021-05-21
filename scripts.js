@@ -417,6 +417,7 @@ axios.get(`${tflApi}${tflJour}${from}/to/${to}${tflModes}`, {
                     goButton.innerHTML = "REFRESH";
                     goButton.style["margin-top"] = "0px";
                     goButton.removeAttribute("onclick");
+                    console.log("test");
                     goButton.setAttribute("onclick","refreshPage()");
                     document.getElementById("para").style.height = "0px";
                     document.getElementById("para").style["padding-bottom"] = "0px";
