@@ -190,7 +190,7 @@ h1{
     font-size: 2rem;
     font-weight: 800;
     margin-top: 5rem;
-    margin-bottom: 2.5rem;
+    margin-bottom: 2rem;
 }
 
 #basic-addon1{
@@ -561,11 +561,22 @@ h3{
 
 .gridItemH3 {
     text-align: left;
-    font-size: 2rem;
+    font-size: 3rem;
 }
 
 #exercise {
     background: black;
     color: white;
     margin-top: 2rem;
+}
+p{
+    text-align: center;
+    padding-top: 1rem;
+    padding-right: 2rem;
+    padding-bottom: 1rem;
+    padding-left: 2rem;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    height: 34vw;
+    margin:0;
 }

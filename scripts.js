@@ -10,7 +10,6 @@ let excer = document.getElementById("excer");
 
 let kcals = document.getElementById("kcals");
 
-
 let results={};
 let bikeDuration="";
 let inputChoiceFrom = "";
@@ -416,10 +415,16 @@ axios.get(`${tflApi}${tflJour}${from}/to/${to}${tflModes}`, {
                     
                     
                     goButton.innerHTML = "REFRESH";
+                    goButton.style["margin-top"] = "0px";
                     goButton.removeAttribute("onclick");
                     goButton.setAttribute("onclick","refreshPage()");
+                    document.getElementById("para").style.height = "0px";
+                    document.getElementById("para").style["padding-bottom"] = "0px";
                     document.getElementById("journey").style.height = "420vw";
-                    document.getElementById("journey").style.overflow = "";
+                    setTimeout(function(){ document.getElementById("journey").style.overflow = "visible";
+                    document.getElementById("journey").style.height = "0px";
+                    }, 2000);
+                    
                     
                 })               
         }
@@ -434,13 +439,19 @@ const hrsAndMins = (n) => {
     let minutes = (hours - rhours) * 60;
     let rminutes = Math.round(minutes);
     if ( num <= 60) {
-        return num + " minutes"
+        return num + " mins";
     } else {
         if(rhours == 1){
-            return rhours + " hour and " + rminutes + " minutes" 
+            if(rminutes == 0){
+                return rhours + " hr";
+            }
+            return rhours + " hr & " + rminutes + " mins";
         }
         else{
-            return rhours + " hours and " + rminutes + " minutes" 
+            if(rminutes == 0){
+                return rhours + " hrs"; 
+            }
+            return rhours + " hrs & " + rminutes + " mins"; 
         }
     }}
 
@@ -1087,6 +1098,6 @@ const hrsAndMins = (n) => {
     "West Croydon Tram Stop",
     "Wimbledon Tram Stop",
     "Woodside Tram Stop"
-    ]} ;
+    ]};
     suggestionsAuto(inputFromEle,autoStations);
     suggestionsAuto(inputToEle,autoStations);
