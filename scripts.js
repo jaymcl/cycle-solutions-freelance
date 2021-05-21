@@ -413,10 +413,14 @@ axios.get(`${tflApi}${tflJour}${from}/to/${to}${tflModes}`, {
                     kcals.innerHTML = Math.round(bikeDuration * 9.52) + " kcals";
                     
                     
-                    document.getElementById("journey").classList.remove("hideCard");
+                    
+                    
                     goButton.innerHTML = "REFRESH";
                     goButton.removeAttribute("onclick");
                     goButton.setAttribute("onclick","refreshPage()");
+                    document.getElementById("journey").style.height = "420vw";
+                    document.getElementById("journey").style.overflow = "";
+                    
                 })               
         }
     })
