@@ -1,20 +1,16 @@
 
 let journeyLocs = document.getElementById("journeyLocs");
-let divMins = document.getElementById("mins");
-let divBike = document.getElementById("bike");
-let divFare = document.getElementById("fare");
-let dailyFare =document.getElementById("dailyFare");
-let weeklyFare =document.getElementById("weeklyFare");
-let monthlyFare =document.getElementById("monthlyFare");
-let yearlyFare =document.getElementById("yearlyFare");
-let dailyExcer =document.getElementById("dailyExcer");
-let weeklyExcer =document.getElementById("weeklyExcer");
-let yearlyExcer =document.getElementById("yearlyExcer");
-let dailyKcals =document.getElementById("dailyKcals");
-let weeklyKcals =document.getElementById("weeklyKcals");
-let yearlyKcals =document.getElementById("yearlyKcals");
-let invested =document.getElementById("invested");
-let speedVsPT = document.getElementById("speedVsPT");
+let h3Mins = document.getElementById("mins");
+let h3Bike = document.getElementById("bike");
+let h3Compare = document.getElementById("h3Compare");
+
+let fare = document.getElementById("fare");
+
+let excer = document.getElementById("excer");
+
+let kcals = document.getElementById("kcals");
+
+
 let results={};
 let bikeDuration="";
 let inputChoiceFrom = "";
@@ -26,25 +22,43 @@ let toSuggestions = document.getElementById("toSuggestions");
 let inputSection = document.getElementById("inputsSection");
 let goButton = document.getElementById("goButton");
 let commuteButtons = document.getElementById("commuteButtons");
+let moneyButtons = document.getElementById("moneyButtons");
+let excerButtons = document.getElementById("excerButtons");
+let compareContainer = document.getElementById("compareContainer");
+let faresTotal = 0;
 
-const CommuteButtonsTog = (ele) => {
-    if(!ele.classList.contains("custoButInvert")){
-        for (let index = 0; index < commuteButtons.children.length; index++) {
-            if(commuteButtons.children[index].classList.contains("custoButInvert")){
-                commuteButtons.children[index].classList.remove("custoButInvert");
-            };
-            
+const buttonsTog = (ele) => {
+    if(ele.parentNode.id == "commuteButtons"){
+        if(!ele.classList.contains("custoButInvert")){
+            for (let index = 0; index < commuteButtons.children.length; index++) {
+                if(commuteButtons.children[index].classList.contains("custoButInvert")){
+                    commuteButtons.children[index].classList.remove("custoButInvert");
+                };
+            }
+            ele.classList.add("custoButInvert");
         }
-        ele.classList.add("custoButInvert");
-        
+    }else if (ele.parentNode.id == "moneyButtons"){
+        if(!ele.classList.contains("custoBut")){
+            for (let index = 0; index < moneyButtons.children.length; index++) {
+                if(moneyButtons.children[index].classList.contains("custoBut")){
+                    moneyButtons.children[index].classList.remove("custoBut");
+                    moneyButtons.children[index].classList.add("custoButInvert");
+                };
+            }
+            ele.classList.add("custoBut");
+            ele.classList.remove("custoButInvert");
+        }
+    }else if (ele.parentNode.id == "excerButtons"){
+        if(!ele.classList.contains("custoButInvert")){
+            for (let index = 0; index < excerButtons.children.length; index++) {
+                if(excerButtons.children[index].classList.contains("custoButInvert")){
+                    excerButtons.children[index].classList.remove("custoButInvert");
+                };
+            }
+            ele.classList.add("custoButInvert");
+        }
     }
-    
-
 }
-
-
-
-
 
 
 const showRemove = (ele) => {
@@ -77,10 +91,60 @@ const closeAllStations = (ele) => {
 
 document.getElementById("fromButtonHeading").addEventListener("click", () => {
     closeAllStations("from");
-})
+});
 document.getElementById("toButtonHeading").addEventListener("click", () => {
     closeAllStations("to");
-})
+});
+document.getElementById("commuteDaily").addEventListener("click", () => {
+    h3Mins.innerHTML = hrsAndMins(results.duration);
+    h3Bike.innerHTML = hrsAndMins(bikeDuration);
+    h3Compare.innerHTML= hrsAndMins(results.duration - bikeDuration);
+});
+document.getElementById("commuteWeekly").addEventListener("click", () => {
+    h3Mins.innerHTML = hrsAndMins((results.duration*5));
+    h3Bike.innerHTML = hrsAndMins((bikeDuration*5));
+    h3Compare.innerHTML= hrsAndMins((results.duration - bikeDuration)*5);
+});
+document.getElementById("commuteMonthly").addEventListener("click", () => {
+    h3Mins.innerHTML = hrsAndMins((results.duration*5)*4.3);
+    h3Bike.innerHTML = hrsAndMins((bikeDuration*5)*4.3);
+    h3Compare.innerHTML= hrsAndMins(((results.duration - bikeDuration)*5)*4.3);
+});
+document.getElementById("commuteYearly").addEventListener("click", () => {
+    h3Mins.innerHTML = hrsAndMins((results.duration*5)*52);
+    h3Bike.innerHTML = hrsAndMins((bikeDuration*5)*52);
+    h3Compare.innerHTML= hrsAndMins(((results.duration - bikeDuration)*5)*52);
+});
+
+document.getElementById("fareDailyBut").addEventListener("click",() => {
+    fare.innerHTML = "£" + (faresTotal*1).toFixed(2);
+});
+document.getElementById("fareWeeklyBut").addEventListener("click",() => {
+    fare.innerHTML = "£" + (faresTotal*5).toFixed(2);
+});
+document.getElementById("fareMonthlyBut").addEventListener("click",() => {
+    fare.innerHTML = "£" + (((faresTotal)*5)*4.3).toFixed(2);
+});
+document.getElementById("fareYearlyBut").addEventListener("click",() => {
+    fare.innerHTML = "£" + (((faresTotal)*5)*52).toFixed(2);
+});
+
+document.getElementById("exerciseDaily").addEventListener("click",() => {
+    excer.innerHTML = Math.round((bikeDistance)/1609.344) + " miles";                  
+    kcals.innerHTML = Math.round(bikeDuration * 9.52) + " kcals";
+});
+document.getElementById("exerciseWeekly").addEventListener("click",() => {
+    excer.innerHTML = Math.round(((bikeDistance)/1609.344)*5) + " miles";                  
+    kcals.innerHTML = Math.round((bikeDuration * 9.52)*5) + " kcals";
+});
+document.getElementById("exerciseMonthly").addEventListener("click",() => {
+    excer.innerHTML = Math.round((((bikeDistance)/1609.344)*5)*4.3) + " miles";                  
+    kcals.innerHTML = Math.round(((bikeDuration * 9.52)*5)*4.3) + " kcals";
+});
+document.getElementById("exerciseYearly").addEventListener("click",() => {
+    excer.innerHTML = Math.round((((bikeDistance)/1609.344)*5)*52) + " miles";                  
+    kcals.innerHTML = Math.round(((bikeDuration * 9.52)*5)*52) + " kcals";
+});
 
 let allStations = document.getElementsByClassName("stations");
 for (let index = 0; index < allStations.length; index++) {
@@ -283,39 +347,31 @@ axios.get(`${tflApi}${tflJour}${from}/to/${to}${tflModes}`, {
 
                         if (fareBoth[0].length >= 1)
                         {
-                            let faresTotal = (1.50 * fareBoth[0].length) + +res.data[0].rows[0].ticketsAvailable[res.data[0].rows[0].ticketsAvailable.length-1].cost ; 
-                            const fareYear = (faresTotal* 522).toFixed(2);
-                            divFare.innerHTML = "£" + faresTotal + " " + "£" + "PA:" + fareYear + " 10yr Returns: £" + compoundInt(10,fareYear).toFixed(2);
-                            dailyFare.innerHTML = "£" + (faresTotal*2).toFixed(2);
-                            weeklyFare.innerHTML = "£" + ((faresTotal*2)*5).toFixed(2);
-                            monthlyFare.innerHTML = "£" + (((faresTotal*2)*5)*4.3).toFixed(2);
-                            yearlyFare.innerHTML = "£" + fareYear;
-                            invested.innerHTML = "£" + compoundInt(10,fareYear).toFixed(2);
+                            faresTotal = (1.50 * fareBoth[0].length) + +res.data[0].rows[0].ticketsAvailable[res.data[0].rows[0].ticketsAvailable.length-1].cost ; 
+                            
+                            
+                            fare.innerHTML = "£" + (faresTotal*1).toFixed(2);
+                        
+                            
                             console.log(faresTotal)
                             console.log(fareBoth[0].length);
                         }else {
-                            let faresTotal = res.data[0].rows[0].ticketsAvailable[res.data[0].rows[0].ticketsAvailable.length-1].cost;
-                            const fareYear = (faresTotal* 522).toFixed(2);
-                            divFare.innerHTML = "£" + faresTotal + " " + "£" + "PA:" + fareYear + " 10yr Returns: £" + compoundInt(10,fareYear).toFixed(2);
-                            dailyFare.innerHTML = "£" + (faresTotal*2).toFixed(2);
-                            weeklyFare.innerHTML = "£" + ((faresTotal*2)*5).toFixed(2);
-                            monthlyFare.innerHTML = "£" + (((faresTotal*2)*5)*4.3).toFixed(2);
-                            yearlyFare.innerHTML = "£" + fareYear;
-                            invested.innerHTML = "£" + compoundInt(10,fareYear).toFixed(2);
+                            faresTotal = res.data[0].rows[0].ticketsAvailable[res.data[0].rows[0].ticketsAvailable.length-1].cost;
+                            
+                            fare.innerHTML = "£" + (faresTotal*1).toFixed(2);
+                            
+                            
 
                             console.log(faresTotal)
                         }
                     })
 
                 } else {
-                    faresTotal = fareBoth[0].length * 1.50.toFixed(2);
-                    const fareYear = (faresTotal* 522).toFixed(2);
-                    divFare.innerHTML = "£" + faresTotal + " " + "£" + "PA:" + fareYear + " 10yr Returns: £" + compoundInt(10,fareYear).toFixed(2);
-                    dailyFare.innerHTML = "£" + (faresTotal*2).toFixed(2);
-                    weeklyFare.innerHTML = "£" + ((faresTotal*2)*5).toFixed(2);
-                    monthlyFare.innerHTML = "£" + (((faresTotal*2)*5)*4.3).toFixed(2);
-                    yearlyFare.innerHTML = "£" + fareYear;
-                    invested.innerHTML = "£" + compoundInt(10,fareYear).toFixed(2);
+                     faresTotal = fareBoth[0].length * 1.50.toFixed(2);
+                    
+                    fare.innerHTML = "£" + (faresTotal).toFixed(2);
+                    
+                    
                     console.log(faresTotal);
                     console.log(fareBoth[0].length);
                 }
@@ -326,7 +382,7 @@ axios.get(`${tflApi}${tflJour}${from}/to/${to}${tflModes}`, {
                                      //assigning to elements
                                     journeyLocs.children[0].innerHTML= results.from;
                                     journeyLocs.children[2].innerHTML= results.to;
-                                    divMins.innerHTML = hrsAndMins(results.duration);
+                                    h3Mins.innerHTML = hrsAndMins(results.duration);
                                     console.log(from, to);
 
              axios.get(`${tflApi}${tflJour}${from}/to/${to}${tflBikeMode}`                                       
@@ -337,24 +393,25 @@ axios.get(`${tflApi}${tflJour}${from}/to/${to}${tflModes}`, {
                     bikeDuration = res.data.journeys[0].duration;
                     bikeDistance = res.data.journeys[0].legs[0].distance;
 
-                    divBike.innerHTML =  hrsAndMins(bikeDuration);
-                    speedVsPT.innerHTML = hrsAndMins(results.duration - bikeDuration);
-                
+                    h3Bike.innerHTML =  hrsAndMins(bikeDuration);
+                    if( results.duration - bikeDuration < 0){
+                        compareContainer.style.display = "none";
+                    }else {
+                    h3Compare.innerHTML = hrsAndMins(results.duration - bikeDuration);
+                    };
                         // if(bikeDuration < results.duration){
-                        //     speedVsPT.innerHTML = "Bike is actually faster by " + (results.duration - bikeDuration) + "mins per trip." + "\n" + "That is an extra " +(results.duration - bikeDuration)*2 +" mins saved a day! " + "\n" +  ((results.duration - bikeDuration)*2)*5 + "mins saved a week! or " + (results.duration - bikeDuration)*522 + "mins a year saved";
+                        //     h3Compare.innerHTML = "Bike is actually faster by " + (results.duration - bikeDuration) + "mins per trip." + "\n" + "That is an extra " +(results.duration - bikeDuration)*2 +" mins saved a day! " + "\n" +  ((results.duration - bikeDuration)*2)*5 + "mins saved a week! or " + (results.duration - bikeDuration)*522 + "mins a year saved";
                         // }else if (bikeDuration == results.duration){
-                        //     speedVsPT.innerHTML = "Bike and public transport are the same speed";
+                        //     h3Compare.innerHTML = "Bike and public transport are the same speed";
                         // }else {
-                        //     speedVsPT.innerHTML = "public transport is faster, but only by " + (bikeDuration - results.duration) + "mins"; 
+                        //     h3Compare.innerHTML = "public transport is faster, but only by " + (bikeDuration - results.duration) + "mins"; 
                         // };
 
-                    dailyExcer.innerHTML = "Your daily excercise is " + hrsAndMins((bikeDuration)*2) + " traveling "  + Math.round(((bikeDistance)/1609.344)*2) + " miles";  
-                    weeklyExcer.innerHTML = "Your weekly excercise is " + hrsAndMins(((bikeDuration)*2)*5) + " traveling "  + Math.round((((bikeDistance)/1609.344)*2)*5) + " miles";  
-                    yearlyExcer.innerHTML = "Your yearly excercise is " + hrsAndMins((bikeDuration)*522) + " traveling "  + Math.round(((bikeDistance)/1609.344)*522) + " miles";  
+                    excer.innerHTML = Math.round((bikeDistance)/1609.344) + " miles";  
                     
-                    dailyKcals.innerHTML = "Your daily calories burned is around " + Math.round((bikeDuration * 9.52)*2) + " kcals";
-                    weeklyKcals.innerHTML = "Your weekly calories burned is around " + Math.round(((bikeDuration * 9.52)*2)*5) + " kcals";
-                    yearlyKcals.innerHTML = "Your yearly calories burned is around " + Math.round((bikeDuration * 9.52)*522) + " kcals";
+                    
+                    kcals.innerHTML = Math.round(bikeDuration * 9.52) + " kcals";
+                    
                     
                     document.getElementById("journey").classList.remove("hideCard");
                     goButton.innerHTML = "REFRESH";
@@ -372,10 +429,15 @@ const hrsAndMins = (n) => {
     let rhours = Math.floor(hours);
     let minutes = (hours - rhours) * 60;
     let rminutes = Math.round(minutes);
-    if ( num < 60) {
+    if ( num <= 60) {
         return num + " minutes"
     } else {
-        return rhours + " hour(s) and " + rminutes + "minutes"  
+        if(rhours == 1){
+            return rhours + " hour and " + rminutes + " minutes" 
+        }
+        else{
+            return rhours + " hours and " + rminutes + " minutes" 
+        }
     }}
 
     function refreshPage(){
@@ -519,7 +581,7 @@ const hrsAndMins = (n) => {
     "Earl's Court Underground Station",
     "East Ham Underground Station",
     "East Putney Underground Station",
-    "Edgware Road (Circle Line) Underground Station",
+    "Edgware Road (District Line) Underground Station",
     "Elm Park Underground Station",
     "Embankment Underground Station",
     "Fulham Broadway Underground Station",
@@ -570,7 +632,7 @@ const hrsAndMins = (n) => {
     "Bow Road Underground Station",
     "Bromley-by-Bow Underground Station",
     "East Ham Underground Station",
-    "Edgware Road (Circle Line) Underground Station",
+    "Edgware Road (H&C Line) Underground Station",
     "Euston Square Underground Station",
     "Farringdon Underground Station",
     "Goldhawk Road Underground Station",

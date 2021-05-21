@@ -1419,12 +1419,12 @@
             
         
         <div id="commuteTime">
-            <h2 id="commuteTitle">Commute Time</h2>
+            <h2 class="titles" >Commute Time</h2>
             <div class="containerButtons" id="commuteButtons">
-                <div class="custoBut custoButInvert" onclick="CommuteButtonsTog(this)">Daily</div>
-                <div class="custoBut" onclick="CommuteButtonsTog(this)">Weekly</div>
-                <div class="custoBut" onclick="CommuteButtonsTog(this)">Monthly</div>
-                <div class="custoBut" onclick="CommuteButtonsTog(this)">Yearly</div>
+                <div class="custoBut custoButInvert" onclick="buttonsTog(this)" id="commuteDaily">Daily</div>
+                <div class="custoBut" onclick="buttonsTog(this)" id="commuteWeekly">Weekly</div>
+                <div class="custoBut" onclick="buttonsTog(this)" id="commuteMonthly">Monthly</div>
+                <div class="custoBut" onclick="buttonsTog(this)" id="commuteYearly">Yearly</div>
             </div>
             <div class="grid-container">
                 <Label class="gridItemLabel" >Public transport:</Label>
@@ -1434,57 +1434,44 @@
                 <Label class="gridItemLabel" >Bicycle:</Label>
                 <h3 class="gridItemH3" id="bike"></h3>
             </div>
-            <div class="grid-container">
+            <div class="grid-container" id="compareContainer">
                 <Label class="gridItemLabel" >Time saved:</Label>
-                <h3 class="gridItemH3" id="speedVsPT"></h3>
+                <h3 class="gridItemH3" id="h3Compare"></h3>
             </div>
-            
-            
-            
         </div>    
-            
 
-        <div id="cashMoney">
-            <div id="fare">
+        <div id="fares">
+            <h2 class="titles" >Money saved</h2>
+            <div class="containerButtons" id="moneyButtons">
+                <div class="custoBut " onclick="buttonsTog(this)" id="fareDailyBut">Daily</div>
+                <div class=" custoButInvert" onclick="buttonsTog(this)" id="fareWeeklyBut">Weekly</div>
+                <div class=" custoButInvert" onclick="buttonsTog(this)" id="fareMonthlyBut">Monthly</div>
+                <div class=" custoButInvert" onclick="buttonsTog(this)" id="fareYearlyBut">Yearly</div>
             </div>
-            <h5>Daily commute cost:<h3 id="dailyFare"></h3>
-            </h5>
-            <h5>Weekly commute cost:<h3 id="weeklyFare"></h3>
-            </h5>
-            <h5>Monthly commute cost:<h3 id="monthlyFare"></h3>
-            </h5>
-            <h5>Yearly commute cost:<h3 id="yearlyFare"></h3>
-            </h5>
-            <div >
-                <h5>If this money was invested for 10 years <h3 id="invested")></h3></h5>
-                <p>*Based on 10year average returns 13.5% p/a (Vanguard Total Stock Market Index Fund Admiral Shares (VTSAX))</p>
+            <div class="grid-container">
+                <Label class="gridItemLabel" >Fare:</Label>
+                <h3 class="gridItemH3" id="fare"></h3>
             </div>    
         </div>
-            
-        
-        
-    
-        <div id=health>
-            <div id="exercise">
-                <h5>Daily excercise: <h3 id="dailyExcer"></h3>
-                </h5>
-                <h5>Weekly excercise: <h3 id="weeklyExcer"></h3>
-                </h5>
-                <h5>Yearly excercise: <h3 id="yearlyExcer"></h3>
-                </h5>
+
+        <div id="exercise">
+            <h2 class="titles" >Exercise benefits</h2>
+            <div class="containerButtons" id="excerButtons">
+                <div class="custoBut custoButInvert" onclick="buttonsTog(this)" id="exerciseDaily">Daily</div>
+                <div class="custoBut" onclick="buttonsTog(this)" id="exerciseWeekly">Weekly</div>
+                <div class="custoBut" onclick="buttonsTog(this)" id="exerciseMonthly">Monthly</div>
+                <div class="custoBut" onclick="buttonsTog(this)" id="exerciseYearly">Yearly</div>
             </div>
-
-
-
-            <div id="calories">
-                <h5>Daily calories:<h3 id="dailyKcals"></h3>
-                </h5>
-                <h5>Weekly calories:<h3 id="weeklyKcals"></h3>
-                </h5>
-                <h5>Yearly calories:<h3 id="yearlyKcals"></h3>
-                </h5>
-            </div>
+            <div class="grid-container">
+                <Label class="gridItemLabel">Distance travelled:</Label>
+                <h3 class="gridItemH3" id="excer"></h3>
+            </div>    
+            <div class="grid-container">
+                <Label class="gridItemLabel" >Calories burned:</Label>
+                <h3 class="gridItemH3" id="kcals"></h3>
+            </div>    
         </div>
+
     </section>
     
     

@@ -504,7 +504,7 @@ h3{
     margin-top: 2rem;
 }
 
-#commuteTitle {
+.titles {
     font-weight: 800;
     padding: 1rem;
     padding-top: 2rem;
@@ -524,9 +524,11 @@ h3{
     border-radius: 4px;
     width: 4rem;
     text-align: center;
-    padding: 4px;
+    
     font-size: 12px;
     font-weight: bold;
+    height: 35px;
+    padding-top: 0.6rem;
 }
 .custoButInvert{
     background: black;
@@ -535,9 +537,13 @@ h3{
     border-radius: 4px;
     width: 4rem;
     text-align: center;
-    padding: 4px;
     font-size: 12px;
     font-weight: bold;
+    height: 35px;
+    padding-top: 0.6rem;
+   
+    
+    
 }
 
 #journeyLocs{
@@ -555,3 +561,8 @@ h3{
     font-size: 2rem;
 }
 
+#exercise {
+    background: black;
+    color: white;
+    margin-top: 2rem;
+}
