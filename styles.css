@@ -189,8 +189,8 @@ h1{
     text-align: center;
     font-size: 2rem;
     font-weight: 800;
-    margin-top: 2rem;
-    
+    margin-top: 1rem;
+    margin-bottom: 0;
 }
 
 #basic-addon1{
@@ -441,7 +441,7 @@ ul {
 .stations>li{
     padding:0;
     line-height: 4;
-    font-size: 12px;
+    font-size: 11px;
     max-width: 90vw;
     
     
@@ -573,10 +573,20 @@ p{
     text-align: center;
     padding-top: 1rem;
     padding-right: 2rem;
-    padding-bottom: 1rem;
+    padding-bottom: 0.5rem;
     padding-left: 2rem;
     transition: all 0.3s ease;
     overflow: hidden;
-    height: 8rem;
+    height: 5rem;
     margin:0;
+    font-size:0.8rem;
+}
+
+h3>span{
+    font-size: 2rem;
+}
+
+.container {
+    padding-left: 0;
+    padding-right: 0;
 }

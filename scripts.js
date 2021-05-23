@@ -164,14 +164,6 @@ for (let index = 0; index < allStations.length; index++) {
     }
 }
 
-const compoundInt = (years, principle) =>{
-    let counter= 0;
-    for (let index = 0; index < years;  index++) {
-        counter = +counter + +principle
-        counter = +counter * 1.135;
-    } return counter  
-}
-
 const suggestionsAuto =  (inp, obj) => { 
 
     inp.addEventListener("input", function(){
@@ -398,13 +390,6 @@ axios.get(`${tflApi}${tflJour}${from}/to/${to}${tflModes}`, {
                     }else {
                     h3Compare.innerHTML = hrsAndMins(results.duration - bikeDuration);
                     };
-                        // if(bikeDuration < results.duration){
-                        //     h3Compare.innerHTML = "Bike is actually faster by " + (results.duration - bikeDuration) + "mins per trip." + "\n" + "That is an extra " +(results.duration - bikeDuration)*2 +" mins saved a day! " + "\n" +  ((results.duration - bikeDuration)*2)*5 + "mins saved a week! or " + (results.duration - bikeDuration)*522 + "mins a year saved";
-                        // }else if (bikeDuration == results.duration){
-                        //     h3Compare.innerHTML = "Bike and public transport are the same speed";
-                        // }else {
-                        //     h3Compare.innerHTML = "public transport is faster, but only by " + (bikeDuration - results.duration) + "mins"; 
-                        // };
 
                     excer.innerHTML = Math.round((bikeDistance)/1609.344) + " miles";  
                     
