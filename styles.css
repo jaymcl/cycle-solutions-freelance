@@ -190,7 +190,7 @@ h1{
     font-size: 2rem;
     font-weight: 800;
     margin-top: 2rem;
-    margin-bottom: 2rem;
+    
 }
 
 #basic-addon1{
@@ -577,6 +577,6 @@ p{
     padding-left: 2rem;
     transition: all 0.3s ease;
     overflow: hidden;
-    height: 10rem;
+    height: 8rem;
     margin:0;
 }
