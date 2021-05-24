@@ -562,6 +562,7 @@ h3{
 .gridItemH3 {
     text-align: left;
     font-size: 3rem;
+    
 }
 
 #exercise {
@@ -589,4 +590,18 @@ h3>span{
 .container {
     padding-left: 0;
     padding-right: 0;
+}
+
+.opac0{
+    opacity: 0;
+
+}
+.opac1{
+    transition: all 0.5s ease 0s;
+    opacity: 1;
+}
+
+.row{
+    margin-right: 0;
+    margin-left: 0;
 }
