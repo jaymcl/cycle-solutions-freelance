@@ -201,10 +201,10 @@ const suggestionsAuto =  (inp, obj) => {
         if(!value){return false};
         let objKeys = Object.keys(obj);
             for (let i = 0; i < objKeys.length; i++) {
-                //console.log(objKeys[i]);
+                
                 const objValues = obj[objKeys[i]];
                 for (let j = 0; j < objValues.length; j++) {
-                  //  console.log(objValues[j]);
+                  
                     if (objValues[j].substr(0, value.length).toUpperCase() == value.toUpperCase()){
                         
                         li = document.createElement("LI");
@@ -271,7 +271,7 @@ axios.get(`${tflApi}${tflJour}${from}/to/${to}${tflModes}`, {
         console.log(error);
     }
     ).then((res) => {
-        console.log(res);
+        
         if (res.status == "300"){
             let fromToArgs = [];
             let DisOptions = res.data;
@@ -350,7 +350,7 @@ axios.get(`${tflApi}${tflJour}${from}/to/${to}${tflModes}`, {
                 
                           
                 let fareBoth = fareFind(legArray);
-                console.log(fareBoth);
+                
                 if (fareBoth[1].length > 0){
                     axios.get(`https://api.tfl.gov.uk/Stoppoint/${fareBoth[1][0].departurePoint.naptanId}/FareTo/${fareBoth[1][fareBoth[1].length - 1].arrivalPoint.naptanId}`
                     ).catch((error) => {
@@ -358,7 +358,7 @@ axios.get(`${tflApi}${tflJour}${from}/to/${to}${tflModes}`, {
                         console.log(error);
                     }
                     ).then((res) => {
-                        console.log(res);
+                        
                         
                         
 
@@ -370,8 +370,7 @@ axios.get(`${tflApi}${tflJour}${from}/to/${to}${tflModes}`, {
                             fare.innerHTML = "£" + (faresTotal*1).toFixed(2);
                         
                             
-                            console.log(faresTotal)
-                            console.log(fareBoth[0].length);
+                            
                         }else {
                             faresTotal = res.data[0].rows[0].ticketsAvailable[res.data[0].rows[0].ticketsAvailable.length-1].cost;
                             
@@ -379,7 +378,7 @@ axios.get(`${tflApi}${tflJour}${from}/to/${to}${tflModes}`, {
                             
                             
 
-                            console.log(faresTotal)
+                            
                         }
                     })
 
@@ -389,8 +388,7 @@ axios.get(`${tflApi}${tflJour}${from}/to/${to}${tflModes}`, {
                     fare.innerHTML = "£" + (faresTotal).toFixed(2);
                     
                     
-                    console.log(faresTotal);
-                    console.log(fareBoth[0].length);
+                   
                 }
 
             results = {from: contentParse.journeys[0].legs[0].departurePoint.commonName,
@@ -400,7 +398,7 @@ axios.get(`${tflApi}${tflJour}${from}/to/${to}${tflModes}`, {
                                     journeyLocs.children[0].innerHTML= results.from;
                                     journeyLocs.children[2].innerHTML= results.to;
                                     h3Mins.innerHTML = hrsAndMins(results.duration);
-                                    console.log(from, to);
+                                    
 
              axios.get(`${tflApi}${tflJour}${from}/to/${to}${tflBikeMode}`                                       
                 ).catch((error) => {
@@ -428,7 +426,7 @@ axios.get(`${tflApi}${tflJour}${from}/to/${to}${tflModes}`, {
                     goButton.innerHTML = "REFRESH";
                     goButton.style["margin-top"] = "0px";
                     goButton.removeAttribute("onclick");
-                    console.log("test");
+                   
                     goButton.setAttribute("onclick","refreshPage()");
                     document.getElementById("para").style.height = "0px";
                     document.getElementById("para").style["padding-bottom"] = "0px";
