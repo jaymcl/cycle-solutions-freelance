@@ -2,6 +2,7 @@
     width:90vw;
     margin: 0 auto;
     height: 16rem;
+    max-width: 40rem;
 }
 
 .hideInputsSection{
@@ -496,15 +497,15 @@ h3{
 
 .grid-container {
     display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-gap: 20px;
-    padding: 2rem;
+    grid-template-rows: 2fr 2fr;
+    padding-top: 0;
+    padding-bottom: 2rem;
 }
 
 #commuteTime {
     background: black;
     color: white;
-    margin-top: 2rem;
+    
 }
 
 .titles {
@@ -518,6 +519,8 @@ h3{
     justify-content: space-evenly;
     padding-top: 2rem;
     padding-bottom: 2rem;
+    max-width: 40rem;
+    margin: auto;
 }
 
 .custoBut {
@@ -555,13 +558,13 @@ h3{
 }
 
 .gridItemLabel {
-    text-align: right;
-    align-self: center;
+    margin: auto;
 }
 
 .gridItemH3 {
-    text-align: left;
+    margin: auto;
     font-size: 3rem;
+
     
 }
 
@@ -579,8 +582,9 @@ p{
     transition: all 0.3s ease;
     overflow: hidden;
     height: 5rem;
-    margin:0;
     font-size:0.8rem;
+    max-width: 40rem;
+    margin: auto;
 }
 
 h3>span{
@@ -590,6 +594,9 @@ h3>span{
 .container {
     padding-left: 0;
     padding-right: 0;
+}
+.container::hover {
+    cursor:auto;
 }
 
 .opac0{
@@ -605,3 +612,104 @@ h3>span{
     margin-right: 0;
     margin-left: 0;
 }
+
+
+.switch {
+position: relative;
+display: inline-block;
+width: 10rem;
+height: 34px;
+}
+
+.switch input {display:none;}
+
+.slider {
+position: absolute;
+cursor: pointer;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: black;
+color: white;
+-webkit-transition: .4s;
+transition: .4s;
+}
+
+.slider:before {
+position: absolute;
+content: "";
+height: 26px;
+width: 26px;
+left: 4px;
+bottom: 3px;
+background-color: white;
+-webkit-transition: .4s;
+transition: .4s;
+}
+
+input:checked + .slider {
+background-color: white;
+color: black;
+}
+
+input:focus + .slider {
+box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+-webkit-transform: translateX(7.8rem);
+-ms-transform: translateX(7.8rem);
+transform: translateX(7.8rem);
+}
+
+/*------ ADDED CSS ---------*/
+.on
+{
+display: none;
+color:black;
+}
+.off{
+    color:white;
+}
+
+.on, .off
+{
+
+position: absolute;
+transform: translate(-50%,-50%);
+top: 50%;
+left: 50%;
+font-size: 12px;
+font-weight: bold;
+}
+
+input:checked+ .slider .on
+{display: block;}
+
+input:checked + .slider .off
+{display: none;}
+
+/*--------- END --------*/
+
+/* Rounded sliders */
+.slider.round {
+border-radius: 34px;
+border:1px solid black;
+}
+
+.slider.round:before {
+border-radius: 50%;
+border: 1px solid black;
+}
+.boop {
+    padding-top: 9rem;
+  }
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: white;
+}
+

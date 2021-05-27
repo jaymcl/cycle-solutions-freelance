@@ -1409,34 +1409,53 @@
 
 
     <section id="journey"  >
+    <div class="wrappaar">
+
         <div id="journeyLocs" >
             <h3></h3>
             <label>To</label>
             <h3></h3>
         </div>
         
+        <div  id="stickyButtons">
+            <div class="containerButtons" id="mainButtons">
+                <div class="custoBut " onclick="buttonsTog(this)" id="mainDaily">Daily</div>
+                <div class=" custoButInvert" onclick="buttonsTog(this)" id="mainWeekly">Weekly</div>
+                <div class=" custoButInvert" onclick="buttonsTog(this)" id="mainMonthly">Monthly</div>
+                <div class=" custoButInvert" onclick="buttonsTog(this)" id="mainYearly">Yearly</div>
+            </div>    
             
+            
+            <label class="switch">
+                <input type="checkbox" id="togBtn">
+                <div class="slider round">
+                    <span class="on">One way</span>
+                    <span class="off">Return</span>
+                </div>
+            </label>
+        </div>
+    </div>
         
         <div id="commuteTime">
             <h2 class="titles" >Commute Time</h2>
             <div class="containerButtons" id="commuteButtons">
-                <div class="custoBut custoButInvert" onclick="buttonsTog(this)" id="commuteDaily">Daily</div>
-                <div class="custoBut" onclick="buttonsTog(this)" id="commuteWeekly">Weekly</div>
-                <div class="custoBut" onclick="buttonsTog(this)" id="commuteMonthly">Monthly</div>
-                <div class="custoBut" onclick="buttonsTog(this)" id="commuteYearly">Yearly</div>
-            </div>
-            <div class="grid-container">
-                <Label class="gridItemLabel" >Public transport:</Label>
-                <h3 class="gridItemH3" id="mins"></h3>
-            </div>
-            <div class="grid-container">
-                <Label class="gridItemLabel" >Bicycle:</Label>
-                <h3 class="gridItemH3" id="bike"></h3>
-            </div>
-            <div class="grid-container" id="compareContainer">
-                <Label class="gridItemLabel" >Time saved:</Label>
-                <h3 class="gridItemH3" id="h3Compare"></h3>
-            </div>
+                    <div class="custoBut custoButInvert" onclick="buttonsTog(this)" id="commuteDaily">Daily</div>
+                    <div class="custoBut" onclick="buttonsTog(this)" id="commuteWeekly">Weekly</div>
+                    <div class="custoBut" onclick="buttonsTog(this)" id="commuteMonthly">Monthly</div>
+                    <div class="custoBut" onclick="buttonsTog(this)" id="commuteYearly">Yearly</div>
+                </div>
+                <div class="grid-container">
+                    <Label class="gridItemLabel" >Public transport:</Label>
+                    <h3 class="gridItemH3" id="mins"></h3>
+                </div>
+                <div class="grid-container">
+                    <Label class="gridItemLabel" >Bicycle:</Label>
+                    <h3 class="gridItemH3" id="bike"></h3>
+                </div>
+                <div class="grid-container" id="compareContainer">
+                    <Label class="gridItemLabel" >Time saved:</Label>
+                    <h3 class="gridItemH3" id="h3Compare"></h3>
+                </div>
         </div>    
 
         <div id="fares">
