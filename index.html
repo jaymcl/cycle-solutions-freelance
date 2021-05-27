@@ -1409,7 +1409,7 @@
 
 
     <section id="journey"  >
-    <div class="wrappaar">
+   
 
         <div id="journeyLocs" >
             <h3></h3>
@@ -1425,25 +1425,29 @@
                 <div class=" custoButInvert" onclick="buttonsTog(this)" id="mainYearly">Yearly</div>
             </div>    
             
-            
-            <label class="switch">
-                <input type="checkbox" id="togBtn">
-                <div class="slider round">
-                    <span class="on">One way</span>
-                    <span class="off">Return</span>
-                </div>
-            </label>
+            <div id="switchWrapper">
+                <label class="switch">
+                    <input type="checkbox" id="togBtn">
+                    <div class="slider round">
+                        <span class="on">One way</span>
+                        <span class="off">Return</span>
+                    </div>
+                </label>
+            </div>
         </div>
     </div>
         
         <div id="commuteTime">
             <h2 class="titles" >Commute Time</h2>
-            <div class="containerButtons" id="commuteButtons">
+            <!--
+
+                <div class="containerButtons" id="commuteButtons">
                     <div class="custoBut custoButInvert" onclick="buttonsTog(this)" id="commuteDaily">Daily</div>
                     <div class="custoBut" onclick="buttonsTog(this)" id="commuteWeekly">Weekly</div>
                     <div class="custoBut" onclick="buttonsTog(this)" id="commuteMonthly">Monthly</div>
                     <div class="custoBut" onclick="buttonsTog(this)" id="commuteYearly">Yearly</div>
                 </div>
+            -->
                 <div class="grid-container">
                     <Label class="gridItemLabel" >Public transport:</Label>
                     <h3 class="gridItemH3" id="mins"></h3>
@@ -1460,12 +1464,15 @@
 
         <div id="fares">
             <h2 class="titles" >Money saved</h2>
-            <div class="containerButtons" id="moneyButtons">
-                <div class="custoBut " onclick="buttonsTog(this)" id="fareDailyBut">Daily</div>
-                <div class=" custoButInvert" onclick="buttonsTog(this)" id="fareWeeklyBut">Weekly</div>
-                <div class=" custoButInvert" onclick="buttonsTog(this)" id="fareMonthlyBut">Monthly</div>
-                <div class=" custoButInvert" onclick="buttonsTog(this)" id="fareYearlyBut">Yearly</div>
-            </div>
+            <!--
+
+                <div class="containerButtons" id="moneyButtons">
+                    <div class="custoBut " onclick="buttonsTog(this)" id="fareDailyBut">Daily</div>
+                    <div class=" custoButInvert" onclick="buttonsTog(this)" id="fareWeeklyBut">Weekly</div>
+                    <div class=" custoButInvert" onclick="buttonsTog(this)" id="fareMonthlyBut">Monthly</div>
+                    <div class=" custoButInvert" onclick="buttonsTog(this)" id="fareYearlyBut">Yearly</div>
+                </div>
+            -->
             <div class="grid-container">
                 <Label class="gridItemLabel" >Fare:</Label>
                 <h3 class="gridItemH3" id="fare"></h3>
@@ -1474,12 +1481,14 @@
 
         <div id="exercise">
             <h2 class="titles" >Exercise benefits</h2>
-            <div class="containerButtons" id="excerButtons">
-                <div class="custoBut custoButInvert" onclick="buttonsTog(this)" id="exerciseDaily">Daily</div>
-                <div class="custoBut" onclick="buttonsTog(this)" id="exerciseWeekly">Weekly</div>
-                <div class="custoBut" onclick="buttonsTog(this)" id="exerciseMonthly">Monthly</div>
-                <div class="custoBut" onclick="buttonsTog(this)" id="exerciseYearly">Yearly</div>
-            </div>
+            <!--
+                <div class="containerButtons" id="excerButtons">
+                    <div class="custoBut custoButInvert" onclick="buttonsTog(this)" id="exerciseDaily">Daily</div>
+                    <div class="custoBut" onclick="buttonsTog(this)" id="exerciseWeekly">Weekly</div>
+                    <div class="custoBut" onclick="buttonsTog(this)" id="exerciseMonthly">Monthly</div>
+                    <div class="custoBut" onclick="buttonsTog(this)" id="exerciseYearly">Yearly</div>
+                </div>
+            -->
             <div class="grid-container">
                 <Label class="gridItemLabel">Distance travelled:</Label>
                 <h3 class="gridItemH3" id="excer"></h3>
@@ -1488,7 +1497,7 @@
                 <Label class="gridItemLabel" >Calories burned:</Label>
                 <h3 class="gridItemH3" id="kcals"></h3>
             </div>    
-        </div>
+       
 
     </section>
     

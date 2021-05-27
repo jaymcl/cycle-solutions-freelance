@@ -25,6 +25,11 @@ let moneyButtons = document.getElementById("moneyButtons");
 let excerButtons = document.getElementById("excerButtons");
 let compareContainer = document.getElementById("compareContainer");
 let mainButtons = document.getElementById("mainButtons");
+let returnTog = document.getElementById("togBtn");
+let mainDaily = document.getElementById("mainDaily");
+let mainWeekly = document.getElementById("mainWeekly");
+let mainMonthly = document.getElementById("mainMonthly");
+let mainYearly = document.getElementById("mainYearly");
 let faresTotal = 0;
 
 
@@ -108,6 +113,9 @@ document.getElementById("toButtonHeading").addEventListener("click", () => {
     closeAllStations("to");
 });
 
+
+
+
 const buttonFadeHelper = (a) => {
     for (let i = 0; i < a.length; i++) {
         a[i].classList.remove("opac0");
@@ -116,117 +124,164 @@ const buttonFadeHelper = (a) => {
         setTimeout(function(){ 
             a[i].classList.add("opac1");
                         }, 250);
-    }
-   
-                    
+    }                    
 }
 
-document.getElementById("mainDaily").addEventListener("click", () => {    
-    h3Mins.innerHTML = hrsAndMins(results.duration);
-    h3Bike.innerHTML = hrsAndMins(bikeDuration);
-    h3Compare.innerHTML= hrsAndMins(results.duration - bikeDuration);
-    buttonFadeHelper([h3Mins,h3Bike,h3Compare,fare,excer, kcals]);
-    fare.innerHTML = "£" + (faresTotal*1).toFixed(2);
-    excer.innerHTML = Math.round((bikeDistance)/1609.344) + " miles";                  
-    kcals.innerHTML = Math.round(bikeDuration * 9.52) + " kcals";
+returnTog.addEventListener("change", () => {
+        for (let i = 0; i < mainButtons.children.length; i++) {
+            if(mainButtons.children[i].classList.contains("custoBut")){
+                mainButtons.children[i].click();
+            }
+            
+        }
+});
+
+mainDaily.addEventListener("click", () => { 
+    if(returnTog.checked) {
+        h3Mins.innerHTML = hrsAndMins(results.duration);
+        h3Bike.innerHTML = hrsAndMins(bikeDuration);
+        h3Compare.innerHTML= hrsAndMins(results.duration - bikeDuration);
+        buttonFadeHelper([h3Mins,h3Bike,h3Compare,fare,excer, kcals]);
+        fare.innerHTML = "£" + (faresTotal*1).toFixed(2);
+        excer.innerHTML = Math.round((bikeDistance)/1609.344) + " miles";                  
+        kcals.innerHTML = Math.round(bikeDuration * 9.52) + " kcals";
+        
+    }else{
+        h3Mins.innerHTML = hrsAndMins(results.duration*2);
+        h3Bike.innerHTML = hrsAndMins(bikeDuration*2);
+        h3Compare.innerHTML= hrsAndMins((results.duration - bikeDuration)*2);
+        buttonFadeHelper([h3Mins,h3Bike,h3Compare,fare,excer, kcals]);
+        fare.innerHTML = "£" + (faresTotal*2).toFixed(2);
+        excer.innerHTML = Math.round((bikeDistance)/1609.344)*2 + " miles";                  
+        kcals.innerHTML = Math.round(bikeDuration * 9.52)*2 + " kcals";
+    }  
+});
+mainWeekly.addEventListener("click", () => {    
+    if(returnTog.checked) {
+        h3Mins.innerHTML = hrsAndMins((results.duration*5));
+        h3Bike.innerHTML = hrsAndMins((bikeDuration*5));
+        h3Compare.innerHTML= hrsAndMins((results.duration - bikeDuration)*5);
+        buttonFadeHelper([h3Mins,h3Bike,h3Compare,fare,excer, kcals]);
+        fare.innerHTML = "£" + (faresTotal*5).toFixed(2);
+        excer.innerHTML = Math.round(((bikeDistance)/1609.344)*5) + " miles";                  
+        kcals.innerHTML = Math.round((bikeDuration * 9.52)*5) + " kcals";
+    }else{
+        h3Mins.innerHTML = hrsAndMins((results.duration*10));
+        h3Bike.innerHTML = hrsAndMins((bikeDuration*10));
+        h3Compare.innerHTML= hrsAndMins((results.duration - bikeDuration)*10);
+        buttonFadeHelper([h3Mins,h3Bike,h3Compare,fare,excer, kcals]);
+        fare.innerHTML = "£" + (faresTotal*10).toFixed(2);
+        excer.innerHTML = Math.round(((bikeDistance)/1609.344)*10) + " miles";                  
+        kcals.innerHTML = Math.round((bikeDuration * 9.52)*10) + " kcals";
+    }
+});
+mainMonthly.addEventListener("click", () => {    
+    if(returnTog.checked) {
+        h3Mins.innerHTML = hrsAndMins((results.duration*5)*4.3);
+        h3Bike.innerHTML = hrsAndMins((bikeDuration*5)*4.3);
+        h3Compare.innerHTML= hrsAndMins(((results.duration - bikeDuration)*5)*4.3);
+        buttonFadeHelper([h3Mins,h3Bike,h3Compare,fare,excer, kcals]);
+        fare.innerHTML = "£" + (((faresTotal)*5)*4.3).toFixed(2);
+        excer.innerHTML = Math.round((((bikeDistance)/1609.344)*5)*4.3) + " miles";                  
+        kcals.innerHTML = Math.round(((bikeDuration * 9.52)*5)*4.3) + " kcals";
+    }else{
+        h3Mins.innerHTML = hrsAndMins((results.duration*5)*8.6);
+        h3Bike.innerHTML = hrsAndMins((bikeDuration*5)*8.6);
+        h3Compare.innerHTML= hrsAndMins(((results.duration - bikeDuration)*5)*8.6);
+        buttonFadeHelper([h3Mins,h3Bike,h3Compare,fare,excer, kcals]);
+        fare.innerHTML = "£" + (((faresTotal)*5)*8.6).toFixed(2);
+        excer.innerHTML = Math.round((((bikeDistance)/1609.344)*5)*8.6) + " miles";                  
+        kcals.innerHTML = Math.round(((bikeDuration * 9.52)*5)*8.6) + " kcals";
+
+    }
+});
+mainYearly.addEventListener("click", () => {   
+    if(returnTog.checked){
+
+        h3Mins.innerHTML = hrsAndMins((results.duration*5)*52);
+        h3Bike.innerHTML = hrsAndMins((bikeDuration*5)*52);
+        h3Compare.innerHTML= hrsAndMins(((results.duration - bikeDuration)*5)*52);
+        buttonFadeHelper([h3Mins,h3Bike,h3Compare,fare,excer, kcals]); 
+        fare.innerHTML = "£" + (((faresTotal)*5)*52).toFixed(2);
+        excer.innerHTML = Math.round((((bikeDistance)/1609.344)*5)*52) + " miles";                  
+        kcals.innerHTML = Math.round(((bikeDuration * 9.52)*5)*52) + " kcals";
+    }else{
+        h3Mins.innerHTML = hrsAndMins((results.duration*5)*104);
+        h3Bike.innerHTML = hrsAndMins((bikeDuration*5)*104);
+        h3Compare.innerHTML= hrsAndMins(((results.duration - bikeDuration)*5)*104);
+        buttonFadeHelper([h3Mins,h3Bike,h3Compare,fare,excer, kcals]); 
+        fare.innerHTML = "£" + (((faresTotal)*5)*104).toFixed(2);
+        excer.innerHTML = Math.round((((bikeDistance)/1609.344)*5)*104) + " miles";                  
+        kcals.innerHTML = Math.round(((bikeDuration * 9.52)*5)*104) + " kcals";
+    }
+    });
     
-});
-document.getElementById("mainWeekly").addEventListener("click", () => {    
-    h3Mins.innerHTML = hrsAndMins((results.duration*5));
-    h3Bike.innerHTML = hrsAndMins((bikeDuration*5));
-    h3Compare.innerHTML= hrsAndMins((results.duration - bikeDuration)*5);
-    buttonFadeHelper([h3Mins,h3Bike,h3Compare,fare,excer, kcals]);
-    fare.innerHTML = "£" + (faresTotal*5).toFixed(2);
-    excer.innerHTML = Math.round(((bikeDistance)/1609.344)*5) + " miles";                  
-    kcals.innerHTML = Math.round((bikeDuration * 9.52)*5) + " kcals";
-    
-});
-document.getElementById("mainMonthly").addEventListener("click", () => {    
-    h3Mins.innerHTML = hrsAndMins((results.duration*5)*4.3);
-    h3Bike.innerHTML = hrsAndMins((bikeDuration*5)*4.3);
-    h3Compare.innerHTML= hrsAndMins(((results.duration - bikeDuration)*5)*4.3);
-    buttonFadeHelper([h3Mins,h3Bike,h3Compare,fare,excer, kcals]);
-    fare.innerHTML = "£" + (((faresTotal)*5)*4.3).toFixed(2);
-    excer.innerHTML = Math.round((((bikeDistance)/1609.344)*5)*4.3) + " miles";                  
-    kcals.innerHTML = Math.round(((bikeDuration * 9.52)*5)*4.3) + " kcals";
-    
-});
-document.getElementById("mainYearly").addEventListener("click", () => {   
-    h3Mins.innerHTML = hrsAndMins((results.duration*5)*52);
-    h3Bike.innerHTML = hrsAndMins((bikeDuration*5)*52);
-    h3Compare.innerHTML= hrsAndMins(((results.duration - bikeDuration)*5)*52);
-    buttonFadeHelper([h3Mins,h3Bike,h3Compare,fare,excer, kcals]); 
-    fare.innerHTML = "£" + (((faresTotal)*5)*52).toFixed(2);
-    excer.innerHTML = Math.round((((bikeDistance)/1609.344)*5)*52) + " miles";                  
-    kcals.innerHTML = Math.round(((bikeDuration * 9.52)*5)*52) + " kcals";
-});
 
 
 
 
+// document.getElementById("commuteDaily").addEventListener("click", () => {
+//     h3Mins.innerHTML = hrsAndMins(results.duration);
+//     h3Bike.innerHTML = hrsAndMins(bikeDuration);
+//     h3Compare.innerHTML= hrsAndMins(results.duration - bikeDuration);
+//     buttonFadeHelper([h3Mins,h3Bike,h3Compare]);
+// });
+// document.getElementById("commuteWeekly").addEventListener("click", () => {
+//     h3Mins.innerHTML = hrsAndMins((results.duration*5));
+//     h3Bike.innerHTML = hrsAndMins((bikeDuration*5));
+//     h3Compare.innerHTML= hrsAndMins((results.duration - bikeDuration)*5);
+//     buttonFadeHelper([h3Mins,h3Bike,h3Compare]);
+// });
+// document.getElementById("commuteMonthly").addEventListener("click", () => {
+//     h3Mins.innerHTML = hrsAndMins((results.duration*5)*4.3);
+//     h3Bike.innerHTML = hrsAndMins((bikeDuration*5)*4.3);
+//     h3Compare.innerHTML= hrsAndMins(((results.duration - bikeDuration)*5)*4.3);
+//     buttonFadeHelper([h3Mins,h3Bike,h3Compare]);
+// });
+// document.getElementById("commuteYearly").addEventListener("click", () => {
+//     h3Mins.innerHTML = hrsAndMins((results.duration*5)*52);
+//     h3Bike.innerHTML = hrsAndMins((bikeDuration*5)*52);
+//     h3Compare.innerHTML= hrsAndMins(((results.duration - bikeDuration)*5)*52);
+//     buttonFadeHelper([h3Mins,h3Bike,h3Compare]);
+// });
 
-document.getElementById("commuteDaily").addEventListener("click", () => {
-    h3Mins.innerHTML = hrsAndMins(results.duration);
-    h3Bike.innerHTML = hrsAndMins(bikeDuration);
-    h3Compare.innerHTML= hrsAndMins(results.duration - bikeDuration);
-    buttonFadeHelper([h3Mins,h3Bike,h3Compare]);
-});
-document.getElementById("commuteWeekly").addEventListener("click", () => {
-    h3Mins.innerHTML = hrsAndMins((results.duration*5));
-    h3Bike.innerHTML = hrsAndMins((bikeDuration*5));
-    h3Compare.innerHTML= hrsAndMins((results.duration - bikeDuration)*5);
-    buttonFadeHelper([h3Mins,h3Bike,h3Compare]);
-});
-document.getElementById("commuteMonthly").addEventListener("click", () => {
-    h3Mins.innerHTML = hrsAndMins((results.duration*5)*4.3);
-    h3Bike.innerHTML = hrsAndMins((bikeDuration*5)*4.3);
-    h3Compare.innerHTML= hrsAndMins(((results.duration - bikeDuration)*5)*4.3);
-    buttonFadeHelper([h3Mins,h3Bike,h3Compare]);
-});
-document.getElementById("commuteYearly").addEventListener("click", () => {
-    h3Mins.innerHTML = hrsAndMins((results.duration*5)*52);
-    h3Bike.innerHTML = hrsAndMins((bikeDuration*5)*52);
-    h3Compare.innerHTML= hrsAndMins(((results.duration - bikeDuration)*5)*52);
-    buttonFadeHelper([h3Mins,h3Bike,h3Compare]);
-});
+// document.getElementById("fareDailyBut").addEventListener("click",() => {
+//     fare.innerHTML = "£" + (faresTotal*1).toFixed(2);
+//     buttonFadeHelper([fare]);
+// });
+// document.getElementById("fareWeeklyBut").addEventListener("click",() => {
+//     fare.innerHTML = "£" + (faresTotal*5).toFixed(2);
+//     buttonFadeHelper([fare]);
+// });
+// document.getElementById("fareMonthlyBut").addEventListener("click",() => {
+//     fare.innerHTML = "£" + (((faresTotal)*5)*4.3).toFixed(2);
+//     buttonFadeHelper([fare]);
+// });
+// document.getElementById("fareYearlyBut").addEventListener("click",() => {
+//     fare.innerHTML = "£" + (((faresTotal)*5)*52).toFixed(2);
+//     buttonFadeHelper([fare]);
+// });
 
-document.getElementById("fareDailyBut").addEventListener("click",() => {
-    fare.innerHTML = "£" + (faresTotal*1).toFixed(2);
-    buttonFadeHelper([fare]);
-});
-document.getElementById("fareWeeklyBut").addEventListener("click",() => {
-    fare.innerHTML = "£" + (faresTotal*5).toFixed(2);
-    buttonFadeHelper([fare]);
-});
-document.getElementById("fareMonthlyBut").addEventListener("click",() => {
-    fare.innerHTML = "£" + (((faresTotal)*5)*4.3).toFixed(2);
-    buttonFadeHelper([fare]);
-});
-document.getElementById("fareYearlyBut").addEventListener("click",() => {
-    fare.innerHTML = "£" + (((faresTotal)*5)*52).toFixed(2);
-    buttonFadeHelper([fare]);
-});
-
-document.getElementById("exerciseDaily").addEventListener("click",() => {
-    excer.innerHTML = Math.round((bikeDistance)/1609.344) + " miles";                  
-    kcals.innerHTML = Math.round(bikeDuration * 9.52) + " kcals";
-    buttonFadeHelper([excer, kcals]);
-});
-document.getElementById("exerciseWeekly").addEventListener("click",() => {
-    excer.innerHTML = Math.round(((bikeDistance)/1609.344)*5) + " miles";                  
-    kcals.innerHTML = Math.round((bikeDuration * 9.52)*5) + " kcals";
-    buttonFadeHelper([excer, kcals]);
-});
-document.getElementById("exerciseMonthly").addEventListener("click",() => {
-    excer.innerHTML = Math.round((((bikeDistance)/1609.344)*5)*4.3) + " miles";                  
-    kcals.innerHTML = Math.round(((bikeDuration * 9.52)*5)*4.3) + " kcals";
-    buttonFadeHelper([excer, kcals]);
-});
-document.getElementById("exerciseYearly").addEventListener("click",() => {
-    excer.innerHTML = Math.round((((bikeDistance)/1609.344)*5)*52) + " miles";                  
-    kcals.innerHTML = Math.round(((bikeDuration * 9.52)*5)*52) + " kcals";
-    buttonFadeHelper([excer, kcals]);
-});
+// document.getElementById("exerciseDaily").addEventListener("click",() => {
+//     excer.innerHTML = Math.round((bikeDistance)/1609.344) + " miles";                  
+//     kcals.innerHTML = Math.round(bikeDuration * 9.52) + " kcals";
+//     buttonFadeHelper([excer, kcals]);
+// });
+// document.getElementById("exerciseWeekly").addEventListener("click",() => {
+//     excer.innerHTML = Math.round(((bikeDistance)/1609.344)*5) + " miles";                  
+//     kcals.innerHTML = Math.round((bikeDuration * 9.52)*5) + " kcals";
+//     buttonFadeHelper([excer, kcals]);
+// });
+// document.getElementById("exerciseMonthly").addEventListener("click",() => {
+//     excer.innerHTML = Math.round((((bikeDistance)/1609.344)*5)*4.3) + " miles";                  
+//     kcals.innerHTML = Math.round(((bikeDuration * 9.52)*5)*4.3) + " kcals";
+//     buttonFadeHelper([excer, kcals]);
+// });
+// document.getElementById("exerciseYearly").addEventListener("click",() => {
+//     excer.innerHTML = Math.round((((bikeDistance)/1609.344)*5)*52) + " miles";                  
+//     kcals.innerHTML = Math.round(((bikeDuration * 9.52)*5)*52) + " kcals";
+//     buttonFadeHelper([excer, kcals]);
+// });
 
 let allStations = document.getElementsByClassName("stations");
 for (let index = 0; index < allStations.length; index++) {
@@ -421,14 +476,14 @@ axios.get(`${tflApi}${tflJour}${from}/to/${to}${tflModes}`, {
                             faresTotal = (1.50 * fareBoth[0].length) + +res.data[0].rows[0].ticketsAvailable[res.data[0].rows[0].ticketsAvailable.length-1].cost ; 
                             
                             
-                            fare.innerHTML = "£" + (faresTotal*1).toFixed(2);
+                            fare.innerHTML = "£" + (faresTotal*2).toFixed(2);
                         
                             
                             
                         }else {
                             faresTotal = res.data[0].rows[0].ticketsAvailable[res.data[0].rows[0].ticketsAvailable.length-1].cost;
                             
-                            fare.innerHTML = "£" + (faresTotal*1).toFixed(2);
+                            fare.innerHTML = "£" + (faresTotal*2).toFixed(2);
                             
                             
 
@@ -439,7 +494,7 @@ axios.get(`${tflApi}${tflJour}${from}/to/${to}${tflModes}`, {
                 } else {
                      faresTotal = fareBoth[0].length * 1.50.toFixed(2);
                     
-                    fare.innerHTML = "£" + (faresTotal).toFixed(2);
+                    fare.innerHTML = "£" + (faresTotal*2).toFixed(2);
                     
                     
                    
@@ -451,7 +506,7 @@ axios.get(`${tflApi}${tflJour}${from}/to/${to}${tflModes}`, {
                                      //assigning to elements
                                     journeyLocs.children[0].innerHTML= results.from;
                                     journeyLocs.children[2].innerHTML= results.to;
-                                    h3Mins.innerHTML = hrsAndMins(results.duration);
+                                    h3Mins.innerHTML = hrsAndMins(results.duration*2);
                                     
 
              axios.get(`${tflApi}${tflJour}${from}/to/${to}${tflBikeMode}`                                       
@@ -462,17 +517,17 @@ axios.get(`${tflApi}${tflJour}${from}/to/${to}${tflModes}`, {
                     bikeDuration = res.data.journeys[0].duration;
                     bikeDistance = res.data.journeys[0].legs[0].distance;
 
-                    h3Bike.innerHTML =  hrsAndMins(bikeDuration);
+                    h3Bike.innerHTML =  hrsAndMins(bikeDuration*2);
                     if( results.duration - bikeDuration <= 0){
                         compareContainer.style.display = "none";
                     }else {
-                    h3Compare.innerHTML = hrsAndMins(results.duration - bikeDuration);
+                    h3Compare.innerHTML = hrsAndMins((results.duration - bikeDuration)*2);
                     };
 
-                    excer.innerHTML = Math.round((bikeDistance)/1609.344) + " miles";  
+                    excer.innerHTML = Math.round((bikeDistance)/1609.344)*2 + " miles";  
                     
                     
-                    kcals.innerHTML = Math.round(bikeDuration * 9.52) + " kcals";
+                    kcals.innerHTML = Math.round(bikeDuration * 9.52)*2 + " kcals";
                     
                     
                     
@@ -487,8 +542,8 @@ axios.get(`${tflApi}${tflJour}${from}/to/${to}${tflModes}`, {
                     document.getElementById("journey").style.height = "420vw";
                     setTimeout(function(){ document.getElementById("journey").style.overflow = "visible";
                     document.getElementById("journey").style.height = "0px";
-                    z = document.getElementById('stickyButtons').offsetTop;
-                    }, 2000);
+                    butOffset = document.getElementById('stickyButtons').offsetTop;
+                    }, 500);
                     
                     
                     
@@ -525,24 +580,23 @@ const refreshPage= () => {
     window.location.reload();
 } 
 
-var see = function() {
+var stickyButtonsFunc = function() {
     let ypos = window.scrollY;
-    let x = document.getElementById('stickyButtons');
-    let xt =document.getElementById('stickyButtons').offsetTop;
+    let stickyButs = document.getElementById('stickyButtons');
+    let butOfsetCurrent =document.getElementById('stickyButtons').offsetTop;
 
-
-    if( ypos <= z){
-        x.classList.remove("sticky");
-        document.getElementById("commuteTime").classList.remove("boop");
+    if( ypos <= butOffset){
+        stickyButs.classList.remove("sticky");
+        document.getElementById("commuteTime").classList.remove("commutePadTop");
         
-    } else if(ypos >= xt) {
-        x.classList.add("sticky");
-        document.getElementById("commuteTime").classList.add("boop");
+    } else if(ypos >= butOfsetCurrent) {
+        stickyButs.classList.add("sticky");
+        document.getElementById("commuteTime").classList.add("commutePadTop");
 
     }
 }
 
-window.addEventListener("scroll", see);
+window.addEventListener("scroll", stickyButtonsFunc);
 
 
 let autoStations = {

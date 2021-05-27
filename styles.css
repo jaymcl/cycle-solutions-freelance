@@ -500,6 +500,8 @@ h3{
     grid-template-rows: 2fr 2fr;
     padding-top: 0;
     padding-bottom: 2rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
 }
 
 #commuteTime {
@@ -512,13 +514,14 @@ h3{
     font-weight: 800;
     padding: 1rem;
     padding-top: 2rem;
+    text-decoration: underline;
 }
 
 .containerButtons {
     display: flex;
     justify-content: space-evenly;
     padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding-bottom: 1rem;
     max-width: 40rem;
     margin: auto;
 }
@@ -654,7 +657,7 @@ color: black;
 }
 
 input:focus + .slider {
-box-shadow: 0 0 1px #2196F3;
+box-shadow: 0 0 1px black;
 }
 
 input:checked + .slider:before {
@@ -684,7 +687,7 @@ font-size: 12px;
 font-weight: bold;
 }
 
-input:checked+ .slider .on
+input:checked + .slider .on
 {display: block;}
 
 input:checked + .slider .off
@@ -702,8 +705,8 @@ border:1px solid black;
 border-radius: 50%;
 border: 1px solid black;
 }
-.boop {
-    padding-top: 9rem;
+.commutePadTop {
+    padding-top: 8rem;
   }
 
 .sticky {
@@ -711,5 +714,7 @@ border: 1px solid black;
     top: 0;
     width: 100%;
     background: white;
+    z-index: 10;
 }
+
 
