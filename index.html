@@ -12,15 +12,19 @@
     <title>Cycle Solutions</title>
 </head>
 <body>
+
+    
     
     <h1>Reroute My Commute</h1>
-
-    <p id="para">Simply enter your daily commute by postcode or nearest station to see how much you can benefit by swapping from public transport to bicycle.</p>
-    
+    <div id="vectorBackground">
+            <p id="para">Simply enter your journey by postcode or nearest station and see how much you can benefit by swapping the train for your bicycle.</p>
+    </div>
+        
     <section id="inputsSection" class="inputsSection">
+        <div  class="">
         <div class="container" >
         <div id="fromInput" class="input-group ">           
-            <input  type="text" autocomplete="off" required id="from" aria-label="postcode or station">
+            <input  type="text" autocomplete="off" required id="from" aria-label="postcode or station" spellcheck="false">
             <label for="from" class="labelFrom" >
                 <span class="labelContentFrom">From</span>
             </label>
@@ -707,9 +711,9 @@
             
         </div>
     
-    <div class="container">
+        <div class="container">
         <div id="toInput"class="input-group">
-        <input type="text" autocomplete="off" required id="to"  aria-label="postcode or station" >  
+        <input type="text" autocomplete="off" required id="to" spellcheck="false" aria-label="postcode or station" >  
             <label for="to" class="labelTo">
                 <span class="labelContentTo" >To</span>
             </label>
@@ -1394,9 +1398,11 @@
                 </div>
             </div>
         </div>
+        </div>
+        </div>
     </section>
 
-    </div>
+    <div>
         <button id="goButton"type="button" class="btn btn-dark" onclick="getInputValue();">GO!</button>
     </div>
 
@@ -1406,7 +1412,9 @@
 
 
 
-
+    <div id="svgPlacement">
+        <img src="blur.svg" id="svgBlur">
+    </div>
 
     <section id="journey"  >
    
@@ -1429,25 +1437,17 @@
                 <label class="switch">
                     <input type="checkbox" id="togBtn">
                     <div class="slider round">
-                        <span class="on">One way</span>
-                        <span class="off">Return</span>
+                        <span class="on">Return</span>
+                        <span class="off">One Way</span>
                     </div>
                 </label>
             </div>
         </div>
     </div>
-        
+    <div id="comFare">    
         <div id="commuteTime">
             <h2 class="titles" >Commute Time</h2>
-            <!--
-
-                <div class="containerButtons" id="commuteButtons">
-                    <div class="custoBut custoButInvert" onclick="buttonsTog(this)" id="commuteDaily">Daily</div>
-                    <div class="custoBut" onclick="buttonsTog(this)" id="commuteWeekly">Weekly</div>
-                    <div class="custoBut" onclick="buttonsTog(this)" id="commuteMonthly">Monthly</div>
-                    <div class="custoBut" onclick="buttonsTog(this)" id="commuteYearly">Yearly</div>
-                </div>
-            -->
+            
                 <div class="grid-container">
                     <Label class="gridItemLabel" >Public transport:</Label>
                     <h3 class="gridItemH3" id="mins"></h3>
@@ -1464,31 +1464,15 @@
 
         <div id="fares">
             <h2 class="titles" >Money saved</h2>
-            <!--
-
-                <div class="containerButtons" id="moneyButtons">
-                    <div class="custoBut " onclick="buttonsTog(this)" id="fareDailyBut">Daily</div>
-                    <div class=" custoButInvert" onclick="buttonsTog(this)" id="fareWeeklyBut">Weekly</div>
-                    <div class=" custoButInvert" onclick="buttonsTog(this)" id="fareMonthlyBut">Monthly</div>
-                    <div class=" custoButInvert" onclick="buttonsTog(this)" id="fareYearlyBut">Yearly</div>
-                </div>
-            -->
             <div class="grid-container">
                 <Label class="gridItemLabel" >Fare:</Label>
                 <h3 class="gridItemH3" id="fare"></h3>
             </div>    
         </div>
-
+    </div>
         <div id="exercise">
             <h2 class="titles" >Exercise benefits</h2>
-            <!--
-                <div class="containerButtons" id="excerButtons">
-                    <div class="custoBut custoButInvert" onclick="buttonsTog(this)" id="exerciseDaily">Daily</div>
-                    <div class="custoBut" onclick="buttonsTog(this)" id="exerciseWeekly">Weekly</div>
-                    <div class="custoBut" onclick="buttonsTog(this)" id="exerciseMonthly">Monthly</div>
-                    <div class="custoBut" onclick="buttonsTog(this)" id="exerciseYearly">Yearly</div>
-                </div>
-            -->
+           
             <div class="grid-container">
                 <Label class="gridItemLabel">Distance travelled:</Label>
                 <h3 class="gridItemH3" id="excer"></h3>
@@ -1497,7 +1481,7 @@
                 <Label class="gridItemLabel" >Calories burned:</Label>
                 <h3 class="gridItemH3" id="kcals"></h3>
             </div>    
-       
+           
 
     </section>
     

@@ -32,7 +32,6 @@ let mainMonthly = document.getElementById("mainMonthly");
 let mainYearly = document.getElementById("mainYearly");
 let faresTotal = 0;
 
-
 const buttonsTog = (ele) => {
     if (ele.parentNode.id == "mainButtons") {
         for (let index = 0; index < mainButtons.children.length; index++) {
@@ -137,7 +136,7 @@ returnTog.addEventListener("change", () => {
 });
 
 mainDaily.addEventListener("click", () => { 
-    if(returnTog.checked) {
+    if(!returnTog.checked) {
         h3Mins.innerHTML = hrsAndMins(results.duration);
         h3Bike.innerHTML = hrsAndMins(bikeDuration);
         h3Compare.innerHTML= hrsAndMins(results.duration - bikeDuration);
@@ -157,7 +156,7 @@ mainDaily.addEventListener("click", () => {
     }  
 });
 mainWeekly.addEventListener("click", () => {    
-    if(returnTog.checked) {
+    if(!returnTog.checked) {
         h3Mins.innerHTML = hrsAndMins((results.duration*5));
         h3Bike.innerHTML = hrsAndMins((bikeDuration*5));
         h3Compare.innerHTML= hrsAndMins((results.duration - bikeDuration)*5);
@@ -176,7 +175,7 @@ mainWeekly.addEventListener("click", () => {
     }
 });
 mainMonthly.addEventListener("click", () => {    
-    if(returnTog.checked) {
+    if(!returnTog.checked) {
         h3Mins.innerHTML = hrsAndMins((results.duration*5)*4.3);
         h3Bike.innerHTML = hrsAndMins((bikeDuration*5)*4.3);
         h3Compare.innerHTML= hrsAndMins(((results.duration - bikeDuration)*5)*4.3);
@@ -196,7 +195,7 @@ mainMonthly.addEventListener("click", () => {
     }
 });
 mainYearly.addEventListener("click", () => {   
-    if(returnTog.checked){
+    if(!returnTog.checked){
 
         h3Mins.innerHTML = hrsAndMins((results.duration*5)*52);
         h3Bike.innerHTML = hrsAndMins((bikeDuration*5)*52);
@@ -476,14 +475,14 @@ axios.get(`${tflApi}${tflJour}${from}/to/${to}${tflModes}`, {
                             faresTotal = (1.50 * fareBoth[0].length) + +res.data[0].rows[0].ticketsAvailable[res.data[0].rows[0].ticketsAvailable.length-1].cost ; 
                             
                             
-                            fare.innerHTML = "£" + (faresTotal*2).toFixed(2);
+                            fare.innerHTML = "£" + (faresTotal*1).toFixed(2);
                         
                             
                             
                         }else {
                             faresTotal = res.data[0].rows[0].ticketsAvailable[res.data[0].rows[0].ticketsAvailable.length-1].cost;
                             
-                            fare.innerHTML = "£" + (faresTotal*2).toFixed(2);
+                            fare.innerHTML = "£" + (faresTotal*1).toFixed(2);
                             
                             
 
@@ -494,7 +493,7 @@ axios.get(`${tflApi}${tflJour}${from}/to/${to}${tflModes}`, {
                 } else {
                      faresTotal = fareBoth[0].length * 1.50.toFixed(2);
                     
-                    fare.innerHTML = "£" + (faresTotal*2).toFixed(2);
+                    fare.innerHTML = "£" + (faresTotal*1).toFixed(2);
                     
                     
                    
@@ -506,7 +505,7 @@ axios.get(`${tflApi}${tflJour}${from}/to/${to}${tflModes}`, {
                                      //assigning to elements
                                     journeyLocs.children[0].innerHTML= results.from;
                                     journeyLocs.children[2].innerHTML= results.to;
-                                    h3Mins.innerHTML = hrsAndMins(results.duration*2);
+                                    h3Mins.innerHTML = hrsAndMins(results.duration);
                                     
 
              axios.get(`${tflApi}${tflJour}${from}/to/${to}${tflBikeMode}`                                       
@@ -517,17 +516,17 @@ axios.get(`${tflApi}${tflJour}${from}/to/${to}${tflModes}`, {
                     bikeDuration = res.data.journeys[0].duration;
                     bikeDistance = res.data.journeys[0].legs[0].distance;
 
-                    h3Bike.innerHTML =  hrsAndMins(bikeDuration*2);
+                    h3Bike.innerHTML =  hrsAndMins(bikeDuration);
                     if( results.duration - bikeDuration <= 0){
                         compareContainer.style.display = "none";
                     }else {
-                    h3Compare.innerHTML = hrsAndMins((results.duration - bikeDuration)*2);
+                    h3Compare.innerHTML = hrsAndMins((results.duration - bikeDuration));
                     };
-
-                    excer.innerHTML = Math.round((bikeDistance)/1609.344)*2 + " miles";  
+                    window.addEventListener("scroll", stickyButtonsFunc);
+                    excer.innerHTML = Math.round((bikeDistance)/1609.344) + " miles";  
                     
                     
-                    kcals.innerHTML = Math.round(bikeDuration * 9.52)*2 + " kcals";
+                    kcals.innerHTML = Math.round(bikeDuration * 9.52) + " kcals";
                     
                     
                     
@@ -535,13 +534,15 @@ axios.get(`${tflApi}${tflJour}${from}/to/${to}${tflModes}`, {
                     goButton.innerHTML = "REFRESH";
                     goButton.style["margin-top"] = "0px";
                     goButton.removeAttribute("onclick");
-                   
+                    for (let i = 0; i < document.getElementsByClassName("titles").length; i++) {
+                        document.getElementsByClassName("titles")[i].classList.add("titleBlock")};
                     goButton.setAttribute("onclick","refreshPage()");
                     document.getElementById("para").style.height = "0px";
                     document.getElementById("para").style["padding-bottom"] = "0px";
                     document.getElementById("journey").style.height = "420vw";
                     setTimeout(function(){ document.getElementById("journey").style.overflow = "visible";
                     document.getElementById("journey").style.height = "0px";
+                    document.getElementById("svgPlacement").style.opacity = "0";
                     butOffset = document.getElementById('stickyButtons').offsetTop;
                     }, 500);
                     
@@ -584,19 +585,30 @@ var stickyButtonsFunc = function() {
     let ypos = window.scrollY;
     let stickyButs = document.getElementById('stickyButtons');
     let butOfsetCurrent =document.getElementById('stickyButtons').offsetTop;
+   
 
     if( ypos <= butOffset){
         stickyButs.classList.remove("sticky");
-        document.getElementById("commuteTime").classList.remove("commutePadTop");
+        if(document.getElementById("comFare").style.display == "flex"){
+          document.getElementById("comFare").classList.remove("commuteFarePadTop")  
+        }else{
+            document.getElementById("commuteTime").classList.remove("commuteFarePadTop");
+        }
         
     } else if(ypos >= butOfsetCurrent) {
         stickyButs.classList.add("sticky");
-        document.getElementById("commuteTime").classList.add("commutePadTop");
+        if(document.getElementById("comFare").style.display == "flex"){
+            document.getElementById("comFare").classList.add("commuteFarePadTop")  
+          }else{
+              document.getElementById("commuteTime").classList.add("commuteFarePadTop");
+          }
+          
 
     }
 }
 
-window.addEventListener("scroll", stickyButtonsFunc);
+
+
 
 
 let autoStations = {
