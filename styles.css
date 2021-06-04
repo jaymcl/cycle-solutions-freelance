@@ -834,7 +834,7 @@ h2::before {
 #svgPlacement {
     width: 12rem;
     height: 12rem;
-    position: absolute;
+    position: fixed;
     overflow: hidden;
     bottom: 0rem;
     left: 0rem;
