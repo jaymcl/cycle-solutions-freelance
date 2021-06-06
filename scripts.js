@@ -542,7 +542,6 @@ axios.get(`${tflApi}${tflJour}${from}/to/${to}${tflModes}`, {
                     document.getElementById("journey").style.height = "420vw";
                     setTimeout(function(){ document.getElementById("journey").style.overflow = "visible";
                     document.getElementById("journey").style.height = "0px";
-                    document.getElementById("svgPlacement").style.opacity = "0";
                     butOffset = document.getElementById('stickyButtons').offsetTop;
                     }, 500);
                     
