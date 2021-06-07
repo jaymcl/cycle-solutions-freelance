@@ -44,36 +44,7 @@ const buttonsTog = (ele) => {
         ele.classList.remove("custoButInvert");
         
     }
-    // if(ele.parentNode.id == "commuteButtons"){
-    //     if(!ele.classList.contains("custoButInvert")){
-    //         for (let index = 0; index < commuteButtons.children.length; index++) {
-    //             if(commuteButtons.children[index].classList.contains("custoButInvert")){
-    //                 commuteButtons.children[index].classList.remove("custoButInvert");
-    //             };
-    //         }
-    //         ele.classList.add("custoButInvert");
-    //     }
-    // }else if (ele.parentNode.id == "moneyButtons"){
-    //     if(!ele.classList.contains("custoBut")){
-    //         for (let index = 0; index < moneyButtons.children.length; index++) {
-    //             if(moneyButtons.children[index].classList.contains("custoBut")){
-    //                 moneyButtons.children[index].classList.remove("custoBut");
-    //                 moneyButtons.children[index].classList.add("custoButInvert");
-    //             };
-    //         }
-    //         ele.classList.add("custoBut");
-    //         ele.classList.remove("custoButInvert");
-    //     }
-    // }else if (ele.parentNode.id == "excerButtons"){
-    //     if(!ele.classList.contains("custoButInvert")){
-    //         for (let index = 0; index < excerButtons.children.length; index++) {
-    //             if(excerButtons.children[index].classList.contains("custoButInvert")){
-    //                 excerButtons.children[index].classList.remove("custoButInvert");
-    //             };
-    //         }
-    //         ele.classList.add("custoButInvert");
-    //     }
-    // }
+
 }
 
 
@@ -215,72 +186,6 @@ mainYearly.addEventListener("click", () => {
     }
     });
     
-
-
-
-
-// document.getElementById("commuteDaily").addEventListener("click", () => {
-//     h3Mins.innerHTML = hrsAndMins(results.duration);
-//     h3Bike.innerHTML = hrsAndMins(bikeDuration);
-//     h3Compare.innerHTML= hrsAndMins(results.duration - bikeDuration);
-//     buttonFadeHelper([h3Mins,h3Bike,h3Compare]);
-// });
-// document.getElementById("commuteWeekly").addEventListener("click", () => {
-//     h3Mins.innerHTML = hrsAndMins((results.duration*5));
-//     h3Bike.innerHTML = hrsAndMins((bikeDuration*5));
-//     h3Compare.innerHTML= hrsAndMins((results.duration - bikeDuration)*5);
-//     buttonFadeHelper([h3Mins,h3Bike,h3Compare]);
-// });
-// document.getElementById("commuteMonthly").addEventListener("click", () => {
-//     h3Mins.innerHTML = hrsAndMins((results.duration*5)*4.3);
-//     h3Bike.innerHTML = hrsAndMins((bikeDuration*5)*4.3);
-//     h3Compare.innerHTML= hrsAndMins(((results.duration - bikeDuration)*5)*4.3);
-//     buttonFadeHelper([h3Mins,h3Bike,h3Compare]);
-// });
-// document.getElementById("commuteYearly").addEventListener("click", () => {
-//     h3Mins.innerHTML = hrsAndMins((results.duration*5)*52);
-//     h3Bike.innerHTML = hrsAndMins((bikeDuration*5)*52);
-//     h3Compare.innerHTML= hrsAndMins(((results.duration - bikeDuration)*5)*52);
-//     buttonFadeHelper([h3Mins,h3Bike,h3Compare]);
-// });
-
-// document.getElementById("fareDailyBut").addEventListener("click",() => {
-//     fare.innerHTML = "£" + (faresTotal*1).toFixed(2);
-//     buttonFadeHelper([fare]);
-// });
-// document.getElementById("fareWeeklyBut").addEventListener("click",() => {
-//     fare.innerHTML = "£" + (faresTotal*5).toFixed(2);
-//     buttonFadeHelper([fare]);
-// });
-// document.getElementById("fareMonthlyBut").addEventListener("click",() => {
-//     fare.innerHTML = "£" + (((faresTotal)*5)*4.3).toFixed(2);
-//     buttonFadeHelper([fare]);
-// });
-// document.getElementById("fareYearlyBut").addEventListener("click",() => {
-//     fare.innerHTML = "£" + (((faresTotal)*5)*52).toFixed(2);
-//     buttonFadeHelper([fare]);
-// });
-
-// document.getElementById("exerciseDaily").addEventListener("click",() => {
-//     excer.innerHTML = Math.round((bikeDistance)/1609.344) + " miles";                  
-//     kcals.innerHTML = Math.round(bikeDuration * 9.52) + " kcals";
-//     buttonFadeHelper([excer, kcals]);
-// });
-// document.getElementById("exerciseWeekly").addEventListener("click",() => {
-//     excer.innerHTML = Math.round(((bikeDistance)/1609.344)*5) + " miles";                  
-//     kcals.innerHTML = Math.round((bikeDuration * 9.52)*5) + " kcals";
-//     buttonFadeHelper([excer, kcals]);
-// });
-// document.getElementById("exerciseMonthly").addEventListener("click",() => {
-//     excer.innerHTML = Math.round((((bikeDistance)/1609.344)*5)*4.3) + " miles";                  
-//     kcals.innerHTML = Math.round(((bikeDuration * 9.52)*5)*4.3) + " kcals";
-//     buttonFadeHelper([excer, kcals]);
-// });
-// document.getElementById("exerciseYearly").addEventListener("click",() => {
-//     excer.innerHTML = Math.round((((bikeDistance)/1609.344)*5)*52) + " miles";                  
-//     kcals.innerHTML = Math.round(((bikeDuration * 9.52)*5)*52) + " kcals";
-//     buttonFadeHelper([excer, kcals]);
-// });
 
 let allStations = document.getElementsByClassName("stations");
 for (let index = 0; index < allStations.length; index++) {
