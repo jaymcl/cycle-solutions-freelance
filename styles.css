@@ -684,7 +684,7 @@ input:checked + .slider:before {
 transform: translateX(7.8rem);
 }
 
-/*------ ADDED CSS ---------*/
+
 .on
 {
 display: none;
@@ -711,9 +711,7 @@ input:checked + .slider .on
 input:checked + .slider .off
 {display: none;}
 
-/*--------- END --------*/
 
-/* Rounded sliders */
 .slider.round {
 border-radius: 34px;
 border:1px solid var(--primaryColor);
@@ -814,13 +812,16 @@ h2::before {
         align-items: center;
         margin: auto;
     }
-    #commuteTime, #fares {
-        width: 50%;
+    #commuteTime, #fares, #exercise {
+        width: 30%;
     }
-    #exercise{
-        max-width: 1440px;
-        margin-top: -21rem;
     
+    #fares{
+        order: 3;
+    }
+
+    #exercise{
+        margin: 0;
     }
     .container.inputContains {
         width: 40%
