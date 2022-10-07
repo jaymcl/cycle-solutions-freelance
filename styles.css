@@ -11,7 +11,7 @@
     --victoriaColor:#00a0e2;
     --WACColor:#76d0bd;
     --londonOvergroundColor:#e86a10;
-    --tflRailColor:#0019a8;
+    --elizabethColor:#6950A1;
     --DLRColor:#00afad;
     --tramColor:#6c0;
     --primaryColor: #011f05;
@@ -404,14 +404,14 @@ ul {
 .londonOverground+ul>li:after{
     background-color: var(--londonOvergroundColor)
 }
-.tflRail::before, .tflRail::after{
-    background-color: var(--tflRailColor);
+.elizabethLine::before, .elizabethLine::after{
+    background-color: var(--elizabethColor);
 }
-.tflRail+ul>li:before{
-    background-color: var(--tflRailColor);
+.elizabethLine+ul>li:before{
+    background-color: var(--elizabethColor);
 }
-.tflRail+ul>li:after{
-    background-color: var(--tflRailColor);
+.elizabethLine+ul>li:after{
+    background-color: var(--elizabethColor);
 }
 .DLR::before, .DLR::after{
     background-color: var(--DLRColor);
@@ -791,7 +791,7 @@ h2::before {
     }   
     #vectorBackground{
         background-image: url(bikeVector2.jpg);
-        height: 35vw;
+        height: 25vw;
         background-size: contain;
         background-repeat: no-repeat;
         background-position-x: right;

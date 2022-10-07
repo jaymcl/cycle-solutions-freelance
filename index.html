@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.1/axios.min.js"></script>
     <link rel="stylesheet" href="styles.css">
     <title>Cycle Solutions</title>
 </head>
@@ -567,26 +567,31 @@
                         <li class="list-group-item list-group-item-action">Woodgrange Park Rail Station </li>
 
                     </ul>
-                <li class="list-group-item list-group-item-action tflRail" id="fromTflRailLine" data-toggle="collapse" data-target="#fromTflRailStations" aria-expanded="true" aria-controls="fromTflRailStations">Tfl Rail</li>
-                    <ul id="fromTflRailStations" class="collapse list-group list-group-flush stations" aria-labelledby="fromTflRailLine" data-parent="#fromPickerButton">
+                <li class="list-group-item list-group-item-action elizabethLine" id="fromElizabethLineLine" data-toggle="collapse" data-target="#fromElizabethLineStations" aria-expanded="true" aria-controls="fromElizabethLineStations">Elizabeth Line</li>
+                    <ul id="fromElizabethLineStations" class="collapse list-group list-group-flush stations" aria-labelledby="fromElizabethLineLine" data-parent="#fromPickerButton">
+                        <li class="list-group-item list-group-item-action">Abbey Wood Line Rail Station </li>
                         <li class="list-group-item list-group-item-action">Acton Main Line Rail Station </li>
                         <li class="list-group-item list-group-item-action">Brentwood Rail Station </li>
                         <li class="list-group-item list-group-item-action">Burnham (Berks) Rail Station </li>
+                        <li class="list-group-item list-group-item-action">Canary Wharf Rail Station </li>
                         <li class="list-group-item list-group-item-action">Chadwell Heath Rail Station </li>
+                        <li class="list-group-item list-group-item-action">Custom House Rail Station </li>
                         <li class="list-group-item list-group-item-action">Ealing Broadway Rail Station </li>
+                        <li class="list-group-item list-group-item-action">Farringdon Rail Station </li>
                         <li class="list-group-item list-group-item-action">Forest Gate Rail Station </li>
                         <li class="list-group-item list-group-item-action">Gidea Park Rail Station </li>
                         <li class="list-group-item list-group-item-action">Goodmayes Rail Station </li>
                         <li class="list-group-item list-group-item-action">Hanwell Rail Station </li>
                         <li class="list-group-item list-group-item-action">Harold Wood Rail Station </li>
                         <li class="list-group-item list-group-item-action">Hayes & Harlington Rail Station </li>
-                        <li class="list-group-item list-group-item-action">Heathrow Terminal  Rail Station </li>
-                        <li class="list-group-item list-group-item-action">Heathrow Terminal (Heathrow Terminals  &  Rail Station) </li>
+                        <li class="list-group-item list-group-item-action">Heathrow Terminal 2 & 3 Rail Station </li>
+                        <li class="list-group-item list-group-item-action">Heathrow Terminal 4 Rail Station </li>
+                        <li class="list-group-item list-group-item-action">Heathrow Terminal 5 Rail Station </li>
                         <li class="list-group-item list-group-item-action">Ilford Rail Station </li>
                         <li class="list-group-item list-group-item-action">Iver Rail Station </li>
                         <li class="list-group-item list-group-item-action">Langley (Berks) Rail Station </li>
                         <li class="list-group-item list-group-item-action">London Liverpool Street Rail Station </li>
-                        <li class="list-group-item list-group-item-action">London Paddington Rail Station </li>
+                        <li class="list-group-item list-group-item-action">LondonPaddington Rail Station </li>
                         <li class="list-group-item list-group-item-action">Maidenhead Rail Station </li>
                         <li class="list-group-item list-group-item-action">Manor Park Rail Station </li>
                         <li class="list-group-item list-group-item-action">Maryland Rail Station </li>
@@ -598,9 +603,12 @@
                         <li class="list-group-item list-group-item-action">Southall Rail Station </li>
                         <li class="list-group-item list-group-item-action">Stratford (London) Rail Station </li>
                         <li class="list-group-item list-group-item-action">Taplow Rail Station </li>
+                        <li class="list-group-item list-group-item-action">Tottenham Court Rail Station </li>
                         <li class="list-group-item list-group-item-action">Twyford Rail Station </li>
                         <li class="list-group-item list-group-item-action">West Drayton Rail Station </li>
                         <li class="list-group-item list-group-item-action">West Ealing Rail Station </li>
+                        <li class="list-group-item list-group-item-action">Whitechapel Rail Station </li>
+                        <li class="list-group-item list-group-item-action">Woolwich Rail Station </li>
                     </ul>
                 <li class="list-group-item list-group-item-action DLR" id="fromDLRLine" data-toggle="collapse" data-target="#fromDLRStations" aria-expanded="true" aria-controls="fromDLRStations">DLR</li>
                     <ul id="fromDLRStations" class="collapse list-group list-group-flush stations" aria-labelledby="fromDLRLine" data-parent="#fromPickerButton">
@@ -1258,26 +1266,31 @@
                     <li class="list-group-item list-group-item-action">Woodgrange Park Rail Station </li>
         
                 </ul>
-            <li class="list-group-item list-group-item-action tflRail" id="toTflRailLine" data-toggle="collapse" data-target="#toTflRailStations" aria-expanded="true" aria-controls="toTflRailStations">Tfl Rail</li>
-                <ul id="toTflRailStations" class="collapse list-group list-group-flush stations" aria-labelledby="toTflRailLine" data-parent="#toPickerButton">
+            <li class="list-group-item list-group-item-action elizabethLine" id="toElizabethLine" data-toggle="collapse" data-target="#toElizabethLineStations" aria-expanded="true" aria-controls="toElizabethLineStations">Elizabeth Line</li>
+                <ul id="toElizabethLineStations" class="collapse list-group list-group-flush stations" aria-labelledby="toElizabethLine" data-parent="#toPickerButton">
+                    <li class="list-group-item list-group-item-action">Abbey Wood Line Rail Station </li>
                     <li class="list-group-item list-group-item-action">Acton Main Line Rail Station </li>
                     <li class="list-group-item list-group-item-action">Brentwood Rail Station </li>
                     <li class="list-group-item list-group-item-action">Burnham (Berks) Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Canary Wharf Rail Station </li>
                     <li class="list-group-item list-group-item-action">Chadwell Heath Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Custom House Rail Station </li>
                     <li class="list-group-item list-group-item-action">Ealing Broadway Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Farringdon Rail Station </li>
                     <li class="list-group-item list-group-item-action">Forest Gate Rail Station </li>
                     <li class="list-group-item list-group-item-action">Gidea Park Rail Station </li>
                     <li class="list-group-item list-group-item-action">Goodmayes Rail Station </li>
                     <li class="list-group-item list-group-item-action">Hanwell Rail Station </li>
                     <li class="list-group-item list-group-item-action">Harold Wood Rail Station </li>
                     <li class="list-group-item list-group-item-action">Hayes & Harlington Rail Station </li>
-                    <li class="list-group-item list-group-item-action">Heathrow Terminal  Rail Station </li>
-                    <li class="list-group-item list-group-item-action">Heathrow Terminal (Heathrow Terminals  &  Rail Station) </li>
+                    <li class="list-group-item list-group-item-action">Heathrow Terminal 2 & 3 Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Heathrow Terminal 4 Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Heathrow Terminal 5 Rail Station </li>
                     <li class="list-group-item list-group-item-action">Ilford Rail Station </li>
                     <li class="list-group-item list-group-item-action">Iver Rail Station </li>
                     <li class="list-group-item list-group-item-action">Langley (Berks) Rail Station </li>
                     <li class="list-group-item list-group-item-action">London Liverpool Street Rail Station </li>
-                    <li class="list-group-item list-group-item-action">London Paddington Rail Station </li>
+                    <li class="list-group-item list-group-item-action">LondonPaddington Rail Station </li>
                     <li class="list-group-item list-group-item-action">Maidenhead Rail Station </li>
                     <li class="list-group-item list-group-item-action">Manor Park Rail Station </li>
                     <li class="list-group-item list-group-item-action">Maryland Rail Station </li>
@@ -1289,9 +1302,12 @@
                     <li class="list-group-item list-group-item-action">Southall Rail Station </li>
                     <li class="list-group-item list-group-item-action">Stratford (London) Rail Station </li>
                     <li class="list-group-item list-group-item-action">Taplow Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Tottenham Court Rail Station </li>
                     <li class="list-group-item list-group-item-action">Twyford Rail Station </li>
                     <li class="list-group-item list-group-item-action">West Drayton Rail Station </li>
                     <li class="list-group-item list-group-item-action">West Ealing Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Whitechapel Rail Station </li>
+                    <li class="list-group-item list-group-item-action">Woolwich Rail Station </li>
                 </ul>
             <li class="list-group-item list-group-item-action DLR" id="toDLRLine" data-toggle="collapse" data-target="#toDLRStations" aria-expanded="true" aria-controls="toDLRStations">DLR</li>
                 <ul id="toDLRStations" class="collapse list-group list-group-flush stations" aria-labelledby="toDLRLine" data-parent="#toPickerButton">

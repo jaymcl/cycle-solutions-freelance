@@ -193,6 +193,7 @@ for (let index = 0; index < allStations.length; index++) {
         for (let i = 0; i < allStations[index].children.length; i++) {
             allStations[index].children[i].addEventListener("click", () => {
                 inputFromEle.value = allStations[index].children[i].textContent;
+                inputFromEle.style.color = getComputedStyle(allStations[index].children[i], ":before").backgroundColor;
                 document.getElementById("fromButtonHeading").click();
             })
         }
@@ -200,6 +201,7 @@ for (let index = 0; index < allStations.length; index++) {
         for (let i = 0; i < allStations[index].children.length; i++) {
             allStations[index].children[i].addEventListener("click", () => {
                 inputToEle.value = allStations[index].children[i].textContent;
+                inputToEle.style.color = getComputedStyle(allStations[index].children[i], ":before").backgroundColor;
                 document.getElementById("toButtonHeading").click();
             })
         }
@@ -232,6 +234,7 @@ const suggestionsAuto =  (inp, obj) => {
                         li.innerHTML += "<input type='hidden' value='" + objValues[j] + "'>";
                         li.addEventListener("click" ,function(){
                             inp.value = this.getElementsByTagName("input")[0].value;
+                            console.log( this.getElementsByTagName("input")[0].value);// DO THIS!!!!!!!!!!!!!!!!!!!!!!!!!!!!
                             closeAllLists();
                         })
                         inp.id == "from" ? fromSuggestions.appendChild(li): toSuggestions.appendChild(li);
@@ -274,7 +277,8 @@ const journeyPlan = (from, to) => {
     let tflApi = "https://api.tfl.gov.uk";
     let tflJour = "/journey/journeyresults/";
    // let tflTime = "?date=20210201&time=0800&timeIs=Departing";
-    let tflModes = "?mode=bus,tube,overground,tflrail,dlr,tram";
+    let tflModes = "?mode=bus,tube,overground,dlr,tram,elizabeth-line";
+   
     let tflBikeMode = "?mode=cycle&bikeProficiency=Fast";
     
 
@@ -354,7 +358,7 @@ axios.get(`${tflApi}${tflJour}${from}/to/${to}${tflModes}`, {
                         }
                         if (array[index].mode.id == "tube" ||
                             array[index].mode.id == "dlr" ||
-                            array[index].mode.id == "tflrail" ||
+                            array[index].mode.id == "elizabeth-line" ||
                             array[index].mode.id == "overground" 
 
                             ) {
@@ -1031,28 +1035,33 @@ londonOverground:[
 "Wood Street Rail Station",
 "Woodgrange Park Rail Station"
 ],
-tflRail:[
+elizabethLine:[
+"Abbey Wood",
 "Acton Main Line Rail Station",
 "Brentwood Rail Station",
 "Burnham (Berks) Rail Station",
+"Canary Wharf",
 "Chadwell Heath Rail Station",
+"Custom House",
 "Ealing Broadway Rail Station",
+"Farringdon",
 "Forest Gate Rail Station",
 "Gidea Park Rail Station",
 "Goodmayes Rail Station",
 "Hanwell Rail Station",
 "Harold Wood Rail Station",
 "Hayes & Harlington Rail Station",
-"Heathrow Terminal  Rail Station",
-"Heathrow Terminal Heathrow Terminals  &  Rail Station",
+"Heathrow Terminal 4 Rail Station",
+"Heathrow Terminal 5 Rail Station",
+"Heathrow Terminals 2 & 3 Rail Station",
 "Ilford Rail Station",
 "Iver Rail Station",
 "Langley (Berks) Rail Station",
-"London Liverpool Street Rail Station",
-"London Paddington Rail Station",
+"Liverpool Street",
 "Maidenhead Rail Station",
 "Manor Park Rail Station",
 "Maryland Rail Station",
+"Paddington",
 "Reading Rail Station",
 "Romford Rail Station",
 "Seven Kings Rail Station",
@@ -1061,9 +1070,14 @@ tflRail:[
 "Southall Rail Station",
 "Stratford (London) Rail Station",
 "Taplow Rail Station",
+"Tottenham Court Road",
 "Twyford Rail Station",
-"West Drayton Rail Station",
-"West Ealing Rail Station"
+"West Drayton Rail Station ",
+"West Ealing Rail Station",
+"Whitechapel",
+"Woolwich",
+"London Paddington Rail Station",
+"London Liverpool Street Rail Station"
 ],
 DLR:[
 "Abbey Road DLR Station",
