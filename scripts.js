@@ -3,13 +3,9 @@ let journeyLocs = document.getElementById("journeyLocs");
 let h3Mins = document.getElementById("mins");
 let h3Bike = document.getElementById("bike");
 let h3Compare = document.getElementById("h3Compare");
-let z;
 let fare = document.getElementById("fare");
-
 let excer = document.getElementById("excer");
-
 let kcals = document.getElementById("kcals");
-
 let results={};
 let bikeDuration="";
 let inputChoiceFrom = "";
@@ -207,7 +203,7 @@ for (let index = 0; index < allStations.length; index++) {
         }
     }
 }
-
+//autosuggestions for inputs 
 const suggestionsAuto =  (inp, stationsObj) => { 
 
     inp.addEventListener("input", function(){
@@ -273,15 +269,14 @@ const getInputValue = () => {
 
 // function to get data from api and assign to variables/elements
 const journeyPlan = (from, to) => {
-    let appKey = "&app_key=c40967018a7f4319892ed7f05cf93392"; 
+    //tfl app key keeps breaking works fine without key ( main not work with concurrent people using at the same time)
+    // let appKey = "&app_key=c40967018a7f4319892ed7f05cf93392"; 
     let tflApi = "https://api.tfl.gov.uk";
     let tflJour = "/journey/journeyresults/";
-   // let tflTime = "?date=20210201&time=0800&timeIs=Departing";
     let tflModes = "?mode=bus,tube,overground,dlr,tram,elizabeth-line";
-   
     let tflBikeMode = "?mode=cycle&bikeProficiency=Fast";
     
-
+//tfl api call to get data
 axios.get(`${tflApi}${tflJour}${from}/to/${to}${tflModes}`, {
     validateStatus: (status) => {
         return status <= 300;}    
@@ -381,7 +376,7 @@ axios.get(`${tflApi}${tflJour}${from}/to/${to}${tflModes}`, {
                         
                         if (fareBoth[0].length >= 1)
                         {
-                            faresTotal = (1.50 * fareBoth[0].length) + +res.data[0].rows[0].ticketsAvailable[res.data[0].rows[0].ticketsAvailable.length-1].cost ; 
+                            faresTotal = (1.65 * fareBoth[0].length) + +res.data[0].rows[0].ticketsAvailable[res.data[0].rows[0].ticketsAvailable.length-1].cost ; 
                             
                             
                             fare.innerHTML = "£" + (faresTotal*1).toFixed(2);
@@ -514,10 +509,6 @@ var stickyButtonsFunc = function() {
 
     }
 }
-
-
-
-
 
 
 suggestionsAuto(inputFromEle,autoStations);
